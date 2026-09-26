@@ -24,7 +24,8 @@ Python は **3.13**。3.14 では semopy の wheel が無く `pip install` が�
 
 | 約束 | 理由 |
 |---|---|
-| `data/raw/` は絶対に書き換えない | 公的機関側の更新で過去の結果が再現不能になるのを防ぐため固定してある。更新したいときは `make fetch` を明示的に実行し、差分をコミットメッセージに書く |
+| `data/raw/` は絶対に書き換えない | 公的機関側の更新で過去の結果が再現不能になるのを防ぐため固定してある。更新したいときは `make fetch` を明示的に実行し、差分をコミットメッセージに書く。**実際に World Bank の WGI 2012年値が203か国分改訂され、境界線上のパスの判定が反転した**（[docs/05-data-sources.md](docs/05-data-sources.md) §3）。差分確認は `.venv/bin/python src/check_revisions.py` |
+| 生データを足したら `make_manifest.py` を回す | `data/MANIFEST.md` に URL と SHA256 が載る。手で書かない |
 | 出力パスは必ず `paths.py` 経由 | `paths.raw/processed/result/figure` を使う。生パスを書かない |
 | 数値をドキュメントに手書きしない | 図もREADMEも、可能な限り結果CSVから読む。図の生成スクリプトは実際にそうしている（[make_pref_diagram.py](src/make_pref_diagram.py) 参照） |
 | N < 200 の推定は必ずブートストラップ区間を併記 | 漸近的な標準誤差は当てにならない。p値だけで「有意」と書かない |

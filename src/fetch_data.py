@@ -46,6 +46,12 @@ SPECS = [
     ("life_exp_17",     "SP.DYN.LE00.IN",     2017, 2015, 2019, 2),
     ("under5_mort_17",  "SH.DYN.MORT",        2017, 2015, 2019, 2),
     ("school_sec_17",   "SE.SEC.ENRR",        2017, 2015, 2019, 2),
+    # --- 人的資本の指標入れ替え検討用（採用モデルには入っていないが、
+    #     「教育のみ」「保健のみ」の試行で使ったので再現のため残す。docs/01-countries.md 参照）---
+    ("school_ter_12",   "SE.TER.ENRR",        2012, 2010, 2014, 2),
+    ("prm_compl_12",    "SE.PRM.CMPT.ZS",     2012, 2010, 2014, 2),
+    ("school_sec_f_12", "SE.SEC.ENRR.FE",     2012, 2010, 2014, 2),
+    ("edu_exp_12",      "SE.XPD.TOTL.GD.ZS",  2012, 2010, 2014, 2),
 ]
 
 

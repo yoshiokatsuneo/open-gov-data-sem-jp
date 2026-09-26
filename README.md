@@ -226,8 +226,13 @@ make fetch     # 生データを取り直す（ネットワーク必要・上書
 │   ├── job_screen.py          残差スクリーニング（多重比較補正）
 │   ├── muni_screen.py         市区町村 回帰＋スクリーニング
 │   ├── muni_path.py           市区町村 パス解析（採用）
-│   └── make_*.py              各図の生成
+│   ├── make_*.py              各図の生成
+│   ├── make_index.py          index.html を results/ から生成
+│   ├── make_manifest.py       data/MANIFEST.md と manifest.csv を生成
+│   └── check_revisions.py     固定データと最新の上流データの差分を出す
 ├── data/
+│   ├── MANIFEST.md            生データ1件ごとの入手元URL・サイズ・SHA256
+│   ├── manifest.csv           同上（機械可読）
 │   ├── raw/                   公的機関から落とした生データ（改変しない）
 │   │   ├── estat_pref/        社会生活統計指標－都道府県の指標－2024（.xls ×8）
 │   │   ├── estat_muni/        統計でみる市区町村のすがた2026（.xls ×10）
@@ -241,13 +246,18 @@ make fetch     # 生データを取り直す（ネットワーク必要・上書
 
 ## データ出典
 
-| データ | 提供 | 取得方法 | ライセンス |
-|---|---|---|---|
-| World Development Indicators / Worldwide Governance Indicators | World Bank | 公開API（キー不要） | [CC BY 4.0](https://datacatalog.worldbank.org/public-licenses) |
-| 社会生活統計指標－都道府県の指標－2024 | 総務省統計局 | e-Stat ファイルダウンロード（キー不要） | [政府標準利用規約](https://www.e-stat.go.jp/terms-of-use) |
-| 統計でみる市区町村のすがた2026（基礎データ） | 総務省統計局 | 同上 | 同上 |
+**ファイル1件ごとの入手元URL・サイズ・SHA256 → [data/MANIFEST.md](data/MANIFEST.md)**（機械可読版: [data/manifest.csv](data/manifest.csv)）
 
-**e-Stat は API キー無しでも統計表を落とせる。** `https://www.e-stat.go.jp/stat-search/file-download?statInfId=<12桁ID>&fileKind=0`。詳細は [docs/05-data-sources.md](docs/05-data-sources.md)。
+| データ | 提供 | データセットページ | 件数 | ライセンス |
+|---|---|---|---|---|
+| World Development Indicators | World Bank | [data.worldbank.org](https://data.worldbank.org/indicator) | 18指標 | [CC BY 4.0](https://datacatalog.worldbank.org/public-licenses) |
+| Worldwide Governance Indicators | World Bank | [databank](https://databank.worldbank.org/source/worldwide-governance-indicators) | 4指標 | 同上 |
+| 社会生活統計指標－都道府県の指標－2024 | 総務省統計局 | [e-Stat](https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00200502&tstat=000001213101&cycle=0&tclass1=000001213102&tclass2val=0) | 8ファイル | [政府標準利用規約](https://www.e-stat.go.jp/terms-of-use) |
+| 統計でみる市区町村のすがた2026（基礎データ） | 総務省統計局 | [e-Stat](https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00200502&tstat=000001244297&cycle=0&tclass1=000001244298&tclass2val=0) | 10ファイル | 同上 |
+
+**すべてAPIキー・ログイン不要。**e-Stat は `https://www.e-stat.go.jp/stat-search/file-download?statInfId=<12桁ID>&fileKind=0` で直接落とせる。取得方法と指標定義は [docs/05-data-sources.md](docs/05-data-sources.md)。
+
+**上流は遡って改訂される。**2026-09-27 の再取得で World Bank の WGI 2012年値が203か国分変わっており、境界線上のパス（制度の質→成長）の判定が反転した。`data/raw/` を固定しているのはそのため。差分は `.venv/bin/python src/check_revisions.py` で確認できる（[詳細](docs/05-data-sources.md#3-上流の改訂--実際に起きたこと)）。
 
 ---
 
