@@ -43,6 +43,7 @@ muni:
 	$(PY) $(SRC)/muni_parse.py
 	$(PY) $(SRC)/muni_screen.py
 	$(PY) $(SRC)/muni_path.py
+	$(PY) $(SRC)/model_log.py
 
 # ---------- 図 ----------
 figures:

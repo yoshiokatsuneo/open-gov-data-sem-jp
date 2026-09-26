@@ -256,7 +256,13 @@ def main():
             try:
                 r = evaluate(desc, cache[prep], cols)
             except Exception as ex:
-                print(f"{cid:4s} 推定に失敗: {ex}")
+                # 推定できないこと自体が棄却理由になる（特異に近い指標を含む等）
+                print(f"{cid:4s} {'推定不能':>34s}  {verdict}（{ex}）")
+                rows.append(dict(family=fam, id=cid, label=label, verdict="推定不能",
+                                 reason=f"{reason}／推定が収束しない: {ex}",
+                                 N=np.nan, df=np.nan, chi2_df=np.nan, CFI=np.nan,
+                                 TLI=np.nan, RMSEA=np.nan, max_resid=np.nan,
+                                 max_abs_std=np.nan))
                 continue
             print(f"{cid:4s} {r['N']:5d} {r['df']:3d} {r['chi2_df']:7.2f} {r['CFI']:6.3f} "
                   f"{r['TLI']:6.3f} {r['RMSEA']:6.3f} {r['max_resid']:7.3f} "
@@ -265,8 +271,71 @@ def main():
                              reason=reason, **r))
     out = pd.DataFrame(rows)
     out.to_csv(paths.result("model_log.csv"), index=False)
-    print(f"\n-> results/model_log.csv（{len(out)} 仕様）")
+    write_doc(out)
+    print(f"\n-> results/model_log.csv / docs/06-model-selection.md（{len(out)} 仕様）")
     return out
+
+
+DOC_HEAD = """# 06 モデル選択の台帳
+
+**なぜこの図なのか。**採用したモデルに至るまでに試した全仕様を、同じ条件で再推定した記録。
+棄却したものも同じ表に載せる。
+
+数値は手で書いていない。`src/model_log.py` が実際に推定した結果を出力している。
+
+```bash
+.venv/bin/python src/model_log.py
+```
+
+機械可読版は [../results/model_log.csv](../results/model_log.csv)。
+
+## 表の読み方
+
+| 列 | 意味 |
+|---|---|
+| χ²/df | 2〜3以下が目安。N が大きいと小さなミススペックでも跳ねる |
+| CFI / TLI | 0.95以上が目安。semopy は CFI を1でクリップしないので1超は飽和に近いだけ |
+| RMSEA | 0.08以下が目安。**N=47 では小標本バイアスで過大に出る** |
+| 残差max | 観測相関とモデル含意相関の差の最大絶対値。0.1以下が目安。**局所的なミススペックはここに出る** |
+| \|std\|max | 標準化係数の最大絶対値。**1を超えたら多重共線性による抑制を疑う** |
+
+判断は適合度だけでなく残差相関と \|std\|max を併せて見ている。適合度が良くても
+残差相関が大きければ、どこか一箇所が構造を無視している。
+
+## 因子負荷に p 値が無い行について
+
+各因子の先頭指標は、潜在変数のスケールを決めるため標準化前の負荷が 1 に固定される。
+**固定したパラメータは推定していないので標準誤差も p 値も無い。**
+表示される標準化値が 1 でないのは標準化が尺度を割り直すため。
+
+これは識別上の任意の選択にすぎない。指標の順番を入れ替えると `-` は別の指標に移り、
+適合度も標準化解も変わらない（χ² は小数4桁まで一致することを確認済み）。
+semopy では潜在変数の分散を1に固定しても先頭指標の固定は解除されず、制約が二重になる。
+
+"""
+
+
+def write_doc(out):
+    lines = [DOC_HEAD]
+    for fam in out.family.unique():
+        d = out[out.family == fam]
+        lines.append(f"\n## {fam}\n")
+        lines.append("| ID | 仕様 | N | df | χ²/df | CFI | TLI | RMSEA | 残差max | \\|std\\|max | 採否 |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|")
+        for _, r in d.iterrows():
+            f = lambda v, n=3: "—" if pd.isna(v) else f"{v:.{n}f}"
+            mark = "**採用**" if r.verdict == "採用" else r.verdict
+            lines.append(
+                f"| {r.id} | {r.label} | {'—' if pd.isna(r.N) else int(r.N)} | "
+                f"{'—' if pd.isna(r.df) else int(r.df)} | {f(r.chi2_df, 2)} | {f(r.CFI)} | "
+                f"{f(r.TLI)} | {f(r.RMSEA)} | {f(r.max_resid)} | {f(r.max_abs_std, 2)} | {mark} |")
+        lines.append("\n### 採否の理由\n")
+        for _, r in d.iterrows():
+            lines.append(f"- **{r.id}（{r.verdict}）** — {r.reason}")
+    lines.append("\n---\n\n各モデルの中身と解釈は "
+                 "[01-countries.md](01-countries.md) / [02-prefectures.md](02-prefectures.md) / "
+                 "[03-municipalities.md](03-municipalities.md) を参照。")
+    (paths.ROOT / "docs" / "06-model-selection.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

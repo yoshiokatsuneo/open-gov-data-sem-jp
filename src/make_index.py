@@ -448,6 +448,8 @@ def build(selected=None):
             "同じ共分散行列を再現する等価モデルは無数にあり、向きを逆にしても適合度は変わらない"
             f"（<a href='{REPO}/docs/04-methodology.md'>方法論 §5</a>に検算あり）。"
             "区間が0をまたぐパスは「効果を示せなかった」ものとして扱うこと。"
+            "図中の因子負荷のうち1本だけ有意性が示されないのは、その指標が潜在変数のスケールを決める"
+            f"参照指標として固定され推定されていないため（<a href='{REPO}/docs/06-model-selection.md'>台帳</a>に説明）。"
             if selected else "観測データから関係を調べたもので、因果関係を証明する分析ではありません。")
     about = """<section id="about"><h2>このプロジェクトについて</h2>
 <p>公開データを使い、経済・健康・労働・人口移動の関係を、国・都道府県・市区町村の単位で調べるプロジェクトです。
@@ -508,7 +510,8 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
 <p>{esc(intro)}</p>
 {('<p class="fit">分析手法：' + ('パス解析（SEMの一種・観測変数のみ）' if selected == 'muni' else '構造方程式モデリング（SEM）') + '</p>') if selected else ''}
 {'<p>複数の関係を同時に推定し、直接の関係と他の変数を経由する間接の関係を分けて調べます。</p>' if selected == 'muni' else ''}
-<nav aria-label="目次">{nav}<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>
+<nav aria-label="目次">{nav}<a href="{REPO}/docs/06-model-selection.md">モデル選択の台帳</a>
+<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>
 <a href="{REPO}/README.md">README</a></nav>
 {f'<div class="note">{note}</div>' if selected is None else ''}</header>
 {about}
@@ -527,6 +530,7 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
 <li><a href="{REPO}/docs/03-municipalities.md">03 市区町村</a><span>docs/03-municipalities.md</span></li>
 <li><a href="{REPO}/docs/04-methodology.md">04 方法論の教訓</a><span>docs/04-methodology.md</span></li>
 <li><a href="{REPO}/docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
+<li><a href="{REPO}/docs/06-model-selection.md">06 モデル選択の台帳</a><span>docs/06-model-selection.md</span></li>
 <li><a href="{REPO}/Makefile">Makefile</a><span>再現用エントリポイント</span></li>
 </ul></section>
 {"</details>" if selected is None else ""}
