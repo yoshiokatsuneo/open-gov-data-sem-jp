@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 742" width="1280" height="742">
+<rect width="1280" height="742" fill="#fcfcfb"/>
+<text x="48" y="50" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="21" font-weight="700" fill="#0b0b0b">残差を説明するものを探した結果 — 375指標の総当たりで、何も残らなかった</text>
+<text x="48" y="75" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="400" fill="#77766f">転職モデルの残差に対し、47都道府県そろう e-Stat の全指標を機械的に相関させた。多重比較は残差の並べ替え2,000回による最大|r|の帰無分布で補正。</text>
+<rect x="40" y="106" width="580" height="530" rx="10" fill="#ffffff" stroke="#d5d4cf"/>
+<text x="64" y="136" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14.5" font-weight="700" fill="#0b0b0b">上位ヒットは沖縄1県で成立している</text>
+<text x="64" y="158" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">全47県 r = +0.536　沖縄を除く46県 r = +0.313</text>
+<rect x="120" y="184" width="468" height="370" fill="#ffffff" stroke="#d5d4cf"/>
+<line x1="219.5" y1="184" x2="219.5" y2="554" stroke="#eceae4"/>
+<text x="219.4500000000001" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">11.0</text>
+<line x1="278.0" y1="184" x2="278.0" y2="554" stroke="#eceae4"/>
+<text x="277.9500000000001" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">12.0</text>
+<line x1="336.5" y1="184" x2="336.5" y2="554" stroke="#eceae4"/>
+<text x="336.4500000000001" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">13.0</text>
+<line x1="395.0" y1="184" x2="395.0" y2="554" stroke="#eceae4"/>
+<text x="394.9500000000001" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">14.0</text>
+<line x1="453.5" y1="184" x2="453.5" y2="554" stroke="#eceae4"/>
+<text x="453.4500000000001" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">15.0</text>
+<line x1="512.0" y1="184" x2="512.0" y2="554" stroke="#eceae4"/>
+<text x="511.95000000000016" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">16.0</text>
+<line x1="570.5" y1="184" x2="570.5" y2="554" stroke="#eceae4"/>
+<text x="570.4500000000002" y="572" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">17.0</text>
+<line x1="120" y1="512.2" x2="588" y2="512.2" stroke="#eceae4"/>
+<text x="112" y="516.2258064516129" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">-1.0</text>
+<line x1="120" y1="452.5" x2="588" y2="452.5" stroke="#eceae4"/>
+<text x="112" y="456.54838709677415" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">-0.5</text>
+<line x1="120" y1="392.9" x2="588" y2="392.9" stroke="#b9b8b2"/>
+<text x="112" y="396.8709677419355" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">+0.0</text>
+<line x1="120" y1="333.2" x2="588" y2="333.2" stroke="#eceae4"/>
+<text x="112" y="337.19354838709677" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">+0.5</text>
+<line x1="120" y1="273.5" x2="588" y2="273.5" stroke="#eceae4"/>
+<text x="112" y="277.51612903225805" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">+1.0</text>
+<line x1="120" y1="213.8" x2="588" y2="213.8" stroke="#eceae4"/>
+<text x="112" y="217.8387096774194" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">+1.5</text>
+<text x="354.0" y="594" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">15歳未満人口割合（%）</text>
+<text x="76" y="369.0" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" fill="#52514e" transform="rotate(-90 76 369.0)">転職率の残差（%ポイント）</text>
+<line x1="120.0" y1="469.1" x2="588.0" y2="256.0" stroke="#2a78d6" stroke-width="2"/>
+<line x1="120.0" y1="445.5" x2="588.0" y2="304.4" stroke="#77766f" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="207.8" cy="376.1" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="196.1" cy="489.9" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="225.3" cy="357.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="272.1" cy="353.6" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="143.4" cy="437.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="237.0" cy="412.6" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="248.7" cy="411.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="272.1" cy="444.8" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="278.0" cy="358.7" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="266.3" cy="354.8" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="278.0" cy="324.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="272.1" cy="292.0" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="248.7" cy="398.7" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="278.0" cy="381.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="242.9" cy="397.4" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="237.0" cy="396.4" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="295.5" cy="396.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="313.1" cy="366.0" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="254.6" cy="407.6" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="283.8" cy="421.1" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="301.4" cy="397.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="289.7" cy="335.1" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="354.0" cy="400.4" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="289.7" cy="347.7" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="389.1" cy="401.4" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="266.3" cy="451.3" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="278.0" cy="455.4" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="307.2" cy="455.0" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="266.3" cy="397.9" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="248.7" cy="528.0" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="307.2" cy="386.9" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="295.5" cy="352.3" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="313.1" cy="322.0" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="324.8" cy="382.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="254.6" cy="405.7" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="231.2" cy="477.1" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="295.5" cy="415.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="266.3" cy="443.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="219.5" cy="429.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="354.0" cy="337.5" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="371.6" cy="382.1" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="313.1" cy="435.3" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="354.0" cy="418.2" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="295.5" cy="384.6" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="354.0" cy="397.8" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="354.0" cy="338.9" r="4" fill="#2a78d6" opacity="0.55"/>
+<circle cx="564.6" cy="209.1" r="6" fill="#e34948" opacity="1"/>
+<text x="552.6000000000001" y="213.09751686504882" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="700" fill="#e34948">沖縄県</text>
+<text x="140" y="606" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">実線 = 全47県の回帰直線　破線 = 沖縄を除いた46県</text>
+<rect x="640" y="106" width="600" height="530" rx="10" fill="#ffffff" stroke="#d5d4cf"/>
+<text x="664" y="136" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14.5" font-weight="700" fill="#0b0b0b">375指標も試せば、無関係でも |r| = 0.5 は普通に出る</text>
+<text x="664" y="158" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">残差を並べ替えたときの「375指標中の最大|r|」の分布（2,000回）</text>
+<rect x="716" y="184" width="480" height="320" fill="#ffffff" stroke="#d5d4cf"/>
+<line x1="716.0" y1="184" x2="716.0" y2="504" stroke="#eceae4"/>
+<text x="716.0" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.2</text>
+<line x1="798.8" y1="184" x2="798.8" y2="504" stroke="#eceae4"/>
+<text x="798.7586206896551" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.3</text>
+<line x1="881.5" y1="184" x2="881.5" y2="504" stroke="#eceae4"/>
+<text x="881.5172413793103" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.4</text>
+<line x1="964.3" y1="184" x2="964.3" y2="504" stroke="#eceae4"/>
+<text x="964.2758620689655" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.5</text>
+<line x1="1047.0" y1="184" x2="1047.0" y2="504" stroke="#eceae4"/>
+<text x="1047.0344827586205" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.6</text>
+<line x1="1129.8" y1="184" x2="1129.8" y2="504" stroke="#eceae4"/>
+<text x="1129.7931034482758" y="522" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0.7</text>
+<line x1="716" y1="504.0" x2="1196" y2="504.0" stroke="#b9b8b2"/>
+<text x="708" y="508.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">0</text>
+<line x1="716" y1="379.8" x2="1196" y2="379.8" stroke="#eceae4"/>
+<text x="708" y="383.77639751552795" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">100</text>
+<line x1="716" y1="255.6" x2="1196" y2="255.6" stroke="#eceae4"/>
+<text x="708" y="259.5527950310559" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">200</text>
+<line x1="716" y1="131.3" x2="1196" y2="131.3" stroke="#eceae4"/>
+<text x="708" y="135.3291925465839" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="10.5" font-weight="400" fill="#77766f">300</text>
+<text x="956.0" y="544" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">並べ替え時の最大 |r|</text>
+<text x="672" y="344.0" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" fill="#52514e" transform="rotate(-90 672 344.0)">回数</text>
+<rect x="761.0" y="499.0" width="13.5" height="5.0" fill="#c9d9ef"/>
+<rect x="776.0" y="490.3" width="13.5" height="13.7" fill="#c9d9ef"/>
+<rect x="791.0" y="472.9" width="13.5" height="31.1" fill="#c9d9ef"/>
+<rect x="806.0" y="429.5" width="13.5" height="74.5" fill="#c9d9ef"/>
+<rect x="821.0" y="374.8" width="13.5" height="129.2" fill="#c9d9ef"/>
+<rect x="836.0" y="315.2" width="13.5" height="188.8" fill="#c9d9ef"/>
+<rect x="851.0" y="248.1" width="13.5" height="255.9" fill="#c9d9ef"/>
+<rect x="866.0" y="218.3" width="13.5" height="285.7" fill="#c9d9ef"/>
+<rect x="881.0" y="218.3" width="13.5" height="285.7" fill="#c9d9ef"/>
+<rect x="896.0" y="251.8" width="13.5" height="252.2" fill="#c9d9ef"/>
+<rect x="911.0" y="277.9" width="13.5" height="226.1" fill="#c9d9ef"/>
+<rect x="926.0" y="305.2" width="13.5" height="198.8" fill="#c9d9ef"/>
+<rect x="941.0" y="336.3" width="13.5" height="167.7" fill="#c9d9ef"/>
+<rect x="956.0" y="369.8" width="13.5" height="134.2" fill="#c9d9ef"/>
+<rect x="971.0" y="405.9" width="13.5" height="98.1" fill="#c9d9ef"/>
+<rect x="986.0" y="448.1" width="13.5" height="55.9" fill="#c9d9ef"/>
+<rect x="1001.0" y="471.7" width="13.5" height="32.3" fill="#c9d9ef"/>
+<rect x="1016.0" y="477.9" width="13.5" height="26.1" fill="#c9d9ef"/>
+<rect x="1031.0" y="495.3" width="13.5" height="8.7" fill="#c9d9ef"/>
+<rect x="1046.0" y="495.3" width="13.5" height="8.7" fill="#c9d9ef"/>
+<rect x="1061.0" y="501.5" width="13.5" height="2.5" fill="#c9d9ef"/>
+<rect x="1076.0" y="502.8" width="13.5" height="1.2" fill="#c9d9ef"/>
+<rect x="1091.0" y="502.8" width="13.5" height="1.2" fill="#c9d9ef"/>
+<rect x="1106.0" y="502.8" width="13.5" height="1.2" fill="#c9d9ef"/>
+<line x1="962.4" y1="184" x2="962.4" y2="504" stroke="#2a78d6" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="962.3601257166343" y="202" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="700" fill="#2a78d6">沖縄を除く最大 0.498</text>
+<line x1="988.1" y1="184" x2="988.1" y2="504" stroke="#77766f" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="988.0881178784482" y="220" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="700" fill="#77766f">95%点 0.529</text>
+<line x1="1041.9" y1="184" x2="1041.9" y2="504" stroke="#e34948" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="1041.890924073959" y="238" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="700" fill="#e34948">全47県の最大 0.594</text>
+<rect x="664" y="558" width="552" height="88" rx="8" fill="#fdf3f3" stroke="#f0c8c8"/>
+<text x="682" y="582" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="700" fill="#b03636">判定</text>
+<text x="682" y="604" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・全47県では2指標が閾値を超えた（工業地地価変動率 0.594、15歳未満人口割合 0.536）。</text>
+<text x="682" y="621" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・沖縄を除くと閾値 0.523 に対し最大 0.498 で、375指標のうち 0 件。</text>
+<text x="682" y="638" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・上位の顔ぶれも入れ替わる。1点で動く相関は知見ではない。</text>
+<text x="48" y="694" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ 沖縄県は残差 +1.54pt（3.4σ、2位の千葉 +0.85pt を大きく離す）であると同時に、人口増減率・自然増減率・住宅地地価変動率すべてで全国1位。説明側と結果側の両方で極端なため、1点だけで相関が立つ。</text>
+<text x="48" y="712" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ 沖縄は誤りではなく実在する県なので、除くのが正しいわけではない。言えるのは「この関係の根拠は観測1つ分しかない」ということ。</text>
+<text x="1232" y="712" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" fill="#77766f">出典: 総務省統計局 e-Stat 社会・人口統計体系</text>
+</svg>
