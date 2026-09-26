@@ -56,7 +56,7 @@
 
 1指標ずつ公開REST APIを叩き、[src/fetch_data.py](../src/fetch_data.py) が1枚のCSVに結合する。
 
-- 結合後のファイル: `data/raw/wb_raw.csv` / 70,288 B / SHA256 `b5fa307ebda20426`
+- 結合後のファイル: `data/raw/wb_raw.csv` / 74,474 B / SHA256 `9340f9725ccc4f6a`
 - WGI（source=3）の一覧: `https://api.worldbank.org/v2/source/3/indicator?format=json&per_page=100`
 - WGI は指標コードに `GOV_WGI_` の接頭辞が必要。素の `RL.EST` では取れない。
 
@@ -84,6 +84,8 @@
 | `prm_compl_12` | `SE.PRM.CMPT.ZS` | 2 | 目標年 2012 / 窓 2010-2014 | [ページ](https://data.worldbank.org/indicator/SE.PRM.CMPT.ZS) | [API](https://api.worldbank.org/v2/country/all/indicator/SE.PRM.CMPT.ZS?format=json&date=2010:2014&per_page=2000&source=2) |
 | `school_sec_f_12` | `SE.SEC.ENRR.FE` | 2 | 目標年 2012 / 窓 2010-2014 | [ページ](https://data.worldbank.org/indicator/SE.SEC.ENRR.FE) | [API](https://api.worldbank.org/v2/country/all/indicator/SE.SEC.ENRR.FE?format=json&date=2010:2014&per_page=2000&source=2) |
 | `edu_exp_12` | `SE.XPD.TOTL.GD.ZS` | 2 | 目標年 2012 / 窓 2010-2014 | [ページ](https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS) | [API](https://api.worldbank.org/v2/country/all/indicator/SE.XPD.TOTL.GD.ZS?format=json&date=2010:2014&per_page=2000&source=2) |
+| `prm_complete` | `SE.PRM.CMPT.ZS` | 2 | 目標年 2017 / 窓 2015-2019 | [ページ](https://data.worldbank.org/indicator/SE.PRM.CMPT.ZS) | [API](https://api.worldbank.org/v2/country/all/indicator/SE.PRM.CMPT.ZS?format=json&date=2015:2019&per_page=2000&source=2) |
+| `electricity` | `EG.ELC.ACCS.ZS` | 2 | 目標年 2022 / 窓 2020-2023 | [ページ](https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS) | [API](https://api.worldbank.org/v2/country/all/indicator/EG.ELC.ACCS.ZS?format=json&date=2020:2023&per_page=2000&source=2) |
 
 ---
 

@@ -52,6 +52,10 @@ SPECS = [
     ("prm_compl_12",    "SE.PRM.CMPT.ZS",     2012, 2010, 2014, 2),
     ("school_sec_f_12", "SE.SEC.ENRR.FE",     2012, 2010, 2014, 2),
     ("edu_exp_12",      "SE.XPD.TOTL.GD.ZS",  2012, 2010, 2014, 2),
+    # --- 水準モデル（Model A 系）の初期案で使い、天井効果のため外した2指標。
+    #     棄却の経緯を再現できるよう残す（src/model_log.py の A1）---
+    ("prm_complete",    "SE.PRM.CMPT.ZS",     2017, 2015, 2019, 2),
+    ("electricity",     "EG.ELC.ACCS.ZS",     2022, 2020, 2023, 2),
 ]
 
 
