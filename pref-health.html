@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都道府県の健康 — 経済の勾配は男性にだけ出る｜公的データによるSEM</title>
+<style>
+:root{color-scheme:light dark;--ink:#16242b;--muted:#5b6b73;--line:#dde5e8;--accent:#0b6b68;--bg:#f5f8f8;--card:#fff;--warn:#8a6d1f;--warnbg:#fff8ec;--warnline:#e8d9b8}
+@media(prefers-color-scheme:dark){:root{--ink:#e8eef0;--muted:#a3b2b8;--line:#2c3a40;--accent:#5fd0c6;--bg:#12191c;--card:#182125;--warn:#e3c07a;--warnbg:#241f14;--warnline:#4a3f25}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif}
+main{max-width:1140px;margin:auto;padding:56px 24px}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:700}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.header-top .eyebrow{min-width:0}
+.github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
+.github-link:hover{background:var(--line)}.github-link svg{width:22px;height:22px;fill:currentColor}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.35;margin:12px 0 8px}h2{font-size:24px;line-height:1.5;margin:6px 0 12px}h3{font-size:16px;margin:26px 0 8px}
+p{color:var(--muted);margin:.6em 0}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid #dc9523;outline-offset:3px}
+nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}nav a,.open{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:9px 15px;background:var(--card);text-decoration:none;font-size:14px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;margin:24px 0;scroll-margin-top:20px}
+.number{color:var(--accent);font-weight:700;font-size:13px}
+.fit{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;border-left:3px solid var(--accent);padding-left:12px;margin:14px 0}
+figure{margin:22px 0}img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px;background:#fff}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600;font-size:12px}
+td.num{text-align:right}.ok{color:#0b6b68;font-weight:700}.no{color:var(--muted)}
+ul.files{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0 22px}
+ul.files li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}ul.files li span{display:block;font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+ul.files li:has(details[open]){grid-column:1/-1;min-width:0}
+summary{cursor:pointer;color:var(--accent);overflow-wrap:anywhere}summary:focus-visible{outline:3px solid #dc9523;outline-offset:3px}
+.file-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:12px 0;font-size:13px}
+.file-toolbar input{max-width:100%;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font:inherit}
+.file-preview{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.file-preview:focus-visible{outline:3px solid #dc9523;outline-offset:2px}
+.file-preview table{white-space:pre;font-size:12px}.file-preview th{position:sticky;top:0;background:var(--card)}
+.file-preview pre{margin:0;padding:16px;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}
+.file-preview code{font:inherit}
+ul.files li .file-preview code span{display:inline;font-size:inherit;overflow-wrap:normal}
+.file-preview code .syn-keyword{color:#8250df;font-weight:600}
+.file-preview code .syn-string{color:#0a3069}
+.file-preview code .syn-comment{color:#57606a;font-style:italic}
+.file-preview code .syn-number{color:#0550ae}
+.file-preview code .syn-definition{color:#953800;font-weight:600}
+@media(prefers-color-scheme:dark){.file-preview code .syn-keyword{color:#d2a8ff}.file-preview code .syn-string{color:#a5d6ff}.file-preview code .syn-comment{color:#a3b2b8}.file-preview code .syn-number{color:#79c0ff}.file-preview code .syn-definition{color:#ffa657}}
+[hidden]{display:none!important}
+.note{border-left:3px solid var(--warnline);background:var(--warnbg);color:var(--ink);padding:14px 18px;font-size:14px;border-radius:0 8px 8px 0;margin:18px 0}
+footer{font-size:13px;color:var(--muted);margin-top:40px}
+.related{margin:28px 0;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:14px}
+.related h3{margin:0 0 12px}.related ul{padding-left:20px}.related li{margin:12px 0}.related li p{margin:4px 0}
+.related dt{font-weight:700;margin-top:12px}.related dd{margin:4px 0;color:var(--muted)}
+@media(max-width:640px){main{padding:28px 16px}section{padding:20px}}
+@media print{body{background:#fff}nav{display:none}section{break-inside:avoid}}
+</style></head><body><main>
+<header><div class="header-top">
+<div class="eyebrow">PUBLIC DATA / STRUCTURAL EQUATION MODELING</div>
+<a class="github-link" href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp" aria-label="GitHubでコード・変更履歴を見る">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+<span>GitHub</span></a></div>
+<h1>都道府県の健康 — 経済の勾配は男性にだけ出る</h1>
+<p>経済的に豊かな県ほど、男性の平均寿命が長く、人口当たりの病床・看護師・病院が少ないという関連が見られました。女性の平均寿命との関連と、医療供給量から寿命への効果は明確に示せませんでした。男女の効果に差があるかは、別途検証が必要です。</p>
+<p class="fit">分析手法：構造方程式モデリング（SEM）</p>
+
+<nav aria-label="目次"><a href='index.html'>← 分析の一覧に戻る</a><a href='country.html'>01 国レベル</a><a href='pref-health.html' aria-current='page'>02 都道府県の健康</a><a href='pref-job.html'>03 都道府県の転職</a><a href='muni.html'>04 市区町村</a><a href='guide.html'>図の読み方</a><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/04-methodology.md">方法論の教訓</a>
+<a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/README.md">README</a></nav>
+</header>
+
+<section id='pref-health'><div class='number'>02</div><h2>結果を図で見る</h2><figure><a href='figures/pref_path_diagram.svg'><img src='figures/pref_path_diagram.svg' alt='都道府県の健康 — 経済の勾配は男性にだけ出る' loading='lazy'></a><figcaption>figures/pref_path_diagram.svg — クリックで原寸</figcaption></figure><h2>考察</h2><p>豊かな県ほど男性の平均寿命が長い一方、人口当たりの病床・看護師・病院は少ないという関係が見られました。この2つの関係は、県を1つずつ除いても符号が変わりませんでした。豊かさと医療供給量が同じ方向に並ばないことから、地域の健康を考える際には、経済条件と医療の量を分けて捉える必要があります。医療供給量から寿命への効果は示せませんでしたが、供給量だけでは医療の質や必要性を表し切れないため、医療が役立たないという意味ではありません。</p><p>豊かさだけを使った補助回帰では、予測からのずれが男女で似ていました。これは、その回帰では捉えていない共通の地域要因を考える手掛かりですが、原因を特定した結果ではありません。また、女性で豊かさとの関連を検出できなかったことも、女性への効果がないことや、男女の効果が異なることの証明にはなりません。男女差を論じるには、係数の差そのものを検証する必要があります。</p><p>分析の過程では、国と都道府県で相関が違う理由を集計単位の違いと解釈しかけました。しかし、所得の範囲をそろえると国でも相関が弱まり、その説明は撤回しました。比較する地域のばらつきが結論を左右するという教訓です。今後は過去の地域条件と後年の寿命を組み合わせ、生活習慣や医療へのアクセスなども事前に定義して検証することで、今回残った問いを絞り込めます。</p><p><a href='https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/02-prefectures.md'>分析と試行の記録を読む →</a></p><h3>具体例で見る：どこまで説明できているか</h3><p>主要国・身近な地域をあらかじめ指定し、それに加えて各指標で残差の絶対値が最小の地域、正の残差が最大の地域、負の残差が最小の地域を機械的に選びました。同じ地域は1行にまとめています。残差の大小は記述的な比較であり、統計的な異常の判定ではありません。</p><h3>平均寿命・男（年）</h3><div style='overflow-x:auto' tabindex='0' role='region' aria-label='平均寿命・男（年）の事例比較'><table><thead><tr><th>国・地域</th><th>選定理由</th><th>実測</th><th>予測</th><th>実測−予測</th><th>平均予測の95％区間</th><th>読み取り</th></tr></thead><tbody><tr><th scope='row'>東京都</th><td>指定した比較例</td><td>81.07</td><td>81.86</td><td>-0.79</td><td>[81.33, 82.94]</td><td>実測値は予測値を0.79年下回る。</td></tr><tr><th scope='row'>大阪府</th><td>指定した比較例</td><td>80.23</td><td>80.91</td><td>-0.68</td><td>[80.74, 81.18]</td><td>実測値は予測値を0.68年下回る。</td></tr><tr><th scope='row'>宮崎県</th><td>予測に最も近い</td><td>80.34</td><td>80.34</td><td>+0.00</td><td>[80.05, 80.56]</td><td>実測値は予測値を0.00年上回る。</td></tr><tr><th scope='row'>長野県</th><td>予測を最も上回る</td><td>81.75</td><td>80.58</td><td>+1.17</td><td>[80.42, 80.73]</td><td>実測値は予測値を1.17年上回る。</td></tr><tr><th scope='row'>青森県</th><td>予測を最も下回る</td><td>78.67</td><td>80.36</td><td>-1.69</td><td>[80.09, 80.58]</td><td>実測値は予測値を1.69年下回る。</td></tr></tbody></table></div><h3>平均寿命・女（年）</h3><div style='overflow-x:auto' tabindex='0' role='region' aria-label='平均寿命・女（年）の事例比較'><table><thead><tr><th>国・地域</th><th>選定理由</th><th>実測</th><th>予測</th><th>実測−予測</th><th>平均予測の95％区間</th><th>読み取り</th></tr></thead><tbody><tr><th scope='row'>東京都</th><td>指定した比較例</td><td>87.26</td><td>87.24</td><td>+0.02</td><td>[86.78, 87.70]</td><td>実測値は予測値を0.02年上回る。</td></tr><tr><th scope='row'>大阪府</th><td>指定した比較例</td><td>86.73</td><td>87.07</td><td>-0.34</td><td>[86.94, 87.20]</td><td>実測値は予測値を0.34年下回る。</td></tr><tr><th scope='row'>兵庫県</th><td>予測に最も近い</td><td>87.07</td><td>87.07</td><td>-0.00</td><td>[86.94, 87.21]</td><td>実測値は予測値を0.00年下回る。</td></tr><tr><th scope='row'>長野県</th><td>予測を最も上回る</td><td>87.67</td><td>87.01</td><td>+0.66</td><td>[86.89, 87.13]</td><td>実測値は予測値を0.66年上回る。</td></tr><tr><th scope='row'>青森県</th><td>予測を最も下回る</td><td>85.93</td><td>86.97</td><td>-1.04</td><td>[86.79, 87.13]</td><td>実測値は予測値を1.04年下回る。</td></tr></tbody></table></div><p>この予測は豊かさのみを使う補助回帰です。予測に近くても健康の原因が説明されたわけではありません。東京は豊かさスコアが他県から離れており、回帰の傾きや予測がその位置に影響されます。生活習慣や医療へのアクセスなどは追加検証の候補ですが、個別の残差から原因を特定することはできません。</p><p>補助回帰の区間は合成指標を固定した600回の復元抽出による平均予測の区間です。個別の実測値の予測区間ではなく、区間の外にあるだけで異常とは判定できません。すべて標本内の当てはめです。</p><h3>ブートストラップによる判定</h3><table><thead><tr><th>パス</th><th class='num'>標準化係数</th><th class='num'>ブートストラップ95%区間</th><th>判定</th></tr></thead><tbody><tr><td>経済的豊かさ → 入院医療キャパシティ</td><td class='num'>-0.615</td><td class='num'>[-0.778, -0.459]</td><td><span class="ok">0を含まない</span></td></tr><tr><td>経済的豊かさ → 平均寿命(男)</td><td class='num'>+0.545</td><td class='num'>[+0.252, +0.930]</td><td><span class="ok">0を含まない</span></td></tr><tr><td>入院医療キャパシティ → 平均寿命(男)</td><td class='num'>+0.073</td><td class='num'>[-0.259, +0.460]</td><td><span class="no">0をまたぐ</span></td></tr><tr><td>経済的豊かさ → 平均寿命(女)</td><td class='num'>+0.272</td><td class='num'>[-0.128, +0.636]</td><td><span class="no">0をまたぐ</span></td></tr><tr><td>入院医療キャパシティ → 平均寿命(女)</td><td class='num'>+0.270</td><td class='num'>[-0.082, +0.642]</td><td><span class="no">0をまたぐ</span></td></tr></tbody></table><h3>予測とのずれ</h3><p>左は実測値と予測値（破線上で一致）、右は予測値と残差です。残差が正なら予測より高く、負なら低い値です。同じ標本に当てはめた結果であり、未知の地域や将来への予測精度ではありません。</p><p>こちらはSEMそのものの予測ではなく、指標の標準化平均を使った補助回帰です。健康は豊かさのみ、転職は都市度と雇用の不安定さ、国は制度・所得調整後の人的資本・初期所得を使います。国の結果変数は一人当たりGDPの対数差×100で、SEMの潜在成長因子や年率ではありません。</p><p>CSVのmean_ci_low／mean_ci_highは、合成指標を固定した600回の復元抽出による平均予測の95％区間です。前処理の不確実性は含まず、個々の実測値が入る予測区間でもありません。</p><figure><a href='figures/health_m_prediction_diagnostics.svg'><img src='figures/health_m_prediction_diagnostics.svg' alt='平均寿命（男）の実測値・予測値と残差' loading='lazy'></a><figcaption>平均寿命（男） — 全点表示。クリックで原寸</figcaption></figure><figure><a href='figures/health_f_prediction_diagnostics.svg'><img src='figures/health_f_prediction_diagnostics.svg' alt='平均寿命（女）の実測値・予測値と残差' loading='lazy'></a><figcaption>平均寿命（女） — 全点表示。クリックで原寸</figcaption></figure><p>表のregionは国・地域名、observedは実測値、predictedは予測値、residualは実測値−予測値です。地域名で検索できます。</p><ul class='files'><li><details><summary>平均寿命（男）：実測・予測・残差<span>health_m_prediction_diagnostics.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/health_m_prediction_diagnostics.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>47 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='平均寿命（男）：実測・予測・残差：health_m_prediction_diagnostics.csv'><table><thead><tr><th scope='col'>region</th><th scope='col'>observed</th><th scope='col'>predicted</th><th scope='col'>residual</th><th scope='col'>mean_ci_low</th><th scope='col'>mean_ci_high</th></tr></thead><tbody><tr><td>長野県</td><td>81.75</td><td>80.57958702144785</td><td>1.1704129785521502</td><td>80.41737054886931</td><td>80.72760242472658</td></tr><tr><td>滋賀県</td><td>81.78</td><td>80.810803584773</td><td>0.9691964152270032</td><td>80.659116804095</td><td>81.02238568301398</td></tr><tr><td>熊本県</td><td>81.22</td><td>80.41060756089283</td><td>0.809392439107171</td><td>80.16405286684619</td><td>80.60992362031367</td></tr><tr><td>大分県</td><td>81.08</td><td>80.45141649335665</td><td>0.628583506643352</td><td>80.22844983248673</td><td>80.63435701203</td></tr><tr><td>福井県</td><td>81.27</td><td>80.72058161993425</td><td>0.5494183800657453</td><td>80.57583309378471</td><td>80.8846269227676</td></tr><tr><td>奈良県</td><td>81.36</td><td>80.83976047504842</td><td>0.5202395249515774</td><td>80.68546312579767</td><td>81.06455387707334</td></tr><tr><td>京都府</td><td>81.4</td><td>80.98017099839956</td><td>0.4198290016004478</td><td>80.78235404723578</td><td>81.30104861583023</td></tr><tr><td>岡山県</td><td>81.03</td><td>80.61958894027623</td><td>0.4104110597237707</td><td>80.46608434001178</td><td>80.7649994438593</td></tr><tr><td>石川県</td><td>81.04</td><td>80.70549486452074</td><td>0.33450513547926164</td><td>80.56299962790172</td><td>80.86274694911334</td></tr><tr><td>宮城県</td><td>80.99</td><td>80.6683763481251</td><td>0.3216236518749014</td><td>80.52331086367776</td><td>80.81480177023852</td></tr><tr><td>島根県</td><td>80.79</td><td>80.47825663676527</td><td>0.31174336323473995</td><td>80.26649092294177</td><td>80.65064612794652</td></tr><tr><td>岐阜県</td><td>81.0</td><td>80.70972089749185</td><td>0.29027910250815125</td><td>80.56611172242654</td><td>80.86890169678516</td></tr><tr><td>佐賀県</td><td>80.65</td><td>80.38083864292348</td><td>0.269161357076527</td><td>80.1166574773562</td><td>80.59206241836127</td></tr><tr><td>神奈川県</td><td>81.32</td><td>81.08785962054804</td><td>0.23214037945194832</td><td>80.85554052521525</td><td>81.50307986317274</td></tr><tr><td>香川県</td><td>80.85</td><td>80.62229097495461</td><td>0.22770902504538526</td><td>80.46987941065441</td><td>80.76760533494853</td></tr><tr><td>新潟県</td><td>80.69</td><td>80.48019321695074</td><td>0.2098067830492596</td><td>80.26922398176303</td><td>80.65183658872196</td></tr><tr><td>広島県</td><td>81.08</td><td>80.88346514812208</td><td>0.19653485187791375</td><td>80.71985637376088</td><td>81.13212956393083</td></tr><tr><td>三重県</td><td>80.86</td><td>80.70225556324277</td><td>0.15774443675722694</td><td>80.55946304153561</td><td>80.85868456216468</td></tr><tr><td>静岡県</td><td>80.95</td><td>80.8042907884237</td><td>0.14570921157630323</td><td>80.65241721280763</td><td>81.01197045639078</td></tr><tr><td>山梨県</td><td>80.85</td><td>80.7144386601554</td><td>0.13556133984459962</td><td>80.5704447188795</td><td>80.87577259414167</td></tr><tr><td>山形県</td><td>80.52</td><td>80.39380216119574</td><td>0.12619783880425928</td><td>80.13513745370035</td><td>80.59985491458053</td></tr><tr><td>千葉県</td><td>80.96</td><td>80.88941321609207</td><td>0.0705867839079275</td><td>80.72666359285579</td><td>81.14186654004683</td></tr><tr><td>沖縄県</td><td>80.27</td><td>80.24578730263366</td><td>0.024212697366337466</td><td>79.88151167530289</td><td>80.50769759213321</td></tr><tr><td>山口県</td><td>80.51</td><td>80.50047321620328</td><td>0.009526783796729887</td><td>80.29890717847353</td><td>80.66487251358588</td></tr><tr><td>宮崎県</td><td>80.34</td><td>80.33815686585739</td><td>0.0018431341426179415</td><td>80.04763485448579</td><td>80.56448144659318</td></tr><tr><td>長崎県</td><td>80.38</td><td>80.39108972262923</td><td>-0.011089722629236576</td><td>80.1303709482221</td><td>80.59822979728267</td></tr><tr><td>兵庫県</td><td>80.92</td><td>80.93383044496233</td><td>-0.01383044496232344</td><td>80.75365852263597</td><td>81.22021394781481</td></tr><tr><td>愛知県</td><td>81.1</td><td>81.12207313442343</td><td>-0.022073134423436613</td><td>80.88010818869846</td><td>81.56680802263703</td></tr><tr><td>福岡県</td><td>80.66</td><td>80.69788583877717</td><td>-0.03788583877717144</td><td>80.55403223606007</td><td>80.85464802636535</td></tr><tr><td>埼玉県</td><td>80.82</td><td>80.85983545262697</td><td>-0.03983545262697419</td><td>80.69864174989779</td><td>81.09428269690163</td></tr><tr><td>富山県</td><td>80.61</td><td>80.69177727782457</td><td>-0.08177727782457112</td><td>80.54644036006647</td><td>80.84614033938894</td></tr><tr><td>群馬県</td><td>80.61</td><td>80.74189353650165</td><td>-0.13189353650165003</td><td>80.59882714777298</td><td>80.91342052090317</td></tr><tr><td>鳥取県</td><td>80.17</td><td>80.31289819729349</td><td>-0.14289819729349063</td><td>80.00298767303066</td><td>80.5492736335747</td></tr><tr><td>北海道</td><td>80.28</td><td>80.44763938336341</td><td>-0.167639383363408</td><td>80.2232862282567</td><td>80.63210360925157</td></tr><tr><td>高知県</td><td>80.26</td><td>80.43051232413664</td><td>-0.17051232413663797</td><td>80.19576602594849</td><td>80.62184926370222</td></tr><tr><td>鹿児島県</td><td>80.02</td><td>80.33696662116188</td><td>-0.3169666211618818</td><td>80.04553072957285</td><td>80.5638260682575</td></tr><tr><td>徳島県</td><td>80.32</td><td>80.67186759972822</td><td>-0.351867599728223</td><td>80.5278624132076</td><td>80.81728046676054</td></tr><tr><td>愛媛県</td><td>80.16</td><td>80.55047864243376</td><td>-0.39047864243376296</td><td>80.37587902362446</td><td>80.69823361356039</td></tr><tr><td>福島県</td><td>80.12</td><td>80.51609787752719</td><td>-0.3960978775271826</td><td>80.32729019475978</td><td>80.67655813401717</td></tr><tr><td>茨城県</td><td>80.28</td><td>80.71349526398079</td><td>-0.4334952639807881</td><td>80.56943660200143</td><td>80.87439864238857</td></tr><tr><td>岩手県</td><td>79.86</td><td>80.38627292300814</td><td>-0.5262729230081362</td><td>80.12319565761219</td><td>80.59533374704617</td></tr><tr><td>和歌山県</td><td>79.94</td><td>80.59231902654162</td><td>-0.652319026541619</td><td>80.4342741151572</td><td>80.7377650479112</td></tr><tr><td>栃木県</td><td>80.1</td><td>80.75949586217645</td><td>-0.6594958621764562</td><td>80.61393827750977</td><td>80.94000171587938</td></tr><tr><td>大阪府</td><td>80.23</td><td>80.91007703576719</td><td>-0.6800770357671837</td><td>80.740545373399</td><td>81.1801731323388</td></tr><tr><td>東京都</td><td>81.07</td><td>81.86244163512379</td><td>-0.7924416351237937</td><td>81.33117571571655</td><td>82.94433048145973</td></tr><tr><td>秋田県</td><td>79.51</td><td>80.340542204687</td><td>-0.8305422046869921</td><td>80.05185167719135</td><td>80.56595098250283</td></tr><tr><td>青森県</td><td>78.67</td><td>80.36287917699076</td><td>-1.6928791769907576</td><td>80.08955291183361</td><td>80.5796863239265</td></tr></tbody></table></div></details></li><li><details><summary>平均寿命（女）：実測・予測・残差<span>health_f_prediction_diagnostics.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/health_f_prediction_diagnostics.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>47 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='平均寿命（女）：実測・予測・残差：health_f_prediction_diagnostics.csv'><table><thead><tr><th scope='col'>region</th><th scope='col'>observed</th><th scope='col'>predicted</th><th scope='col'>residual</th><th scope='col'>mean_ci_low</th><th scope='col'>mean_ci_high</th></tr></thead><tbody><tr><td>長野県</td><td>87.67</td><td>87.0090195191336</td><td>0.6609804808663995</td><td>86.8880787693553</td><td>87.13044462680564</td></tr><tr><td>滋賀県</td><td>87.57</td><td>87.05080050235335</td><td>0.519199497646639</td><td>86.94132216077752</td><td>87.1594923152674</td></tr><tr><td>熊本県</td><td>87.49</td><td>86.97848482082135</td><td>0.5115151791786445</td><td>86.81746588118523</td><td>87.13540054606216</td></tr><tr><td>大分県</td><td>87.31</td><td>86.98585902143209</td><td>0.324140978567911</td><td>86.83707191631561</td><td>87.1285111970212</td></tr><tr><td>福井県</td><td>87.54</td><td>87.03449733468764</td><td>0.5055026653123633</td><td>86.92766019017512</td><td>87.13965491850485</td></tr><tr><td>奈良県</td><td>87.25</td><td>87.0560330312401</td><td>0.19396696875989505</td><td>86.9425684669654</td><td>87.17032292263123</td></tr><tr><td>京都府</td><td>87.35</td><td>87.0814053040377</td><td>0.26859469596229246</td><td>86.94407951117597</td><td>87.2251019664007</td></tr><tr><td>岡山県</td><td>87.67</td><td>87.0162478918561</td><td>0.6537521081439053</td><td>86.8994519604043</td><td>87.12653279670079</td></tr><tr><td>石川県</td><td>87.28</td><td>87.0317711481822</td><td>0.24822885181779952</td><td>86.92231816600521</td><td>87.13593729998946</td></tr><tr><td>宮城県</td><td>87.16</td><td>87.02506380815272</td><td>0.1349361918472738</td><td>86.91399353371989</td><td>87.13232923737014</td></tr><tr><td>島根県</td><td>87.64</td><td>86.99070905278471</td><td>0.6492909472152917</td><td>86.84800962367564</td><td>87.12913866322603</td></tr><tr><td>岐阜県</td><td>86.82</td><td>87.03253479508582</td><td>-0.21253479508582984</td><td>86.92492407255483</td><td>87.13791428216601</td></tr><tr><td>佐賀県</td><td>87.12</td><td>86.97310555800271</td><td>0.14689444199728996</td><td>86.79994705273488</td><td>87.13472047060496</td></tr><tr><td>神奈川県</td><td>87.24</td><td>87.1008647080278</td><td>0.13913529197219532</td><td>86.93179208809971</td><td>87.26912349332382</td></tr><tr><td>香川県</td><td>87.21</td><td>87.01673615127805</td><td>0.1932638487219407</td><td>86.89997049172162</td><td>87.12656120601211</td></tr><tr><td>新潟県</td><td>87.32</td><td>86.99105899408247</td><td>0.3289410059175282</td><td>86.84878022046034</td><td>87.12918393640511</td></tr><tr><td>広島県</td><td>87.33</td><td>87.06393049406049</td><td>0.2660695059395124</td><td>86.94481621825743</td><td>87.18795504014165</td></tr><tr><td>三重県</td><td>86.99</td><td>87.03118580433662</td><td>-0.04118580433662089</td><td>86.92035871452521</td><td>87.13578753746386</td></tr><tr><td>静岡県</td><td>87.1</td><td>87.04962363582152</td><td>0.050376364178475797</td><td>86.94269799095318</td><td>87.1565246895029</td></tr><tr><td>山梨県</td><td>87.22</td><td>87.03338729786438</td><td>0.1866127021356192</td><td>86.9256296727528</td><td>87.13869041744135</td></tr><tr><td>山形県</td><td>86.96</td><td>86.97544807417721</td><td>-0.015448074177214721</td><td>86.80758529329746</td><td>87.13471467114977</td></tr><tr><td>千葉県</td><td>86.91</td><td>87.06500531380726</td><td>-0.15500531380726557</td><td>86.94413373253961</td><td>87.19065074391271</td></tr><tr><td>沖縄県</td><td>87.44</td><td>86.94870169306627</td><td>0.49129830693372867</td><td>86.7256922311146</td><td>87.15084728801352</td></tr><tr><td>山口県</td><td>86.88</td><td>86.99472360312379</td><td>-0.11472360312379237</td><td>86.85724121512159</td><td>87.12963546839049</td></tr><tr><td>宮崎県</td><td>87.12</td><td>86.9653929331555</td><td>0.15460706684450543</td><td>86.77736341579208</td><td>87.13550290839007</td></tr><tr><td>長崎県</td><td>86.97</td><td>86.97495793476591</td><td>-0.004957934765911887</td><td>86.80627255509933</td><td>87.13460396901843</td></tr><tr><td>兵庫県</td><td>87.07</td><td>87.07303153592304</td><td>-0.0030315359230428385</td><td>86.94255862711638</td><td>87.2057636568258</td></tr><tr><td>愛知県</td><td>86.86</td><td>87.10704711221442</td><td>-0.24704711221441755</td><td>86.9328139236452</td><td>87.2885864239379</td></tr><tr><td>福岡県</td><td>87.14</td><td>87.03039619228657</td><td>0.1096038077134267</td><td>86.91921116858263</td><td>87.13558551211457</td></tr><tr><td>埼玉県</td><td>86.66</td><td>87.05966059273175</td><td>-0.3996605927317489</td><td>86.94156614130448</td><td>87.17729417096389</td></tr><tr><td>富山県</td><td>87.42</td><td>87.02929237135356</td><td>0.3907076286464388</td><td>86.91895749592315</td><td>87.13528483334336</td></tr><tr><td>群馬県</td><td>86.84</td><td>87.03834841185822</td><td>-0.19834841185821972</td><td>86.93473953214516</td><td>87.14282203966287</td></tr><tr><td>鳥取県</td><td>87.27</td><td>86.96082867533485</td><td>0.30917132466514374</td><td>86.76429901584622</td><td>87.13975349899994</td></tr><tr><td>北海道</td><td>86.77</td><td>86.98517649520224</td><td>-0.21517649520224325</td><td>86.83554451638756</td><td>87.1284228961192</td></tr><tr><td>高知県</td><td>87.01</td><td>86.9820816244721</td><td>0.02791837552790355</td><td>86.82861862090728</td><td>87.13200416292406</td></tr><tr><td>鹿児島県</td><td>86.78</td><td>86.96517785516569</td><td>-0.18517785516569063</td><td>86.7765727837093</td><td>87.1357032056826</td></tr><tr><td>徳島県</td><td>86.66</td><td>87.02569467958575</td><td>-0.36569467958575785</td><td>86.915740052819</td><td>87.13237336201871</td></tr><tr><td>愛媛県</td><td>86.82</td><td>87.00375961613335</td><td>-0.1837596161333579</td><td>86.87659513851557</td><td>87.12989624016163</td></tr><tr><td>福島県</td><td>86.4</td><td>86.99754698957673</td><td>-0.5975469895767276</td><td>86.86320378214326</td><td>87.1300864672564</td></tr><tr><td>茨城県</td><td>86.33</td><td>87.03321682556268</td><td>-0.7032168255626772</td><td>86.92555303796075</td><td>87.13854229558373</td></tr><tr><td>岩手県</td><td>86.44</td><td>86.97408753594479</td><td>-0.5340875359447921</td><td>86.80383716195307</td><td>87.13440738208342</td></tr><tr><td>和歌山県</td><td>86.47</td><td>87.01132020072635</td><td>-0.5413202007263465</td><td>86.89285386252209</td><td>87.13098367981348</td></tr><tr><td>栃木県</td><td>86.24</td><td>87.04152916354431</td><td>-0.8015291635443162</td><td>86.93963699098876</td><td>87.14598643367242</td></tr><tr><td>大阪府</td><td>86.73</td><td>87.06873927944832</td><td>-0.33873927944831905</td><td>86.9418117504547</td><td>87.1973768811493</td></tr><tr><td>東京都</td><td>87.26</td><td>87.24083218132597</td><td>0.01916781867403472</td><td>86.78432972895078</td><td>87.69734012719573</td></tr><tr><td>秋田県</td><td>86.38</td><td>86.96582396543182</td><td>-0.5858239654318282</td><td>86.77894790124631</td><td>87.13510149772961</td></tr><tr><td>青森県</td><td>85.93</td><td>86.96986027083997</td><td>-1.0398602708399665</td><td>86.79145600117594</td><td>87.13461630699985</td></tr></tbody></table></div></details></li></ul><ul class='files'><li><details><summary>予測と残差の計算・図の生成<span>prediction_diagnostics.py — クリックで表示</span></summary><div class='file-toolbar'><a href='src/prediction_diagnostics.py' download>元ファイルをダウンロード</a></div><div class='file-preview' tabindex='0' role='region' aria-label='予測と残差の計算・図の生成：prediction_diagnostics.py'><pre><code><span class="syn-string">&quot;&quot;&quot;各分析の標本内当てはめと残差。SEMと補助回帰を明確に区別する。&quot;&quot;&quot;</span>
+<span class="syn-keyword">import</span> numpy <span class="syn-keyword">as</span> np
+<span class="syn-keyword">import</span> pandas <span class="syn-keyword">as</span> pd
+<span class="syn-keyword">import</span> paths
+<span class="syn-keyword">from</span> make_path_diagram <span class="syn-keyword">import</span> text, esc, SURFACE, INK, INK3, C_POS, BOX_LINE
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">auxiliary</span>(names, y, predictors):
+    <span class="syn-string">&quot;&quot;&quot;固定した合成指標を使うOLS。区間は合成指標を固定した条件付き区間。&quot;&quot;&quot;</span>
+    x = np.column_stack([np.ones(len(y)), predictors])
+    y = np.asarray(y, dtype=float)
+    fitted = x @ np.linalg.lstsq(x, y, rcond=<span class="syn-keyword">None</span>)[<span class="syn-number">0</span>]
+    rng = np.random.default_rng(<span class="syn-number">2026</span>)
+    draws = []
+    <span class="syn-keyword">for</span> _ <span class="syn-keyword">in</span> range(<span class="syn-number">600</span>):
+        ix = rng.integers(<span class="syn-number">0</span>, len(y), len(y))
+        draws.append(x @ np.linalg.lstsq(x[ix], y[ix], rcond=<span class="syn-keyword">None</span>)[<span class="syn-number">0</span>])
+    lo, hi = np.quantile(draws, [<span class="syn-number">.025</span>, <span class="syn-number">.975</span>], axis=<span class="syn-number">0</span>)
+    <span class="syn-keyword">return</span> pd.DataFrame(dict(region=list(names), observed=y, predicted=fitted,
+                             residual=y-fitted, mean_ci_low=lo, mean_ci_high=hi))
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">compute</span>():
+    <span class="syn-keyword">from</span> sem_country_v2 <span class="syn-keyword">import</span> prepare, HCR
+    <span class="syn-keyword">from</span> sem_analysis <span class="syn-keyword">import</span> derive
+    <span class="syn-keyword">from</span> pref_residuals <span class="syn-keyword">import</span> compute <span class="syn-keyword">as</span> pref_compute
+    <span class="syn-keyword">from</span> job_residuals <span class="syn-keyword">import</span> compute <span class="syn-keyword">as</span> job_compute
+    <span class="syn-keyword">from</span> muni_path <span class="syn-keyword">import</span> wide, V, fit
+    z = prepare()
+    gov = z[[<span class="syn-string">&#x27;rule_of_law&#x27;</span>, <span class="syn-string">&#x27;gov_effect&#x27;</span>, <span class="syn-string">&#x27;control_corrupt&#x27;</span>, <span class="syn-string">&#x27;reg_quality&#x27;</span>]].mean(axis=<span class="syn-number">1</span>)
+    country = auxiliary(z.country, derive().loc[z.index, <span class="syn-string">&#x27;g_gdp&#x27;</span>] * <span class="syn-number">100</span>,
+                        np.column_stack([gov, z[HCR].mean(axis=<span class="syn-number">1</span>), z.init_gdp]))
+    p = pref_compute()
+    j, _ = job_compute()
+    datasets = [
+        (<span class="syn-string">&#x27;country&#x27;</span>, <span class="syn-string">&#x27;国：一人当たりGDPの成長&#x27;</span>, <span class="syn-string">&#x27;対数差×100&#x27;</span>, country,
+         <span class="syn-string">&#x27;補助回帰：制度・所得調整後人的資本の標準化平均と初期所得。SEMの潜在成長因子の予測ではない。&#x27;</span>),
+        (<span class="syn-string">&#x27;health_m&#x27;</span>, <span class="syn-string">&#x27;都道府県：平均寿命（男）&#x27;</span>, <span class="syn-string">&#x27;年&#x27;</span>, auxiliary(p.pref, p.le_m, p[[<span class="syn-string">&#x27;wealth&#x27;</span>]]),
+         <span class="syn-string">&#x27;補助回帰：豊かさの3指標の標準化平均のみ。医療供給量を含むSEM全体の予測ではない。&#x27;</span>),
+        (<span class="syn-string">&#x27;health_f&#x27;</span>, <span class="syn-string">&#x27;都道府県：平均寿命（女）&#x27;</span>, <span class="syn-string">&#x27;年&#x27;</span>, auxiliary(p.pref, p.le_f, p[[<span class="syn-string">&#x27;wealth&#x27;</span>]]),
+         <span class="syn-string">&#x27;補助回帰：豊かさの3指標の標準化平均のみ。医療供給量を含むSEM全体の予測ではない。&#x27;</span>),
+        (<span class="syn-string">&#x27;job&#x27;</span>, <span class="syn-string">&#x27;都道府県：転職率&#x27;</span>, <span class="syn-string">&#x27;%（残差はポイント）&#x27;</span>, auxiliary(j.pref, j.jobchg, j[[<span class="syn-string">&#x27;urban&#x27;</span>,<span class="syn-string">&#x27;precar&#x27;</span>]]),
+         <span class="syn-string">&#x27;補助回帰：都市度・雇用の不安定さの指標の標準化平均。SEMの因子得点は使わない。&#x27;</span>),
+    ]
+    w = wide()
+    zz = (w[V] - w[V].mean()) / w[V].std()
+    estimates = fit(zz).inspect()
+    pred = np.zeros(len(w))
+    <span class="syn-keyword">for</span> _, row <span class="syn-keyword">in</span> estimates[(estimates.op == <span class="syn-string">&#x27;~&#x27;</span>) &amp; (estimates.lval == <span class="syn-string">&#x27;move_rate&#x27;</span>)].iterrows():
+        pred += row.Estimate * zz[row.rval].to_numpy()
+    pred = pred * w.move_rate.std() + w.move_rate.mean()
+    names = [<span class="syn-string">f&#x27;</span>{name}<span class="syn-string"> [</span>{code}<span class="syn-string">]</span><span class="syn-string">&#x27;</span> <span class="syn-keyword">for</span> code, name <span class="syn-keyword">in</span> zip(w.index, w[<span class="syn-string">&#x27;name&#x27;</span>])]
+    d = pd.DataFrame(dict(region=names, observed=w.move_rate.to_numpy(), predicted=pred,
+                         residual=w.move_rate.to_numpy()-pred))
+    datasets.append((<span class="syn-string">&#x27;muni&#x27;</span>, <span class="syn-string">&#x27;市区町村：総移動率&#x27;</span>, <span class="syn-string">&#x27;%（残差はポイント）&#x27;</span>, d,
+                     <span class="syn-string">&#x27;パスモデルの総移動率の式：通勤流出率・単独世帯割合・高齢化率・人口密度の実測値から当てはめ。&#x27;</span>))
+    <span class="syn-keyword">return</span> datasets
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">build</span>(title, unit, d, method):
+    out = [<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1280&quot; height=&quot;690&quot; viewBox=&quot;0 0 1280 690&quot; role=&quot;img&quot;&gt;</span><span class="syn-string">&#x27;</span>,
+           <span class="syn-string">f&#x27;</span><span class="syn-string">&lt;title&gt;</span>{esc(title)}<span class="syn-string">：実測・予測と残差&lt;/title&gt;</span><span class="syn-string">&#x27;</span>,
+           <span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect width=&quot;1280&quot; height=&quot;690&quot; fill=&quot;</span>{SURFACE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>,
+           text(<span class="syn-number">40</span>, <span class="syn-number">38</span>, title + <span class="syn-string">&#x27; — 予測とのずれ&#x27;</span>, <span class="syn-number">22</span>, INK, <span class="syn-string">&#x27;700&#x27;</span>),
+           text(<span class="syn-number">40</span>, <span class="syn-number">66</span>, <span class="syn-string">f&#x27;</span><span class="syn-string">N = </span>{len(d):<span class="syn-string">,</span>}<span class="syn-string"> ｜単位：</span>{unit}<span class="syn-string">｜全点を表示・各点は国／地域</span><span class="syn-string">&#x27;</span>, <span class="syn-number">13</span>, INK3),
+           text(<span class="syn-number">40</span>, <span class="syn-number">92</span>, method, <span class="syn-number">12</span>, INK3)]
+    <span class="syn-keyword">for</span> panel, ycol <span class="syn-keyword">in</span> enumerate([<span class="syn-string">&#x27;observed&#x27;</span>,<span class="syn-string">&#x27;residual&#x27;</span>]):
+        left, top, size = <span class="syn-number">92</span> + panel * <span class="syn-number">620</span>, <span class="syn-number">154</span>, <span class="syn-number">440</span>
+        x = d.predicted.to_numpy(); y = d[ycol].to_numpy()
+        <span class="syn-keyword">if</span> panel == <span class="syn-number">0</span>:
+            low = min(x.min(), y.min()); high = max(x.max(), y.max())
+            pad = (high-low)*<span class="syn-number">.08</span> <span class="syn-keyword">or</span> <span class="syn-number">1</span>
+            xmin,ymin = low-pad,low-pad; xmax,ymax = high+pad,high+pad
+        <span class="syn-keyword">else</span>:
+            pad = np.ptp(x)*<span class="syn-number">.08</span> <span class="syn-keyword">or</span> <span class="syn-number">1</span>
+            xmin,xmax = x.min()-pad,x.max()+pad
+            edge=max(abs(y.min()),abs(y.max()))*<span class="syn-number">1.08</span> <span class="syn-keyword">or</span> <span class="syn-number">1</span>
+            ymin,ymax=-edge,edge
+        sx=<span class="syn-keyword">lambda</span> v:left+(v-xmin)/(xmax-xmin)*size
+        sy=<span class="syn-keyword">lambda</span> v:top+size-(v-ymin)/(ymax-ymin)*size
+        out.append(text(left, <span class="syn-number">128</span>, <span class="syn-string">&#x27;実測値と予測値（破線は一致線）&#x27;</span> <span class="syn-keyword">if</span> panel==<span class="syn-number">0</span> <span class="syn-keyword">else</span> <span class="syn-string">&#x27;残差＝実測値−予測値（破線は0）&#x27;</span>,<span class="syn-number">15</span>,INK,<span class="syn-string">&#x27;600&#x27;</span>))
+        <span class="syn-keyword">for</span> v <span class="syn-keyword">in</span> np.linspace(xmin,xmax,<span class="syn-number">5</span>):
+            out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;M</span>{sx(v):<span class="syn-string">.2f</span>}<span class="syn-string">,</span>{top}<span class="syn-string">v</span>{size}<span class="syn-string">&quot; stroke=&quot;</span>{BOX_LINE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+            out.append(text(sx(v), top+size+<span class="syn-number">24</span>, <span class="syn-string">f&#x27;</span>{v:<span class="syn-string">.2f</span>}<span class="syn-string">&#x27;</span>,<span class="syn-number">11</span>,INK3,<span class="syn-string">&#x27;400&#x27;</span>,<span class="syn-string">&#x27;middle&#x27;</span>))
+        <span class="syn-keyword">for</span> v <span class="syn-keyword">in</span> np.linspace(ymin,ymax,<span class="syn-number">5</span>):
+            out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;M</span>{left}<span class="syn-string">,</span>{sy(v):<span class="syn-string">.2f</span>}<span class="syn-string">h</span>{size}<span class="syn-string">&quot; stroke=&quot;</span>{BOX_LINE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+            out.append(text(left-<span class="syn-number">10</span>,sy(v)+<span class="syn-number">4</span>,<span class="syn-string">f&#x27;</span>{v:<span class="syn-string">.2f</span>}<span class="syn-string">&#x27;</span>,<span class="syn-number">11</span>,INK3,<span class="syn-string">&#x27;400&#x27;</span>,<span class="syn-string">&#x27;end&#x27;</span>))
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;M</span>{left}<span class="syn-string">,</span>{top}<span class="syn-string">v</span>{size}<span class="syn-string">h</span>{size}<span class="syn-string">&quot; fill=&quot;none&quot; stroke=&quot;</span>{INK3}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        line = <span class="syn-string">f&#x27;</span><span class="syn-string">M</span>{sx(xmin)}<span class="syn-string">,</span>{sy(xmin)}<span class="syn-string">L</span>{sx(xmax)}<span class="syn-string">,</span>{sy(xmax)}<span class="syn-string">&#x27;</span> <span class="syn-keyword">if</span> panel==<span class="syn-number">0</span> <span class="syn-keyword">else</span> <span class="syn-string">f&#x27;</span><span class="syn-string">M</span>{left}<span class="syn-string">,</span>{sy(<span class="syn-number">0</span>)}<span class="syn-string">h</span>{size}<span class="syn-string">&#x27;</span>
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;</span>{line}<span class="syn-string">&quot; stroke=&quot;</span>{INK3}<span class="syn-string">&quot; stroke-dasharray=&quot;5 4&quot; fill=&quot;none&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        <span class="syn-keyword">for</span> (_, r), xx, yy <span class="syn-keyword">in</span> zip(d.iterrows(), x, y):
+            label=<span class="syn-string">f&#x27;</span>{r.region}<span class="syn-string">：実測 </span>{r.observed:<span class="syn-string">.3f</span>}<span class="syn-string"> / 予測 </span>{r.predicted:<span class="syn-string">.3f</span>}<span class="syn-string"> / 残差 </span>{r.residual:<span class="syn-string">+.3f</span>}<span class="syn-string">&#x27;</span>
+            out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;circle cx=&quot;</span>{sx(xx):<span class="syn-string">.2f</span>}<span class="syn-string">&quot; cy=&quot;</span>{sy(yy):<span class="syn-string">.2f</span>}<span class="syn-string">&quot; r=&quot;3&quot; fill=&quot;</span>{C_POS}<span class="syn-string">&quot; opacity=&quot;0.6&quot;&gt;&lt;title&gt;</span>{esc(label)}<span class="syn-string">&lt;/title&gt;&lt;/circle&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(left+size/<span class="syn-number">2</span>,top+size+<span class="syn-number">48</span>,<span class="syn-string">&#x27;予測値&#x27;</span>,<span class="syn-number">13</span>,INK,<span class="syn-string">&#x27;400&#x27;</span>,<span class="syn-string">&#x27;middle&#x27;</span>))
+    out += [text(<span class="syn-number">40</span>,<span class="syn-number">658</span>,<span class="syn-string">&#x27;同じデータで推定した標本内の当てはめ。未知の地域・将来に対する予測精度ではない。&#x27;</span>,<span class="syn-number">12</span>,INK3),
+            text(<span class="syn-number">40</span>,<span class="syn-number">679</span>,<span class="syn-string">&#x27;補助回帰の平均予測の95%区間はCSVに収録（600回・指標固定）。個々の実測値の予測区間ではない。&#x27;</span> <span class="syn-keyword">if</span> <span class="syn-string">&#x27;mean_ci_low&#x27;</span> <span class="syn-keyword">in</span> d <span class="syn-keyword">else</span> <span class="syn-string">&#x27;地域名と全数値は付属CSVで検索可能。残差の大きさだけで原因や異常を断定しない。&#x27;</span>,<span class="syn-number">12</span>,INK3), <span class="syn-string">&#x27;&lt;/svg&gt;&#x27;</span>]
+    <span class="syn-keyword">return</span> <span class="syn-string">&#x27;\n&#x27;</span>.join(out)
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">main</span>():
+    <span class="syn-keyword">for</span> key,title,unit,d,method <span class="syn-keyword">in</span> compute():
+        <span class="syn-keyword">assert</span> np.isfinite(d.select_dtypes(<span class="syn-string">&#x27;number&#x27;</span>)).all().all()
+        <span class="syn-keyword">assert</span> np.allclose(d.observed-d.predicted,d.residual)
+        d.to_csv(paths.result(<span class="syn-string">f&#x27;</span>{key}<span class="syn-string">_prediction_diagnostics.csv</span><span class="syn-string">&#x27;</span>),index=<span class="syn-keyword">False</span>)
+        paths.figure(<span class="syn-string">f&#x27;</span>{key}<span class="syn-string">_prediction_diagnostics.svg</span><span class="syn-string">&#x27;</span>).write_text(build(title,unit,d,method))
+        print(key, len(d))
+
+<span class="syn-keyword">if</span> __name__ == <span class="syn-string">&#x27;__main__&#x27;</span>:
+    main()
+</code></pre></div></details></li></ul><figure><a href='figures/pref_residual_chart.svg'><img src='figures/pref_residual_chart.svg' alt='豊かさから予測される寿命とのずれ（47都道府県）' loading='lazy'></a><figcaption>豊かさから予測される寿命とのずれ（47都道府県） — figures/pref_residual_chart.svg</figcaption></figure><h3>データと分析方法</h3><p>e-Statの都道府県データを用い、経済的豊かさと入院医療キャパシティを潜在変数とするSEMで、男女別の平均寿命との関係を推定しました。小標本のため、係数の解釈ではブートストラップ区間と1県抜き診断を併せて確認します。</p><div class='fit'>N = 47　χ²/df = 1.73　CFI = 0.968　TLI = 0.944　RMSEA = 0.126　df = 16</div><h3>解釈上の注意</h3><div class='note'>すべて観測データであり、矢印の向きはモデルの仮定にすぎない。同じ共分散行列を再現する等価モデルは無数にあり、向きを逆にしても適合度は変わらない（<a href='https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/04-methodology.md'>方法論 §5</a>に検算あり）。区間が0をまたぐパスは「効果を示せなかった」ものとして扱うこと。</div><aside class='related' aria-labelledby='related-pref-health'><h3 id='related-pref-health'>関連研究と今回の位置づけ</h3><p>関連する代表例を選んだ比較であり、網羅的な文献レビューではありません。以下の位置づけは本サイトによる整理です。対象・指標・調整要因が異なるため、標準化係数の大小だけで研究間の効果を比べることはできません。</p><ul><li><a href='https://doi.org/10.1016/j.lanwpc.2021.100204'>Kataokaほか（2021）Geographical socioeconomic inequalities in healthy life expectancy in Japan, 2010–2014: An ecological study</a><p>日本の1,707市区町村で、地域の社会経済的不利と平均寿命・健康寿命などの関係を分析した研究。</p></li></ul><dl><dt>共通する点</dt><dd>地域の経済・社会条件と健康の関係を、地域単位のデータから調べる点が共通する。</dd><dt>異なる点</dt><dd>先行研究は市区町村の地域剥奪指標を用いる。今回は都道府県の豊かさと医療供給量を潜在変数として扱い、平均寿命を説明する。集計単位と指標が違うため係数は直接比較できない。</dd><dt>今回まだ分からないこと</dt><dd>男性で関連を検出し女性で検出できなかったことだけでは、男女の効果が異なるとは言えない。係数差の検定が必要である。また、医療供給量の効果を示せなかったことは、医療が無効であることを意味しない。</dd></dl></aside><h3>結果データ</h3><ul class='files'><li><details><summary>推定係数<span>pref_estimates.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/pref_estimates.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>22 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='推定係数：pref_estimates.csv'><table><thead><tr><th scope='col'>lval</th><th scope='col'>op</th><th scope='col'>rval</th><th scope='col'>Estimate</th><th scope='col'>std</th><th scope='col'>se</th><th scope='col'>z-value</th><th scope='col'>p</th></tr></thead><tbody><tr><td>MED</td><td>~</td><td>WEALTH</td><td>-0.7279306194991939</td><td>-0.6012396632277586</td><td>0.16939317741767446</td><td>-4.29728416806322</td><td>1.729034786035477e-05</td></tr><tr><td>income</td><td>~</td><td>WEALTH</td><td>1.0</td><td>0.7880279915830273</td><td>-</td><td>-</td><td>-</td></tr><tr><td>tax_income</td><td>~</td><td>WEALTH</td><td>1.2688884486150143</td><td>1.0</td><td>0.15844868879319876</td><td>8.00819784796775</td><td>1.1102230246251565e-15</td></tr><tr><td>univ_rate</td><td>~</td><td>WEALTH</td><td>1.0656282104723491</td><td>0.8397857962179481</td><td>0.15762144602002479</td><td>6.760680334896859</td><td>1.3734569037637812e-11</td></tr><tr><td>nurses</td><td>~</td><td>MED</td><td>1.0</td><td>0.9541302819675782</td><td>-</td><td>-</td><td>-</td></tr><tr><td>beds</td><td>~</td><td>MED</td><td>0.9990344432501018</td><td>0.953171614414681</td><td>0.06868503880975352</td><td>14.545153654243698</td><td>0.0</td></tr><tr><td>hosp</td><td>~</td><td>MED</td><td>0.9875338709096865</td><td>0.9421993572068885</td><td>0.07143886373998054</td><td>13.823482334352871</td><td>0.0</td></tr><tr><td>le_m</td><td>~</td><td>WEALTH</td><td>0.6313746834763609</td><td>0.49756834017824897</td><td>0.217963704575447</td><td>2.8966964233942774</td><td>0.0037711448201174225</td></tr><tr><td>le_m</td><td>~</td><td>MED</td><td>0.027092459427122243</td><td>0.025849751448743172</td><td>0.17402434415220192</td><td>0.15568200850836972</td><td>0.8762836793717501</td></tr><tr><td>le_f</td><td>~</td><td>WEALTH</td><td>0.3078590930875642</td><td>0.2426048036988842</td><td>0.23151661828514591</td><td>1.3297494381464308</td><td>0.18360084003371657</td></tr><tr><td>le_f</td><td>~</td><td>MED</td><td>0.254683886513123</td><td>0.24299159054792177</td><td>0.1928045961791043</td><td>1.320943025005563</td><td>0.18652036230538727</td></tr><tr><td>MED</td><td>~~</td><td>MED</td><td>0.5688616641568677</td><td>0.6385108673617715</td><td>0.13257518854886569</td><td>4.2908606835049</td><td>1.7798195217411106e-05</td></tr><tr><td>WEALTH</td><td>~~</td><td>WEALTH</td><td>0.6077901314369512</td><td>1.0</td><td>0.18939649854008594</td><td>3.209088531829973</td><td>0.0013315648444991446</td></tr><tr><td>le_m</td><td>~~</td><td>le_f</td><td>0.7055721824922058</td><td>0.7209427705013643</td><td>0.15990240879268824</td><td>4.412517533757481</td><td>1.021755169561267e-05</td></tr><tr><td>le_m</td><td>~~</td><td>le_m</td><td>0.7508351365306024</td><td>0.7672238478504525</td><td>0.155383539352721</td><td>4.832140776645412</td><td>1.3507268534773686e-06</td></tr><tr><td>beds</td><td>~~</td><td>beds</td><td>0.08951724045525758</td><td>0.09146387347411065</td><td>0.029814826325424815</td><td>3.002440446078287</td><td>0.0026782437028707307</td></tr><tr><td>hosp</td><td>~~</td><td>hosp</td><td>0.1098710415527554</td><td>0.11226037127892627</td><td>0.03233171788549946</td><td>3.3982432340421207</td><td>0.0006782009261603328</td></tr><tr><td>income</td><td>~~</td><td>income</td><td>0.3709566694250728</td><td>0.3790118844816203</td><td>0.08257599774301912</td><td>4.4923062337680415</td><td>7.045601298383275e-06</td></tr><tr><td>le_f</td><td>~~</td><td>le_f</td><td>0.93270651544085</td><td>0.9529852672888461</td><td>0.19285112351560488</td><td>4.836406956999356</td><td>1.3220711312378342e-06</td></tr><tr><td>nurses</td><td>~~</td><td>nurses</td><td>0.08772080332949082</td><td>0.08963540503246961</td><td>0.029611197205212422</td><td>2.9624200169484207</td><td>0.0030523109920437275</td></tr><tr><td>tax_income</td><td>~~</td><td>tax_income</td><td>0.0</td><td>0.0</td><td>0.04996691037297103</td><td>0.0</td><td>1.0</td></tr><tr><td>univ_rate</td><td>~~</td><td>univ_rate</td><td>0.2884671010393741</td><td>0.2947598164705869</td><td>0.06915859586343368</td><td>4.171095399403917</td><td>3.0313891112188074e-05</td></tr></tbody></table></div></details></li><li><details><summary>1県抜き診断<span>pref_influence.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/pref_influence.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>7 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='1県抜き診断：pref_influence.csv'><table><thead><tr><th scope='col'>モデル</th><th scope='col'>パス</th><th scope='col'>全県</th><th scope='col'>LOO最小</th><th scope='col'>LOO最大</th><th scope='col'>最大変化</th><th scope='col'>その県</th></tr></thead><tbody><tr><td>健康</td><td>経済的豊かさ → 平均寿命(男)</td><td>0.49756834017824897</td><td>0.42464630826300975</td><td>0.6653807695470458</td><td>0.16781242936879687</td><td>東京都</td></tr><tr><td>健康</td><td>経済的豊かさ → 平均寿命(女)</td><td>0.2426048036988842</td><td>0.14649524673841013</td><td>0.3073061634525845</td><td>-0.09610955696047407</td><td>青森県</td></tr><tr><td>健康</td><td>経済的豊かさ → 入院医療キャパシティ</td><td>-0.6012396632277586</td><td>-0.6417597744581787</td><td>-0.5649319706140841</td><td>-0.0405201112304201</td><td>高知県</td></tr><tr><td>健康</td><td>入院医療キャパシティ → 平均寿命(男)</td><td>0.025849751448743172</td><td>-0.07082247621255645</td><td>0.1647061370441345</td><td>0.13885638559539132</td><td>東京都</td></tr><tr><td>健康</td><td>入院医療キャパシティ → 平均寿命(女)</td><td>0.24299159054792177</td><td>0.18628569270639164</td><td>0.3275955145917838</td><td>0.08460392404386205</td><td>高知県</td></tr><tr><td>転職</td><td>都市労働市場の厚み → 転職率</td><td>0.4955942354399884</td><td>0.41628822420833783</td><td>0.6109126566737754</td><td>0.115318421233787</td><td>沖縄県</td></tr><tr><td>転職</td><td>雇用の不安定さ → 転職率</td><td>0.38966864962646086</td><td>0.16153209292713078</td><td>0.44160990790106525</td><td>-0.22813655669933008</td><td>沖縄県</td></tr></tbody></table></div></details></li><li><details><summary>県別の寿命残差<span>pref_residuals.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/pref_residuals.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>47 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='県別の寿命残差：pref_residuals.csv'><table><thead><tr><th scope='col'>pref</th><th scope='col'>wealth</th><th scope='col'>income</th><th scope='col'>tax_income</th><th scope='col'>univ_rate</th><th scope='col'>le_m</th><th scope='col'>le_m_hat</th><th scope='col'>le_m_res</th><th scope='col'>le_f</th><th scope='col'>le_f_hat</th><th scope='col'>le_f_res</th></tr></thead><tbody><tr><td>長野県</td><td>-0.23466028943826914</td><td>2857.0</td><td>2893.5</td><td>48.9</td><td>81.75</td><td>80.57958702144786</td><td>1.170412978552136</td><td>87.67</td><td>87.00901951913362</td><td>0.6609804808663853</td></tr><tr><td>滋賀県</td><td>0.5132976424741948</td><td>3110.0</td><td>3175.7</td><td>55.0</td><td>81.78</td><td>80.81080358477301</td><td>0.969196415226989</td><td>87.57</td><td>87.05080050235337</td><td>0.5191994976466248</td></tr><tr><td>熊本県</td><td>-0.781288636624108</td><td>2440.0</td><td>2747.5</td><td>46.1</td><td>81.22</td><td>80.41060756089284</td><td>0.8093924391071567</td><td>87.49</td><td>86.97848482082135</td><td>0.5115151791786445</td></tr><tr><td>大分県</td><td>-0.6492766203124921</td><td>2594.0</td><td>2768.7</td><td>46.4</td><td>81.08</td><td>80.45141649335666</td><td>0.6285835066433378</td><td>87.31</td><td>86.9858590214321</td><td>0.3241409785678968</td></tr><tr><td>福井県</td><td>0.22144037557513138</td><td>3082.0</td><td>2851.0</td><td>56.0</td><td>81.27</td><td>80.72058161993426</td><td>0.5494183800657311</td><td>87.54</td><td>87.03449733468766</td><td>0.5055026653123491</td></tr><tr><td>奈良県</td><td>0.606969719653904</td><td>2658.0</td><td>3352.7</td><td>58.9</td><td>81.36</td><td>80.83976047504844</td><td>0.5202395249515632</td><td>87.25</td><td>87.05603303124012</td><td>0.19396696875988084</td></tr><tr><td>京都府</td><td>1.0611809714523932</td><td>2918.0</td><td>3266.4</td><td>66.4</td><td>81.4</td><td>80.98017099839957</td><td>0.41982900160043357</td><td>87.35</td><td>87.08140530403773</td><td>0.26859469596226404</td></tr><tr><td>岡山県</td><td>-0.10525886572913347</td><td>2816.0</td><td>2967.4</td><td>50.5</td><td>81.03</td><td>80.61958894027624</td><td>0.41041105972375647</td><td>87.67</td><td>87.01624789185611</td><td>0.6537521081438911</td></tr><tr><td>石川県</td><td>0.1726365259889512</td><td>2954.0</td><td>2947.3</td><td>54.7</td><td>81.04</td><td>80.70549486452076</td><td>0.33450513547924743</td><td>87.28</td><td>87.03177114818222</td><td>0.2482288518177853</td></tr><tr><td>宮城県</td><td>0.05256256433291249</td><td>3026.0</td><td>3045.3</td><td>49.5</td><td>80.99</td><td>80.66837634812511</td><td>0.3216236518748872</td><td>87.16</td><td>87.02506380815274</td><td>0.13493619184725958</td></tr><tr><td>島根県</td><td>-0.5624519661119417</td><td>2832.0</td><td>2677.5</td><td>47.0</td><td>80.79</td><td>80.47825663676528</td><td>0.31174336323472573</td><td>87.64</td><td>86.99070905278472</td><td>0.6492909472152775</td></tr><tr><td>岐阜県</td><td>0.18630723727279822</td><td>2878.0</td><td>2987.9</td><td>55.1</td><td>81.0</td><td>80.70972089749186</td><td>0.29027910250813704</td><td>86.82</td><td>87.03253479508585</td><td>-0.21253479508585826</td></tr><tr><td>佐賀県</td><td>-0.8775875262859044</td><td>2620.0</td><td>2696.2</td><td>43.0</td><td>80.65</td><td>80.3808386429235</td><td>0.2691613570765128</td><td>87.12</td><td>86.97310555800271</td><td>0.14689444199728996</td></tr><tr><td>神奈川県</td><td>1.4095407859671447</td><td>3099.0</td><td>3749.6</td><td>61.5</td><td>81.32</td><td>81.08785962054806</td><td>0.2321403794519341</td><td>87.24</td><td>87.10086470802783</td><td>0.1391352919721669</td></tr><tr><td>香川県</td><td>-0.09651810667223669</td><td>2884.0</td><td>2928.9</td><td>50.6</td><td>80.85</td><td>80.62229097495461</td><td>0.22770902504538526</td><td>87.21</td><td>87.01673615127807</td><td>0.19326384872192648</td></tr><tr><td>新潟県</td><td>-0.5561873608013613</td><td>2835.0</td><td>2722.3</td><td>46.2</td><td>80.69</td><td>80.48019321695075</td><td>0.20980678304924538</td><td>87.32</td><td>86.99105899408248</td><td>0.32894100591751396</td></tr><tr><td>広島県</td><td>0.7483491105460583</td><td>3206.0</td><td>3103.5</td><td>59.9</td><td>81.08</td><td>80.8834651481221</td><td>0.19653485187789954</td><td>87.33</td><td>87.0639304940605</td><td>0.2660695059394982</td></tr><tr><td>三重県</td><td>0.16215777373234216</td><td>2971.0</td><td>3138.4</td><td>50.5</td><td>80.86</td><td>80.70225556324279</td><td>0.15774443675721272</td><td>86.99</td><td>87.03118580433663</td><td>-0.0411858043366351</td></tr><tr><td>静岡県</td><td>0.4922295251285838</td><td>3359.0</td><td>3101.2</td><td>53.0</td><td>80.95</td><td>80.80429078842373</td><td>0.1457092115762748</td><td>87.1</td><td>87.04962363582153</td><td>0.050376364178461586</td></tr><tr><td>山梨県</td><td>0.20156863530734256</td><td>2885.0</td><td>2938.2</td><td>56.3</td><td>80.85</td><td>80.71443866015541</td><td>0.1355613398445854</td><td>87.22</td><td>87.0333872978644</td><td>0.186612702135605</td></tr><tr><td>山形県</td><td>-0.8356520949405796</td><td>2644.0</td><td>2632.3</td><td>44.8</td><td>80.52</td><td>80.39380216119575</td><td>0.12619783880424507</td><td>86.96</td><td>86.97544807417722</td><td>-0.015448074177228932</td></tr><tr><td>千葉県</td><td>0.7675903991186654</td><td>3033.0</td><td>3427.0</td><td>56.0</td><td>80.96</td><td>80.88941321609208</td><td>0.07058678390791329</td><td>86.91</td><td>87.06500531380728</td><td>-0.15500531380727978</td></tr><tr><td>沖縄県</td><td>-1.3144624617685023</td><td>2225.0</td><td>2696.7</td><td>39.2</td><td>80.27</td><td>80.24578730263367</td><td>0.024212697366323255</td><td>87.44</td><td>86.94870169306628</td><td>0.49129830693371446</td></tr><tr><td>山口県</td><td>-0.4905839884392147</td><td>2958.0</td><td>2888.3</td><td>42.7</td><td>80.51</td><td>80.50047321620329</td><td>0.009526783796715677</td><td>86.88</td><td>86.9947236031238</td><td>-0.11472360312380658</td></tr><tr><td>宮崎県</td><td>-1.015657970918434</td><td>2340.0</td><td>2625.9</td><td>45.1</td><td>80.34</td><td>80.33815686585739</td><td>0.0018431341426179415</td><td>87.12</td><td>86.96539293315551</td><td>0.15460706684449121</td></tr><tr><td>長崎県</td><td>-0.8444265093314348</td><td>2503.0</td><td>2721.1</td><td>44.6</td><td>80.38</td><td>80.39108972262923</td><td>-0.011089722629236576</td><td>86.97</td><td>86.97495793476591</td><td>-0.004957934765911887</td></tr><tr><td>兵庫県</td><td>0.9112748228005344</td><td>2926.0</td><td>3404.6</td><td>60.6</td><td>80.92</td><td>80.93383044496234</td><td>-0.013830444962337651</td><td>87.07</td><td>87.07303153592306</td><td>-0.00303153592307126</td></tr><tr><td>愛知県</td><td>1.5202174118700704</td><td>3836.0</td><td>3544.4</td><td>58.7</td><td>81.1</td><td>81.12207313442346</td><td>-0.022073134423465035</td><td>86.86</td><td>87.10704711221445</td><td>-0.24704711221444597</td></tr><tr><td>福岡県</td><td>0.14802223764737452</td><td>2770.0</td><td>3052.0</td><td>54.4</td><td>80.66</td><td>80.69788583877718</td><td>-0.037885838777185654</td><td>87.14</td><td>87.03039619228659</td><td>0.1096038077134125</td></tr><tr><td>埼玉県</td><td>0.6719098714185865</td><td>2977.0</td><td>3320.7</td><td>56.9</td><td>80.82</td><td>80.85983545262698</td><td>-0.0398354526269884</td><td>86.66</td><td>87.05966059273176</td><td>-0.39966059273176313</td></tr><tr><td>富山県</td><td>0.1282617734688655</td><td>3231.0</td><td>2867.5</td><td>52.0</td><td>80.61</td><td>80.69177727782458</td><td>-0.08177727782458533</td><td>87.42</td><td>87.02929237135358</td><td>0.3907076286464246</td></tr><tr><td>群馬県</td><td>0.2903818770472126</td><td>3219.0</td><td>3006.6</td><td>52.6</td><td>80.61</td><td>80.74189353650166</td><td>-0.13189353650166424</td><td>86.84</td><td>87.03834841185825</td><td>-0.19834841185824814</td></tr><tr><td>鳥取県</td><td>-1.0973667431197516</td><td>2334.0</td><td>2628.8</td><td>43.5</td><td>80.17</td><td>80.3128981972935</td><td>-0.14289819729350484</td><td>87.27</td><td>86.96082867533485</td><td>0.30917132466514374</td></tr><tr><td>北海道</td><td>-0.6614951194481977</td><td>2700.0</td><td>2847.3</td><td>43.3</td><td>80.28</td><td>80.44763938336342</td><td>-0.1676393833634222</td><td>86.77</td><td>86.98517649520224</td><td>-0.21517649520224325</td></tr><tr><td>高知県</td><td>-0.7168991078769316</td><td>2537.0</td><td>2686.0</td><td>47.4</td><td>80.26</td><td>80.43051232413666</td><td>-0.17051232413665218</td><td>87.01</td><td>86.98208162447212</td><td>0.02791837552788934</td></tr><tr><td>鹿児島県</td><td>-1.0195082701708698</td><td>2407.0</td><td>2701.7</td><td>42.7</td><td>80.02</td><td>80.33696662116188</td><td>-0.3169666211618818</td><td>86.78</td><td>86.9651778551657</td><td>-0.18517785516570484</td></tr><tr><td>徳島県</td><td>0.06385634576146294</td><td>3074.0</td><td>2915.7</td><td>51.7</td><td>80.32</td><td>80.67186759972823</td><td>-0.3518675997282372</td><td>86.66</td><td>87.02569467958577</td><td>-0.36569467958577206</td></tr><tr><td>愛媛県</td><td>-0.3288224145715281</td><td>2516.0</td><td>2844.3</td><td>52.2</td><td>80.16</td><td>80.55047864243377</td><td>-0.39047864243377717</td><td>86.82</td><td>87.00375961613337</td><td>-0.1837596161333721</td></tr><tr><td>福島県</td><td>-0.44004007755931235</td><td>2844.0</td><td>2858.0</td><td>45.7</td><td>80.12</td><td>80.5160978775272</td><td>-0.39609787752719683</td><td>86.4</td><td>86.99754698957675</td><td>-0.5975469895767418</td></tr><tr><td>茨城県</td><td>0.19851686150018868</td><td>3105.0</td><td>3091.6</td><td>50.5</td><td>80.28</td><td>80.7134952639808</td><td>-0.4334952639808023</td><td>86.33</td><td>87.03321682556269</td><td>-0.7032168255626914</td></tr><tr><td>岩手県</td><td>-0.8600082800800967</td><td>2613.0</td><td>2657.5</td><td>44.2</td><td>79.86</td><td>80.38627292300815</td><td>-0.5262729230081504</td><td>86.44</td><td>86.97408753594479</td><td>-0.5340875359447921</td></tr><tr><td>和歌山県</td><td>-0.19347377553941084</td><td>2805.0</td><td>2936.6</td><td>49.5</td><td>79.94</td><td>80.59231902654163</td><td>-0.6523190265416332</td><td>86.47</td><td>87.01132020072635</td><td>-0.5413202007263465</td></tr><tr><td>栃木県</td><td>0.34732329559973335</td><td>3302.0</td><td>3042.3</td><td>52.0</td><td>80.1</td><td>80.75949586217646</td><td>-0.6594958621764704</td><td>86.24</td><td>87.04152916354433</td><td>-0.8015291635443305</td></tr><tr><td>大阪府</td><td>0.8344353846480074</td><td>2950.0</td><td>3318.0</td><td>60.5</td><td>80.23</td><td>80.9100770357672</td><td>-0.6800770357671979</td><td>86.73</td><td>87.06873927944835</td><td>-0.3387392794483475</td></tr><tr><td>東京都</td><td>3.9152209733503844</td><td>5858.0</td><td>4288.8</td><td>66.5</td><td>81.07</td><td>81.86244163512382</td><td>-0.7924416351238222</td><td>87.26</td><td>87.24083218132601</td><td>0.019167818673992087</td></tr><tr><td>秋田県</td><td>-1.007941685059597</td><td>2466.0</td><td>2580.7</td><td>44.6</td><td>79.51</td><td>80.34054220468701</td><td>-0.8305422046870063</td><td>86.38</td><td>86.96582396543184</td><td>-0.5858239654318425</td></tr><tr><td>青森県</td><td>-0.9356842508635316</td><td>2618.0</td><td>2609.1</td><td>43.6</td><td>78.67</td><td>80.36287917699077</td><td>-1.6928791769907718</td><td>85.93</td><td>86.96986027083999</td><td>-1.0398602708399807</td></tr></tbody></table></div></details></li><li><details><summary>分析サンプル<span>pref_sample.csv — クリックで表示</span></summary><div class='file-toolbar'><a href='results/pref_sample.csv' download>元ファイルをダウンロード</a><label class='file-search' hidden>行を検索 <input type='search' placeholder='国名・県名・変数名など'></label><output aria-live='polite'>47 行</output></div><div class='file-preview' tabindex='0' role='region' aria-label='分析サンプル：pref_sample.csv'><table><thead><tr><th scope='col'>pref_cd</th><th scope='col'>pref</th><th scope='col'>income</th><th scope='col'>tax_income</th><th scope='col'>univ_rate</th><th scope='col'>nurses</th><th scope='col'>beds</th><th scope='col'>hosp</th><th scope='col'>le_m</th><th scope='col'>le_f</th><th scope='col'>doctors</th></tr></thead><tbody><tr><td>01</td><td>北海道</td><td>2700.0</td><td>2847.3</td><td>43.3</td><td>1236.6</td><td>1526.2</td><td>9.2</td><td>80.28</td><td>86.77</td><td>238.2</td></tr><tr><td>02</td><td>青森県</td><td>2618.0</td><td>2609.1</td><td>43.6</td><td>1081.9</td><td>1119.7</td><td>6.2</td><td>78.67</td><td>85.93</td><td>197.9</td></tr><tr><td>03</td><td>岩手県</td><td>2613.0</td><td>2657.5</td><td>44.2</td><td>1018.8</td><td>1083.4</td><td>5.9</td><td>79.86</td><td>86.44</td><td>193.8</td></tr><tr><td>04</td><td>宮城県</td><td>3026.0</td><td>3045.3</td><td>49.5</td><td>899.1</td><td>867.3</td><td>4.9</td><td>80.99</td><td>87.16</td><td>231.7</td></tr><tr><td>05</td><td>秋田県</td><td>2466.0</td><td>2580.7</td><td>44.6</td><td>1068.0</td><td>1162.9</td><td>5.3</td><td>79.51</td><td>86.38</td><td>223.2</td></tr><tr><td>06</td><td>山形県</td><td>2644.0</td><td>2632.3</td><td>44.8</td><td>1002.6</td><td>1046.6</td><td>4.9</td><td>80.52</td><td>86.96</td><td>219.3</td></tr><tr><td>07</td><td>福島県</td><td>2844.0</td><td>2858.0</td><td>45.7</td><td>962.3</td><td>1047.4</td><td>5.4</td><td>80.12</td><td>86.4</td><td>195.5</td></tr><tr><td>08</td><td>茨城県</td><td>3105.0</td><td>3091.6</td><td>50.5</td><td>739.6</td><td>940.2</td><td>5.5</td><td>80.28</td><td>86.33</td><td>180.1</td></tr><tr><td>09</td><td>栃木県</td><td>3302.0</td><td>3042.3</td><td>52.0</td><td>881.2</td><td>906.7</td><td>4.6</td><td>80.1</td><td>86.24</td><td>217.6</td></tr><tr><td>10</td><td>群馬県</td><td>3219.0</td><td>3006.6</td><td>52.6</td><td>1018.2</td><td>1073.8</td><td>5.9</td><td>80.61</td><td>86.84</td><td>225.0</td></tr><tr><td>11</td><td>埼玉県</td><td>2977.0</td><td>3320.7</td><td>56.9</td><td>665.5</td><td>695.3</td><td>4.0</td><td>80.82</td><td>86.66</td><td>160.1</td></tr><tr><td>12</td><td>千葉県</td><td>3033.0</td><td>3427.0</td><td>56.0</td><td>700.9</td><td>790.2</td><td>4.0</td><td>80.96</td><td>86.91</td><td>189.7</td></tr><tr><td>13</td><td>東京都</td><td>5858.0</td><td>4288.8</td><td>66.5</td><td>746.8</td><td>857.0</td><td>4.4</td><td>81.07</td><td>87.26</td><td>303.7</td></tr><tr><td>14</td><td>神奈川県</td><td>3099.0</td><td>3749.6</td><td>61.5</td><td>666.2</td><td>681.3</td><td>3.2</td><td>81.32</td><td>87.24</td><td>205.2</td></tr><tr><td>15</td><td>新潟県</td><td>2835.0</td><td>2722.3</td><td>46.2</td><td>918.6</td><td>1031.2</td><td>4.9</td><td>80.69</td><td>87.32</td><td>191.9</td></tr><tr><td>16</td><td>富山県</td><td>3231.0</td><td>2867.5</td><td>52.0</td><td>1144.2</td><td>1359.5</td><td>8.3</td><td>80.61</td><td>87.42</td><td>241.8</td></tr><tr><td>17</td><td>石川県</td><td>2954.0</td><td>2947.3</td><td>54.7</td><td>1185.3</td><td>1329.1</td><td>7.3</td><td>81.04</td><td>87.28</td><td>280.6</td></tr><tr><td>18</td><td>福井県</td><td>3082.0</td><td>2851.0</td><td>56.0</td><td>1115.5</td><td>1206.4</td><td>7.6</td><td>81.27</td><td>87.54</td><td>245.5</td></tr><tr><td>19</td><td>山梨県</td><td>2885.0</td><td>2938.2</td><td>56.3</td><td>922.7</td><td>1065.5</td><td>6.2</td><td>80.85</td><td>87.22</td><td>231.5</td></tr><tr><td>20</td><td>長野県</td><td>2857.0</td><td>2893.5</td><td>48.9</td><td>986.1</td><td>1032.0</td><td>5.5</td><td>81.75</td><td>87.67</td><td>225.9</td></tr><tr><td>21</td><td>岐阜県</td><td>2878.0</td><td>2987.9</td><td>55.1</td><td>914.9</td><td>854.3</td><td>4.4</td><td>81.0</td><td>86.82</td><td>208.6</td></tr><tr><td>22</td><td>静岡県</td><td>3359.0</td><td>3101.2</td><td>53.0</td><td>812.6</td><td>874.7</td><td>4.0</td><td>80.95</td><td>87.1</td><td>200.7</td></tr><tr><td>23</td><td>愛知県</td><td>3836.0</td><td>3544.4</td><td>58.7</td><td>817.9</td><td>773.2</td><td>3.8</td><td>81.1</td><td>86.86</td><td>207.7</td></tr><tr><td>24</td><td>三重県</td><td>2971.0</td><td>3138.4</td><td>50.5</td><td>864.3</td><td>926.7</td><td>4.8</td><td>80.86</td><td>86.99</td><td>216.9</td></tr><tr><td>25</td><td>滋賀県</td><td>3110.0</td><td>3175.7</td><td>55.0</td><td>848.5</td><td>901.2</td><td>3.5</td><td>81.78</td><td>87.57</td><td>220.7</td></tr><tr><td>26</td><td>京都府</td><td>2918.0</td><td>3266.4</td><td>66.4</td><td>999.2</td><td>1252.7</td><td>6.2</td><td>81.4</td><td>87.35</td><td>314.5</td></tr><tr><td>27</td><td>大阪府</td><td>2950.0</td><td>3318.0</td><td>60.5</td><td>912.6</td><td>1058.5</td><td>5.6</td><td>80.23</td><td>86.73</td><td>270.2</td></tr><tr><td>28</td><td>兵庫県</td><td>2926.0</td><td>3404.6</td><td>60.6</td><td>935.9</td><td>993.2</td><td>5.8</td><td>80.92</td><td>87.07</td><td>242.2</td></tr><tr><td>29</td><td>奈良県</td><td>2658.0</td><td>3352.7</td><td>58.9</td><td>862.3</td><td>1154.4</td><td>5.4</td><td>81.36</td><td>87.25</td><td>243.0</td></tr><tr><td>30</td><td>和歌山県</td><td>2805.0</td><td>2936.6</td><td>49.5</td><td>1141.2</td><td>1242.8</td><td>8.1</td><td>79.94</td><td>86.47</td><td>289.5</td></tr><tr><td>31</td><td>鳥取県</td><td>2334.0</td><td>2628.8</td><td>43.5</td><td>1241.4</td><td>1371.0</td><td>7.0</td><td>80.17</td><td>87.27</td><td>298.1</td></tr><tr><td>32</td><td>島根県</td><td>2832.0</td><td>2677.5</td><td>47.0</td><td>1224.2</td><td>1301.1</td><td>6.2</td><td>80.79</td><td>87.64</td><td>271.9</td></tr><tr><td>33</td><td>岡山県</td><td>2816.0</td><td>2967.4</td><td>50.5</td><td>1170.5</td><td>1237.4</td><td>7.7</td><td>81.03</td><td>87.67</td><td>300.1</td></tr><tr><td>34</td><td>広島県</td><td>3206.0</td><td>3103.5</td><td>59.9</td><td>1170.2</td><td>1155.6</td><td>7.5</td><td>81.08</td><td>87.33</td><td>254.4</td></tr><tr><td>35</td><td>山口県</td><td>2958.0</td><td>2888.3</td><td>42.7</td><td>1366.2</td><td>1523.4</td><td>8.5</td><td>80.51</td><td>86.88</td><td>246.5</td></tr><tr><td>36</td><td>徳島県</td><td>3074.0</td><td>2915.7</td><td>51.7</td><td>1333.2</td><td>1484.7</td><td>13.0</td><td>80.32</td><td>86.66</td><td>315.9</td></tr><tr><td>37</td><td>香川県</td><td>2884.0</td><td>2928.9</td><td>50.6</td><td>1242.7</td><td>1266.3</td><td>8.3</td><td>80.85</td><td>87.21</td><td>275.7</td></tr><tr><td>38</td><td>愛媛県</td><td>2516.0</td><td>2844.3</td><td>52.2</td><td>1268.8</td><td>1326.6</td><td>9.2</td><td>80.16</td><td>86.82</td><td>262.1</td></tr><tr><td>39</td><td>高知県</td><td>2537.0</td><td>2686.0</td><td>47.4</td><td>1574.8</td><td>2257.5</td><td>16.5</td><td>80.26</td><td>87.01</td><td>306.0</td></tr><tr><td>40</td><td>福岡県</td><td>2770.0</td><td>3052.0</td><td>54.4</td><td>1310.4</td><td>1406.1</td><td>7.9</td><td>80.66</td><td>87.14</td><td>297.0</td></tr><tr><td>41</td><td>佐賀県</td><td>2620.0</td><td>2696.2</td><td>43.0</td><td>1504.2</td><td>1485.9</td><td>11.3</td><td>80.65</td><td>87.12</td><td>276.5</td></tr><tr><td>42</td><td>長崎県</td><td>2503.0</td><td>2721.1</td><td>44.6</td><td>1480.8</td><td>1406.7</td><td>9.1</td><td>80.38</td><td>86.97</td><td>295.7</td></tr><tr><td>43</td><td>熊本県</td><td>2440.0</td><td>2747.5</td><td>46.1</td><td>1457.1</td><td>1527.7</td><td>9.9</td><td>81.22</td><td>87.49</td><td>281.7</td></tr><tr><td>44</td><td>大分県</td><td>2594.0</td><td>2768.7</td><td>46.4</td><td>1409.0</td><td>1279.6</td><td>11.3</td><td>81.08</td><td>87.31</td><td>268.5</td></tr><tr><td>45</td><td>宮崎県</td><td>2340.0</td><td>2625.9</td><td>45.1</td><td>1420.9</td><td>1333.8</td><td>11.1</td><td>80.34</td><td>87.12</td><td>238.2</td></tr><tr><td>46</td><td>鹿児島県</td><td>2407.0</td><td>2701.7</td><td>42.7</td><td>1535.4</td><td>1608.3</td><td>13.0</td><td>80.02</td><td>86.78</td><td>262.9</td></tr><tr><td>47</td><td>沖縄県</td><td>2225.0</td><td>2696.7</td><td>39.2</td><td>1061.9</td><td>1082.4</td><td>5.7</td><td>80.27</td><td>87.44</td><td>242.6</td></tr></tbody></table></div></details></li></ul><h3>コード</h3><ul class='files'><li><details><summary>SEM<span>estat_sem.py — クリックで表示</span></summary><div class='file-toolbar'><a href='src/estat_sem.py' download>元ファイルをダウンロード</a></div><div class='file-preview' tabindex='0' role='region' aria-label='SEM：estat_sem.py'><pre><code><span class="syn-comment"># -*- coding: utf-8 -*-</span>
+<span class="syn-string">&quot;&quot;&quot;都道府県別データ（e-Stat 社会生活統計指標 2024）による構造方程式モデリング。
+
+問い: 都道府県の健康格差は「経済的豊かさ」で説明できるのか、
+      それとも「医療の供給量」なのか。そして男女で違うのか。
+
+    経済的豊かさ ──┬─────────────→ 平均寿命(男)
+                   │                ↗
+                   └→ 入院医療キャパ ─→ 平均寿命(女)
+
+国レベル（World Bank）では豊かさと健康が同一次元に潰れたが、
+47都道府県では両者が分離するかどうかが見どころ。
+
+実行: python estat_sem.py   （先に estat_fetch.py → estat_parse.py）
+&quot;&quot;&quot;</span>
+<span class="syn-keyword">import</span> paths
+
+<span class="syn-keyword">import</span> numpy <span class="syn-keyword">as</span> np
+<span class="syn-keyword">import</span> pandas <span class="syn-keyword">as</span> pd
+<span class="syn-keyword">import</span> semopy
+
+<span class="syn-keyword">from</span> estat_parse <span class="syn-keyword">import</span> load_all
+
+<span class="syn-comment"># 列名 → (指標コード, 採用年)</span>
+SPEC = {
+    <span class="syn-comment"># 経済的豊かさ</span>
+    <span class="syn-string">&quot;income&quot;</span>:     (<span class="syn-string">&quot;#C01321&quot;</span>, <span class="syn-number">2015</span>),   <span class="syn-comment"># １人当たり県民所得</span>
+    <span class="syn-string">&quot;tax_income&quot;</span>: (<span class="syn-string">&quot;#D02206&quot;</span>, <span class="syn-number">2015</span>),   <span class="syn-comment"># 課税対象所得（納税義務者１人当たり）</span>
+    <span class="syn-string">&quot;univ_rate&quot;</span>:  (<span class="syn-string">&quot;#E09402&quot;</span>, <span class="syn-number">2015</span>),   <span class="syn-comment"># 高等学校卒業者の進学率</span>
+    <span class="syn-comment"># 入院医療キャパシティ（人口当たり）</span>
+    <span class="syn-string">&quot;nurses&quot;</span>:     (<span class="syn-string">&quot;#I0920301&quot;</span>, <span class="syn-number">2016</span>),  <span class="syn-comment"># 看護師・准看護師数（人口10万人当たり）</span>
+    <span class="syn-string">&quot;beds&quot;</span>:       (<span class="syn-string">&quot;#I0910203&quot;</span>, <span class="syn-number">2015</span>),  <span class="syn-comment"># 一般病院病床数（人口10万人当たり）</span>
+    <span class="syn-string">&quot;hosp&quot;</span>:       (<span class="syn-string">&quot;#I0910103&quot;</span>, <span class="syn-number">2015</span>),  <span class="syn-comment"># 一般病院数（人口10万人当たり）</span>
+    <span class="syn-comment"># 健康アウトカム</span>
+    <span class="syn-string">&quot;le_m&quot;</span>:       (<span class="syn-string">&quot;#I0520101&quot;</span>, <span class="syn-number">2015</span>),  <span class="syn-comment"># 平均余命（０歳・男）＝男性の平均寿命</span>
+    <span class="syn-string">&quot;le_f&quot;</span>:       (<span class="syn-string">&quot;#I0520102&quot;</span>, <span class="syn-number">2015</span>),  <span class="syn-comment"># 平均余命（０歳・女）＝女性の平均寿命</span>
+    <span class="syn-comment"># 参考（モデルには入れない）</span>
+    <span class="syn-string">&quot;doctors&quot;</span>:    (<span class="syn-string">&quot;#I0920101&quot;</span>, <span class="syn-number">2016</span>),  <span class="syn-comment"># 医療施設に従事する医師数（人口10万人当たり）</span>
+}
+
+MODEL = <span class="syn-string">&quot;&quot;&quot;
+# ---- 測定モデル ----
+WEALTH =~ income + tax_income + univ_rate
+MED    =~ nurses + beds + hosp
+
+# ---- 構造モデル ----
+MED  ~ WEALTH
+le_m ~ WEALTH + MED
+le_f ~ WEALTH + MED
+
+# 男女の平均寿命は同じ県の同じ環境を共有する
+le_m ~~ le_f
+&quot;&quot;&quot;</span>
+
+USED = [<span class="syn-string">&quot;income&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>, <span class="syn-string">&quot;nurses&quot;</span>, <span class="syn-string">&quot;beds&quot;</span>, <span class="syn-string">&quot;hosp&quot;</span>, <span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>]
+
+LABELS = {
+    <span class="syn-string">&quot;income&quot;</span>: <span class="syn-string">&quot;１人当たり県民所得&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>: <span class="syn-string">&quot;課税対象所得&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>: <span class="syn-string">&quot;大学等進学率&quot;</span>,
+    <span class="syn-string">&quot;nurses&quot;</span>: <span class="syn-string">&quot;看護師数&quot;</span>, <span class="syn-string">&quot;beds&quot;</span>: <span class="syn-string">&quot;一般病院病床数&quot;</span>, <span class="syn-string">&quot;hosp&quot;</span>: <span class="syn-string">&quot;一般病院数&quot;</span>,
+    <span class="syn-string">&quot;le_m&quot;</span>: <span class="syn-string">&quot;平均寿命(男)&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>: <span class="syn-string">&quot;平均寿命(女)&quot;</span>, <span class="syn-string">&quot;doctors&quot;</span>: <span class="syn-string">&quot;医師数&quot;</span>,
+    <span class="syn-string">&quot;WEALTH&quot;</span>: <span class="syn-string">&quot;経済的豊かさ&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>: <span class="syn-string">&quot;入院医療キャパシティ&quot;</span>,
+}
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">wide</span>():
+    <span class="syn-string">&quot;&quot;&quot;縦持ちの estat_long から、分析用の47行×指標 の表を作る。&quot;&quot;&quot;</span>
+    long = load_all()
+    long = long[long.pref_cd != <span class="syn-string">&quot;00&quot;</span>]                 <span class="syn-comment"># 「全国」を落とす</span>
+    names = long.drop_duplicates(<span class="syn-string">&quot;pref_cd&quot;</span>).set_index(<span class="syn-string">&quot;pref_cd&quot;</span>)[<span class="syn-string">&quot;pref&quot;</span>]
+    w = pd.DataFrame(index=sorted(long.pref_cd.unique()))
+    w.index.name = <span class="syn-string">&quot;pref_cd&quot;</span>
+    w[<span class="syn-string">&quot;pref&quot;</span>] = names
+    <span class="syn-keyword">for</span> col, (code, year) <span class="syn-keyword">in</span> SPEC.items():
+        s = long[(long.code == code) &amp; (long.year == year)].set_index(<span class="syn-string">&quot;pref_cd&quot;</span>)[<span class="syn-string">&quot;value&quot;</span>]
+        w[col] = s
+    <span class="syn-keyword">return</span> w
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">fit</span>(z, desc=MODEL):
+    m = semopy.Model(desc)
+    m.fit(z)
+    <span class="syn-keyword">return</span> m
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">bootstrap</span>(z, n=<span class="syn-number">600</span>, seed=<span class="syn-number">0</span>):
+    <span class="syn-string">&quot;&quot;&quot;N=47 なので漸近的な標準誤差は当てにならない。非復元でなく復元抽出で分布を見る。&quot;&quot;&quot;</span>
+    rng = np.random.default_rng(seed)
+    keys = [(<span class="syn-string">&quot;MED&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>),
+            (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>)]
+    draws = {k: [] <span class="syn-keyword">for</span> k <span class="syn-keyword">in</span> keys}
+    ok = <span class="syn-number">0</span>
+    <span class="syn-keyword">for</span> _ <span class="syn-keyword">in</span> range(n):
+        s = z.iloc[rng.integers(<span class="syn-number">0</span>, len(z), len(z))]
+        <span class="syn-keyword">try</span>:
+            e = fit(s).inspect(std_est=<span class="syn-keyword">True</span>)
+        <span class="syn-keyword">except</span> Exception:
+            <span class="syn-keyword">continue</span>
+        e = e[e.op == <span class="syn-string">&quot;~&quot;</span>]
+        vals = {}
+        <span class="syn-keyword">for</span> l, r <span class="syn-keyword">in</span> keys:
+            row = e[(e.lval == l) &amp; (e.rval == r)]
+            <span class="syn-keyword">if</span> row.empty:
+                <span class="syn-keyword">break</span>
+            vals[(l, r)] = float(row[<span class="syn-string">&quot;Est. Std&quot;</span>].iloc[<span class="syn-number">0</span>])
+        <span class="syn-keyword">if</span> len(vals) == len(keys):
+            ok += <span class="syn-number">1</span>
+            <span class="syn-keyword">for</span> k, v <span class="syn-keyword">in</span> vals.items():
+                draws[k].append(v)
+    <span class="syn-keyword">return</span> draws, ok
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">main</span>():
+    w = wide()
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">N = </span>{len(w)}<span class="syn-string"> 都道府県　欠損 = </span>{w[USED].isna().sum().sum()}<span class="syn-string">\n</span><span class="syn-string">&quot;</span>)
+
+    z = (w[USED] - w[USED].mean()) / w[USED].std()
+    print(<span class="syn-string">&quot;=== 観測変数の相関 ===&quot;</span>)
+    c = z.corr()
+    c.index = [LABELS[i] <span class="syn-keyword">for</span> i <span class="syn-keyword">in</span> c.index]
+    c.columns = [LABELS[i] <span class="syn-keyword">for</span> i <span class="syn-keyword">in</span> c.columns]
+    print(c.round(<span class="syn-number">2</span>).to_string(), <span class="syn-string">&quot;\n&quot;</span>)
+
+    m = fit(z)
+    s = semopy.calc_stats(m).T[<span class="syn-string">&quot;Value&quot;</span>]
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">=== 適合度 ===\nχ²/df = </span>{s[<span class="syn-string">&#x27;chi2&#x27;</span>]/s[<span class="syn-string">&#x27;DoF&#x27;</span>]:<span class="syn-string">.2f</span>}<span class="syn-string">　CFI = </span>{s[<span class="syn-string">&#x27;CFI&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　</span><span class="syn-string">&quot;</span>
+          <span class="syn-string">f&quot;</span><span class="syn-string">TLI = </span>{s[<span class="syn-string">&#x27;TLI&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　RMSEA = </span>{s[<span class="syn-string">&#x27;RMSEA&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　</span><span class="syn-string">&quot;</span>
+          <span class="syn-string">f&quot;</span><span class="syn-string">（自由度 </span>{int(s[<span class="syn-string">&#x27;DoF&#x27;</span>])}<span class="syn-string">、N = </span>{len(z)}<span class="syn-string">）\n</span><span class="syn-string">&quot;</span>)
+
+    e = m.inspect(std_est=<span class="syn-keyword">True</span>).rename(columns={<span class="syn-string">&quot;Est. Std&quot;</span>: <span class="syn-string">&quot;std&quot;</span>, <span class="syn-string">&quot;Std. Err&quot;</span>: <span class="syn-string">&quot;se&quot;</span>,
+                                                <span class="syn-string">&quot;p-value&quot;</span>: <span class="syn-string">&quot;p&quot;</span>})
+    lat = set(m.vars[<span class="syn-string">&quot;latent&quot;</span>])
+    load = e[(e.op == <span class="syn-string">&quot;~&quot;</span>) &amp; e.rval.isin(lat) &amp; ~e.lval.isin(lat) &amp; ~e.lval.isin([<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>])]
+    stru = e[(e.op == <span class="syn-string">&quot;~&quot;</span>) &amp; ~e.index.isin(load.index) &amp; (e.rval != <span class="syn-string">&quot;1&quot;</span>)]
+
+    <span class="syn-keyword">def</span> <span class="syn-definition">show</span>(t, sub):
+        d = sub.copy()
+        d[<span class="syn-string">&quot;→&quot;</span>] = d.lval.map(<span class="syn-keyword">lambda</span> x: LABELS.get(x, x))
+        d[<span class="syn-string">&quot;←&quot;</span>] = d.rval.map(<span class="syn-keyword">lambda</span> x: LABELS.get(x, x))
+        print(<span class="syn-string">f&quot;</span><span class="syn-string">--- </span>{t}<span class="syn-string"> ---</span><span class="syn-string">&quot;</span>)
+        print(d[[<span class="syn-string">&quot;←&quot;</span>, <span class="syn-string">&quot;→&quot;</span>, <span class="syn-string">&quot;std&quot;</span>, <span class="syn-string">&quot;se&quot;</span>, <span class="syn-string">&quot;p&quot;</span>]].to_string(index=<span class="syn-keyword">False</span>), <span class="syn-string">&quot;\n&quot;</span>)
+
+    show(<span class="syn-string">&quot;因子負荷（標準化）&quot;</span>, load)
+    show(<span class="syn-string">&quot;パス係数（標準化）&quot;</span>, stru)
+
+    <span class="syn-comment"># 残差相関で局所的な当てはまりを確認</span>
+    sigma, _ = m.calc_sigma()
+    nm = list(m.vars[<span class="syn-string">&quot;observed&quot;</span>])
+    cm = <span class="syn-keyword">lambda</span> M: M / np.outer(np.sqrt(np.diag(M)), np.sqrt(np.diag(M)))
+    R = pd.DataFrame(cm(z[nm].cov().values) - cm(sigma), index=nm, columns=nm)
+    iu = np.triu_indices(len(nm), <span class="syn-number">1</span>)
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">残差相関の最大絶対値: </span>{abs(R.values[iu]).max():<span class="syn-string">.3f</span>}<span class="syn-string">\n</span><span class="syn-string">&quot;</span>)
+
+    print(<span class="syn-string">&quot;=== ブートストラップ（復元抽出 600 回、標準化係数の 95% 区間）===&quot;</span>)
+    draws, ok = bootstrap(z)
+    rows = []
+    <span class="syn-keyword">for</span> (l, r), v <span class="syn-keyword">in</span> draws.items():
+        v = np.array(v)
+        rows.append({<span class="syn-string">&quot;パス&quot;</span>: <span class="syn-string">f&quot;</span>{LABELS.get(r, r)}<span class="syn-string"> → </span>{LABELS.get(l, l)}<span class="syn-string">&quot;</span>,
+                     <span class="syn-string">&quot;中央値&quot;</span>: np.median(v),
+                     <span class="syn-string">&quot;2.5%&quot;</span>: np.percentile(v, <span class="syn-number">2.5</span>), <span class="syn-string">&quot;97.5%&quot;</span>: np.percentile(v, <span class="syn-number">97.5</span>),
+                     <span class="syn-string">&quot;0をまたぐ&quot;</span>: <span class="syn-string">&quot;はい&quot;</span> <span class="syn-keyword">if</span> np.percentile(v, <span class="syn-number">2.5</span>) * np.percentile(v, <span class="syn-number">97.5</span>) &lt; <span class="syn-number">0</span> <span class="syn-keyword">else</span> <span class="syn-string">&quot;いいえ&quot;</span>})
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">収束 </span>{ok}<span class="syn-string">/600 回</span><span class="syn-string">&quot;</span>)
+    boot = pd.DataFrame(rows)
+    print(boot.round(<span class="syn-number">3</span>).to_string(index=<span class="syn-keyword">False</span>), <span class="syn-string">&quot;\n&quot;</span>)
+    boot.insert(<span class="syn-number">0</span>, <span class="syn-string">&quot;key&quot;</span>, [<span class="syn-string">f&quot;</span>{l}<span class="syn-string">&lt;-</span>{r}<span class="syn-string">&quot;</span> <span class="syn-keyword">for</span> (l, r) <span class="syn-keyword">in</span> draws])
+    boot.to_csv(paths.result(<span class="syn-string">&quot;pref_bootstrap.csv&quot;</span>), index=<span class="syn-keyword">False</span>)
+
+    <span class="syn-comment"># 参考: 医師数はモデルから外したが、男女差が出る変数なので生の相関だけ見ておく</span>
+    d = w[[<span class="syn-string">&quot;doctors&quot;</span>, <span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;income&quot;</span>]].corr().round(<span class="syn-number">2</span>)
+    print(<span class="syn-string">&quot;=== 参考：医師数（モデル外）の相関 ===&quot;</span>)
+    print(d.loc[<span class="syn-string">&quot;doctors&quot;</span>].to_string())
+
+    w.to_csv(paths.result(<span class="syn-string">&quot;pref_sample.csv&quot;</span>))
+    e.to_csv(paths.result(<span class="syn-string">&quot;pref_estimates.csv&quot;</span>), index=<span class="syn-keyword">False</span>)
+    s.to_csv(paths.result(<span class="syn-string">&quot;pref_fit.csv&quot;</span>))
+    print(<span class="syn-string">&quot;\n-&gt; pref_sample.csv / pref_estimates.csv / pref_fit.csv / pref_bootstrap.csv&quot;</span>)
+
+
+<span class="syn-keyword">if</span> __name__ == <span class="syn-string">&quot;__main__&quot;</span>:
+    main()
+</code></pre></div></details></li><li><details><summary>LOO診断<span>pref_influence.py — クリックで表示</span></summary><div class='file-toolbar'><a href='src/pref_influence.py' download>元ファイルをダウンロード</a></div><div class='file-preview' tabindex='0' role='region' aria-label='LOO診断：pref_influence.py'><pre><code><span class="syn-comment"># -*- coding: utf-8 -*-</span>
+<span class="syn-string">&quot;&quot;&quot;都道府県2モデルの影響度診断（leave-one-out）。出力: pref_influence.csv
+
+沖縄1県で残差スクリーニングの結果が全部飛んだ経験を踏まえ、
+既存2モデルの主要パスについても「1県抜いたら係数がどれだけ動くか」を確認する。
+&quot;&quot;&quot;</span>
+<span class="syn-keyword">import</span> paths
+
+<span class="syn-keyword">import</span> numpy <span class="syn-keyword">as</span> np
+<span class="syn-keyword">import</span> pandas <span class="syn-keyword">as</span> pd
+<span class="syn-keyword">import</span> semopy
+
+<span class="syn-keyword">import</span> estat_sem <span class="syn-keyword">as</span> HEALTH
+<span class="syn-keyword">import</span> job_sem <span class="syn-keyword">as</span> JOB
+
+MODELS = {
+    <span class="syn-string">&quot;健康&quot;</span>: (HEALTH.MODEL, HEALTH.USED, HEALTH.wide, HEALTH.LABELS,
+             [(<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), (<span class="syn-string">&quot;MED&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>),
+              (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>), (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>)]),
+    <span class="syn-string">&quot;転職&quot;</span>: (JOB.MODEL, JOB.USED, JOB.wide, JOB.LABELS,
+             [(<span class="syn-string">&quot;jobchg&quot;</span>, <span class="syn-string">&quot;URBAN&quot;</span>), (<span class="syn-string">&quot;jobchg&quot;</span>, <span class="syn-string">&quot;PRECAR&quot;</span>)]),
+}
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">loo</span>(desc, used, wide, keys):
+    w = wide()
+    z = (w[used] - w[used].mean()) / w[used].std()
+    full = fitpaths(desc, z, keys)
+    rows = []
+    <span class="syn-keyword">for</span> i, idx <span class="syn-keyword">in</span> enumerate(z.index):
+        <span class="syn-keyword">try</span>:
+            p = fitpaths(desc, z.drop(index=idx), keys)
+        <span class="syn-keyword">except</span> Exception:
+            <span class="syn-keyword">continue</span>
+        <span class="syn-keyword">for</span> k <span class="syn-keyword">in</span> keys:
+            rows.append({<span class="syn-string">&quot;抜いた県&quot;</span>: w.pref.loc[idx], <span class="syn-string">&quot;path&quot;</span>: <span class="syn-string">f&quot;</span>{k[<span class="syn-number">1</span>]}<span class="syn-string">→</span>{k[<span class="syn-number">0</span>]}<span class="syn-string">&quot;</span>,
+                         <span class="syn-string">&quot;係数&quot;</span>: p[k], <span class="syn-string">&quot;全県&quot;</span>: full[k], <span class="syn-string">&quot;変化&quot;</span>: p[k] - full[k]})
+    <span class="syn-keyword">return</span> full, pd.DataFrame(rows)
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">fitpaths</span>(desc, z, keys):
+    m = semopy.Model(desc)
+    m.fit(z)
+    e = m.inspect(std_est=<span class="syn-keyword">True</span>)
+    e = e[e.op == <span class="syn-string">&quot;~&quot;</span>]
+    out = {}
+    <span class="syn-keyword">for</span> l, r <span class="syn-keyword">in</span> keys:
+        row = e[(e.lval == l) &amp; (e.rval == r)]
+        out[(l, r)] = float(row[<span class="syn-string">&quot;Est. Std&quot;</span>].iloc[<span class="syn-number">0</span>]) <span class="syn-keyword">if</span> len(row) <span class="syn-keyword">else</span> np.nan
+    <span class="syn-keyword">return</span> out
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">main</span>():
+    allrows = []
+    <span class="syn-keyword">for</span> name, (desc, used, wide, labels, keys) <span class="syn-keyword">in</span> MODELS.items():
+        full, d = loo(desc, used, wide, keys)
+        print(<span class="syn-string">f&quot;</span><span class="syn-string">\n</span>{<span class="syn-string">&#x27;=&#x27;</span>*<span class="syn-number">76</span>}<span class="syn-string">\n</span>{name}<span class="syn-string">モデル　1県抜きでの主要パスの振れ\n</span>{<span class="syn-string">&#x27;=&#x27;</span>*<span class="syn-number">76</span>}<span class="syn-string">&quot;</span>)
+        <span class="syn-keyword">for</span> k <span class="syn-keyword">in</span> keys:
+            lab = <span class="syn-string">f&quot;</span>{labels.get(k[<span class="syn-number">1</span>], k[<span class="syn-number">1</span>])}<span class="syn-string"> → </span>{labels.get(k[<span class="syn-number">0</span>], k[<span class="syn-number">0</span>])}<span class="syn-string">&quot;</span>
+            s = d[d.path == <span class="syn-string">f&quot;</span>{k[<span class="syn-number">1</span>]}<span class="syn-string">→</span>{k[<span class="syn-number">0</span>]}<span class="syn-string">&quot;</span>]
+            worst = s.loc[s[<span class="syn-string">&quot;変化&quot;</span>].abs().idxmax()]
+            lo, hi = s[<span class="syn-string">&quot;係数&quot;</span>].min(), s[<span class="syn-string">&quot;係数&quot;</span>].max()
+            flip = <span class="syn-string">&quot;★符号反転あり&quot;</span> <span class="syn-keyword">if</span> lo * hi &lt; <span class="syn-number">0</span> <span class="syn-keyword">else</span> <span class="syn-string">&quot;&quot;</span>
+            print(<span class="syn-string">f&quot;</span><span class="syn-string">  </span>{lab:<span class="syn-string">32s</span>}<span class="syn-string"> 全県 </span>{full[k]:<span class="syn-string">+.3f</span>}<span class="syn-string">　1県抜き </span>{lo:<span class="syn-string">+.3f</span>}<span class="syn-string">〜</span>{hi:<span class="syn-string">+.3f</span>}<span class="syn-string">&quot;</span>
+                  <span class="syn-string">f&quot;</span><span class="syn-string">　最大変化 </span>{worst[<span class="syn-string">&#x27;変化&#x27;</span>]:<span class="syn-string">+.3f</span>}<span class="syn-string">（除 </span>{worst[<span class="syn-string">&#x27;抜いた県&#x27;</span>]}<span class="syn-string">）</span>{flip}<span class="syn-string">&quot;</span>)
+            allrows.append({<span class="syn-string">&quot;モデル&quot;</span>: name, <span class="syn-string">&quot;パス&quot;</span>: lab, <span class="syn-string">&quot;全県&quot;</span>: full[k],
+                            <span class="syn-string">&quot;LOO最小&quot;</span>: lo, <span class="syn-string">&quot;LOO最大&quot;</span>: hi,
+                            <span class="syn-string">&quot;最大変化&quot;</span>: worst[<span class="syn-string">&quot;変化&quot;</span>], <span class="syn-string">&quot;その県&quot;</span>: worst[<span class="syn-string">&quot;抜いた県&quot;</span>]})
+    pd.DataFrame(allrows).to_csv(paths.result(<span class="syn-string">&quot;pref_influence.csv&quot;</span>), index=<span class="syn-keyword">False</span>)
+    print(<span class="syn-string">&quot;\n-&gt; pref_influence.csv&quot;</span>)
+
+
+<span class="syn-keyword">if</span> __name__ == <span class="syn-string">&quot;__main__&quot;</span>:
+    main()
+</code></pre></div></details></li><li><details><summary>残差と図<span>pref_residuals.py — クリックで表示</span></summary><div class='file-toolbar'><a href='src/pref_residuals.py' download>元ファイルをダウンロード</a></div><div class='file-preview' tabindex='0' role='region' aria-label='残差と図：pref_residuals.py'><pre><code><span class="syn-comment"># -*- coding: utf-8 -*-</span>
+<span class="syn-string">&quot;&quot;&quot;「豊かさから予測される平均寿命」と実際のずれを47都道府県について出す。
+
+出力: pref_residuals.csv / pref_residual_chart.svg
+
+豊かさスコアは、SEM の因子得点ではなく３指標（県民所得・課税対象所得・大学等進学率）の
+標準化平均を使う。CFA の因子得点は課税対象所得の残差分散が 0 に潰れる Heywood ケース
+になり、実質その１指標と同じものになってしまうため。両者の結果はほぼ変わらない
+（平均寿命(男)との相関 0.482 → 0.489）。
+&quot;&quot;&quot;</span>
+<span class="syn-keyword">import</span> paths
+
+<span class="syn-keyword">import</span> numpy <span class="syn-keyword">as</span> np
+<span class="syn-keyword">import</span> pandas <span class="syn-keyword">as</span> pd
+
+<span class="syn-keyword">from</span> estat_sem <span class="syn-keyword">import</span> wide
+<span class="syn-keyword">from</span> make_path_diagram <span class="syn-keyword">import</span> BOX_LINE, FONT, INK, INK2, INK3, SURFACE, text
+
+M_COL, F_COL = <span class="syn-string">&quot;#2a78d6&quot;</span>, <span class="syn-string">&quot;#eb6834&quot;</span>          <span class="syn-comment"># 男 / 女</span>
+WEALTH_COLS = [<span class="syn-string">&quot;income&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>]
+
+W, H = <span class="syn-number">1280</span>, <span class="syn-number">858</span>
+ROW = <span class="syn-number">23</span>                                      <span class="syn-comment"># 1都道府県あたりの行の高さ</span>
+DOM = (-<span class="syn-number">1.85</span>, <span class="syn-number">1.35</span>)                           <span class="syn-comment"># 横軸（年）の描画範囲</span>
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">compute</span>():
+    w = wide()
+    z = (w[WEALTH_COLS] - w[WEALTH_COLS].mean()) / w[WEALTH_COLS].std()
+    w[<span class="syn-string">&quot;wealth&quot;</span>] = z.mean(axis=<span class="syn-number">1</span>)
+    <span class="syn-keyword">for</span> y <span class="syn-keyword">in</span> (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>):
+        b, a = np.polyfit(w.wealth, w[y], <span class="syn-number">1</span>)
+        w[y + <span class="syn-string">&quot;_hat&quot;</span>] = a + b * w.wealth
+        w[y + <span class="syn-string">&quot;_res&quot;</span>] = w[y] - w[y + <span class="syn-string">&quot;_hat&quot;</span>]
+        r = np.corrcoef(w.wealth, w[y])[<span class="syn-number">0</span>, <span class="syn-number">1</span>]
+        print(<span class="syn-string">f&quot;</span>{y}<span class="syn-string">: 傾き </span>{b:<span class="syn-string">+.3f</span>}<span class="syn-string"> 年/SD　r = </span>{r:<span class="syn-string">+.3f</span>}<span class="syn-string">　R² = </span>{r**<span class="syn-number">2</span>:<span class="syn-string">.3f</span>}<span class="syn-string">　</span><span class="syn-string">&quot;</span>
+              <span class="syn-string">f&quot;</span><span class="syn-string">残差SD = </span>{w[y+<span class="syn-string">&#x27;_res&#x27;</span>].std():<span class="syn-string">.3f</span>}<span class="syn-string"> 年</span><span class="syn-string">&quot;</span>)
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">男女の残差の相関: </span>{np.corrcoef(w.le_m_res, w.le_f_res)[<span class="syn-number">0</span>,<span class="syn-number">1</span>]:<span class="syn-string">+.3f</span>}<span class="syn-string">&quot;</span>)
+    <span class="syn-keyword">return</span> w.sort_values(<span class="syn-string">&quot;le_m_res&quot;</span>, ascending=<span class="syn-keyword">False</span>)
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">column</span>(d, x0, y0, plot_w, start_rank):
+    <span class="syn-string">&quot;&quot;&quot;1列ぶん（都道府県名・ダンベル・数値）の SVG を返す。&quot;&quot;&quot;</span>
+    lo, hi = DOM
+    sx = <span class="syn-keyword">lambda</span> v: x0 + (v - lo) / (hi - lo) * plot_w
+    out = []
+
+    <span class="syn-comment"># 目盛り</span>
+    <span class="syn-keyword">for</span> t <span class="syn-keyword">in</span> (-<span class="syn-number">1.5</span>, -<span class="syn-number">1.0</span>, -<span class="syn-number">0.5</span>, <span class="syn-number">0.0</span>, <span class="syn-number">0.5</span>, <span class="syn-number">1.0</span>):
+        x = sx(t)
+        major = t == <span class="syn-number">0</span>
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;line x1=&quot;</span>{x:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; y1=&quot;</span>{y0-<span class="syn-number">16</span>}<span class="syn-string">&quot; x2=&quot;</span>{x:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; y2=&quot;</span>{y0+len(d)*ROW:<span class="syn-string">.0f</span>}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+                   <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{<span class="syn-string">&quot;#b9b8b2&quot;</span> <span class="syn-keyword">if</span> major <span class="syn-keyword">else</span> <span class="syn-string">&quot;#eceae4&quot;</span>}<span class="syn-string">&quot; stroke-width=&quot;</span>{<span class="syn-number">1.4</span> <span class="syn-keyword">if</span> major <span class="syn-keyword">else</span> <span class="syn-number">1</span>}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(x, y0 - <span class="syn-number">10</span>, <span class="syn-string">f&quot;</span>{t:<span class="syn-string">+.1f</span>}<span class="syn-string">&quot;</span>.replace(<span class="syn-string">&quot;+0.0&quot;</span>, <span class="syn-string">&quot;0&quot;</span>), <span class="syn-number">10.5</span>, INK3, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;middle&quot;</span>))
+
+    <span class="syn-keyword">for</span> i, (_, r) <span class="syn-keyword">in</span> enumerate(d.iterrows()):
+        y = y0 + i * ROW + ROW / <span class="syn-number">2</span> + <span class="syn-number">4</span>
+        <span class="syn-keyword">if</span> i % <span class="syn-number">2</span> == <span class="syn-number">0</span>:
+            out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;</span>{x0-<span class="syn-number">92</span>}<span class="syn-string">&quot; y=&quot;</span>{y-<span class="syn-number">15</span>:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; width=&quot;</span>{plot_w+<span class="syn-number">190</span>}<span class="syn-string">&quot; height=&quot;</span>{ROW}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+                       <span class="syn-string">f&#x27;</span><span class="syn-string">fill=&quot;#faf9f6&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(x0 - <span class="syn-number">10</span>, y, <span class="syn-string">f&quot;</span>{start_rank+i}<span class="syn-string">&quot;</span>, <span class="syn-number">10.5</span>, INK3, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+        out.append(text(x0 - <span class="syn-number">26</span>, y, r.pref, <span class="syn-number">12</span>, INK2, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+        xm, xf = sx(r.le_m_res), sx(r.le_f_res)
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;line x1=&quot;</span>{xm:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; y1=&quot;</span>{y-<span class="syn-number">4</span>:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; x2=&quot;</span>{xf:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; y2=&quot;</span>{y-<span class="syn-number">4</span>:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+                   <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;#c9c8c2&quot; stroke-width=&quot;1.6&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        <span class="syn-keyword">for</span> x, c <span class="syn-keyword">in</span> ((xf, F_COL), (xm, M_COL)):
+            out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;circle cx=&quot;</span>{x:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; cy=&quot;</span>{y-<span class="syn-number">4</span>:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; r=&quot;4.6&quot; fill=&quot;</span>{c}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+                       <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{SURFACE}<span class="syn-string">&quot; stroke-width=&quot;1.4&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(x0 + plot_w + <span class="syn-number">88</span>, y,
+                        <span class="syn-string">f&quot;</span>{r.le_m_res:<span class="syn-string">+.2f</span>}<span class="syn-string"> / </span>{r.le_f_res:<span class="syn-string">+.2f</span>}<span class="syn-string">&quot;</span>, <span class="syn-number">11</span>, INK3, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+    <span class="syn-keyword">return</span> out
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">build</span>(d):
+    r2 = {y: np.corrcoef(d.wealth, d[y])[<span class="syn-number">0</span>, <span class="syn-number">1</span>] ** <span class="syn-number">2</span> <span class="syn-keyword">for</span> y <span class="syn-keyword">in</span> (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>)}
+    rmf = np.corrcoef(d.le_m_res, d.le_f_res)[<span class="syn-number">0</span>, <span class="syn-number">1</span>]
+    out = [<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 </span>{W}<span class="syn-string"> </span>{H}<span class="syn-string">&quot; width=&quot;</span>{W}<span class="syn-string">&quot; height=&quot;</span>{H}<span class="syn-string">&quot;&gt;</span><span class="syn-string">&#x27;</span>,
+           <span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect width=&quot;</span>{W}<span class="syn-string">&quot; height=&quot;</span>{H}<span class="syn-string">&quot; fill=&quot;</span>{SURFACE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>]
+    out.append(text(<span class="syn-number">48</span>, <span class="syn-number">50</span>, <span class="syn-string">&quot;豊かさで説明できる分を差し引いた平均寿命 — 47都道府県の残差&quot;</span>, <span class="syn-number">21</span>, INK, <span class="syn-string">&quot;700&quot;</span>))
+    out.append(text(<span class="syn-number">48</span>, <span class="syn-number">75</span>, <span class="syn-string">&quot;県民所得・課税対象所得・大学等進学率の標準化平均を「豊かさ」とし、&quot;</span>
+                            <span class="syn-string">&quot;そこから回帰で予測される平均寿命と実測値の差（年）。&quot;</span>
+                            <span class="syn-string">&quot;平均寿命(男)の残差が大きい順。&quot;</span>, <span class="syn-number">12.5</span>, INK3))
+
+    py = <span class="syn-number">128</span>
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;40&quot; y=&quot;</span>{py}<span class="syn-string">&quot; width=&quot;</span>{W-<span class="syn-number">80</span>}<span class="syn-string">&quot; height=&quot;</span>{H-py-<span class="syn-number">92</span>}<span class="syn-string">&quot; rx=&quot;10&quot; fill=&quot;#ffffff&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{BOX_LINE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    hy = py + <span class="syn-number">74</span>
+    <span class="syn-keyword">for</span> x0 <span class="syn-keyword">in</span> (<span class="syn-number">200</span>, <span class="syn-number">780</span>):
+        out.append(text(x0, py + <span class="syn-number">32</span>, <span class="syn-string">&quot;← 予測より短命&quot;</span>, <span class="syn-number">12</span>, INK3))
+        out.append(text(x0 + <span class="syn-number">330</span>, py + <span class="syn-number">32</span>, <span class="syn-string">&quot;予測より長生き →&quot;</span>, <span class="syn-number">12</span>, INK3, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+
+    half = <span class="syn-number">24</span>
+    out += column(d.iloc[:half], <span class="syn-number">200</span>, hy, <span class="syn-number">330</span>, <span class="syn-number">1</span>)
+    out += column(d.iloc[half:], <span class="syn-number">780</span>, hy, <span class="syn-number">330</span>, half + <span class="syn-number">1</span>)
+
+    ly = H - <span class="syn-number">58</span>
+    out.append(text(<span class="syn-number">48</span>, ly, <span class="syn-string">&quot;凡例&quot;</span>, <span class="syn-number">12</span>, INK, <span class="syn-string">&quot;700&quot;</span>))
+    <span class="syn-keyword">for</span> x, c, lab <span class="syn-keyword">in</span> ((<span class="syn-number">100</span>, M_COL, <span class="syn-string">&quot;平均寿命（男）の残差&quot;</span>), (<span class="syn-number">300</span>, F_COL, <span class="syn-string">&quot;平均寿命（女）の残差&quot;</span>)):
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;circle cx=&quot;</span>{x}<span class="syn-string">&quot; cy=&quot;</span>{ly-<span class="syn-number">4</span>}<span class="syn-string">&quot; r=&quot;4.6&quot; fill=&quot;</span>{c}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(x + <span class="syn-number">12</span>, ly, lab, <span class="syn-number">12</span>, INK2))
+    out.append(text(<span class="syn-number">500</span>, ly, <span class="syn-string">&quot;数値は 男 / 女（年）&quot;</span>, <span class="syn-number">12</span>, INK3))
+    out.append(text(<span class="syn-number">48</span>, ly + <span class="syn-number">20</span>,
+                    <span class="syn-string">f&quot;</span><span class="syn-string">※ 豊かさで説明できるのは男性で </span>{r2[<span class="syn-string">&#x27;le_m&#x27;</span>]*<span class="syn-number">100</span>:<span class="syn-string">.0f</span>}<span class="syn-string">%（R²=</span>{r2[<span class="syn-string">&#x27;le_m&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">）、</span><span class="syn-string">&quot;</span>
+                    <span class="syn-string">f&quot;</span><span class="syn-string">女性では </span>{r2[<span class="syn-string">&#x27;le_f&#x27;</span>]*<span class="syn-number">100</span>:<span class="syn-string">.0f</span>}<span class="syn-string">%（R²=</span>{r2[<span class="syn-string">&#x27;le_f&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">）。</span><span class="syn-string">&quot;</span>
+                    <span class="syn-string">&quot;女性の残差は実質そのまま平均寿命の順位であり、豊かさを差し引いた効果ではない。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(text(<span class="syn-number">48</span>, ly + <span class="syn-number">38</span>,
+                    <span class="syn-string">&quot;※ 東京都は豊かさスコアが突出した高レバレッジ点で、予測値が外挿になっている。&quot;</span>
+                    <span class="syn-string">f&quot;</span><span class="syn-string">男女の残差の相関は </span>{rmf:<span class="syn-string">.2f</span>}<span class="syn-string"> で、豊かさ以外の要因は男女で共通している。</span><span class="syn-string">&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;text x=&quot;</span>{W-<span class="syn-number">48</span>}<span class="syn-string">&quot; y=&quot;</span>{ly+<span class="syn-number">38</span>}<span class="syn-string">&quot; text-anchor=&quot;end&quot; font-family=&quot;</span>{FONT}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">font-size=&quot;11&quot; fill=&quot;</span>{INK3}<span class="syn-string">&quot;&gt;出典: 総務省統計局 e-Stat 社会・人口統計体系&lt;/text&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(<span class="syn-string">&quot;&lt;/svg&gt;&quot;</span>)
+    <span class="syn-keyword">return</span> <span class="syn-string">&quot;\n&quot;</span>.join(out)
+
+
+<span class="syn-keyword">if</span> __name__ == <span class="syn-string">&quot;__main__&quot;</span>:
+    d = compute()
+    keep = [<span class="syn-string">&quot;pref&quot;</span>, <span class="syn-string">&quot;wealth&quot;</span>, <span class="syn-string">&quot;income&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>,
+            <span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_m_hat&quot;</span>, <span class="syn-string">&quot;le_m_res&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;le_f_hat&quot;</span>, <span class="syn-string">&quot;le_f_res&quot;</span>]
+    d[keep].to_csv(paths.result(<span class="syn-string">&quot;pref_residuals.csv&quot;</span>), index=<span class="syn-keyword">False</span>)
+    svg = build(d)
+    <span class="syn-keyword">with</span> open(paths.figure(<span class="syn-string">&quot;pref_residual_chart.svg&quot;</span>), <span class="syn-string">&quot;w&quot;</span>) <span class="syn-keyword">as</span> f:
+        f.write(svg)
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">\n-&gt; pref_residuals.csv / pref_residual_chart.svg (</span>{len(svg)/<span class="syn-number">1024</span>:<span class="syn-string">.1f</span>}<span class="syn-string"> KB)</span><span class="syn-string">&quot;</span>)
+</code></pre></div></details></li><li><details><summary>図の生成<span>make_pref_diagram.py — クリックで表示</span></summary><div class='file-toolbar'><a href='src/make_pref_diagram.py' download>元ファイルをダウンロード</a></div><div class='file-preview' tabindex='0' role='region' aria-label='図の生成：make_pref_diagram.py'><pre><code><span class="syn-comment"># -*- coding: utf-8 -*-</span>
+<span class="syn-string">&quot;&quot;&quot;都道府県SEMのパス図を SVG で生成する。出力: pref_path_diagram.svg&quot;&quot;&quot;</span>
+<span class="syn-keyword">import</span> paths
+
+<span class="syn-keyword">import</span> math
+
+<span class="syn-keyword">import</span> numpy <span class="syn-keyword">as</span> np
+<span class="syn-keyword">import</span> pandas <span class="syn-keyword">as</span> pd
+<span class="syn-keyword">import</span> semopy
+
+<span class="syn-keyword">from</span> estat_sem <span class="syn-keyword">import</span> LABELS, MODEL, USED, wide
+<span class="syn-keyword">from</span> make_path_diagram <span class="syn-keyword">import</span> (BOX_LINE, C_NEG, C_NS, C_POS, FONT, INK, INK2, INK3,
+                               SURFACE, Node, arrow, esc, path_style, stars, loading_label, text)
+
+W, H = <span class="syn-number">1280</span>, <span class="syn-number">932</span>
+P = <span class="syn-number">104</span>                      <span class="syn-comment"># パネル上端</span>
+PH = <span class="syn-number">654</span>                     <span class="syn-comment"># パネル高さ</span>
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">covariance</span>(a, b, label, bulge=<span class="syn-number">105</span>):
+    <span class="syn-string">&quot;&quot;&quot;両端矢印の曲線（相関を表す）。a, b の右側にふくらませる。&quot;&quot;&quot;</span>
+    x1, y1 = a.cx + a.w / <span class="syn-number">2</span>, a.cy
+    x2, y2 = b.cx + b.w / <span class="syn-number">2</span>, b.cy
+    cx, cy = max(x1, x2) + bulge, (y1 + y2) / <span class="syn-number">2</span>
+    d = <span class="syn-string">f&quot;</span><span class="syn-string">M</span>{x1}<span class="syn-string">,</span>{y1}<span class="syn-string"> Q</span>{cx}<span class="syn-string">,</span>{cy}<span class="syn-string"> </span>{x2}<span class="syn-string">,</span>{y2}<span class="syn-string">&quot;</span>
+    lx, ly = <span class="syn-number">.25</span> * x1 + <span class="syn-number">.5</span> * cx + <span class="syn-number">.25</span> * x2, (y1 + y2) / <span class="syn-number">2</span>
+    s = (<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;</span>{d}<span class="syn-string">&quot; fill=&quot;none&quot; stroke=&quot;</span>{INK3}<span class="syn-string">&quot; stroke-width=&quot;1.5&quot; </span><span class="syn-string">&#x27;</span>
+         <span class="syn-string">f&#x27;</span><span class="syn-string">marker-end=&quot;url(#ah-</span>{INK3[<span class="syn-number">1</span>:]}<span class="syn-string">)&quot; marker-start=&quot;url(#ah-</span>{INK3[<span class="syn-number">1</span>:]}<span class="syn-string">)&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    bw = len(label) * <span class="syn-number">7.4</span> + <span class="syn-number">10</span>
+    s += (<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;</span>{lx-bw/<span class="syn-number">2</span>:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; y=&quot;</span>{ly-<span class="syn-number">10</span>}<span class="syn-string">&quot; width=&quot;</span>{bw:<span class="syn-string">.1f</span>}<span class="syn-string">&quot; height=&quot;20&quot; rx=&quot;4&quot; </span><span class="syn-string">&#x27;</span>
+          <span class="syn-string">f&#x27;</span><span class="syn-string">fill=&quot;</span>{SURFACE}<span class="syn-string">&quot; opacity=&quot;0.95&quot;/&gt;</span><span class="syn-string">&#x27;</span> + text(lx, ly + <span class="syn-number">4</span>, label, <span class="syn-number">12</span>, INK3, <span class="syn-string">&quot;600&quot;</span>, <span class="syn-string">&quot;middle&quot;</span>))
+    <span class="syn-keyword">return</span> s
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">build</span>():
+    w = wide()
+    z = (w[USED] - w[USED].mean()) / w[USED].std()
+    m = semopy.Model(MODEL)
+    m.fit(z)
+    e = m.inspect(std_est=<span class="syn-keyword">True</span>)
+    s = semopy.calc_stats(m).T[<span class="syn-string">&quot;Value&quot;</span>]
+    est = {(r.lval, r.rval, r.op): (float(r[<span class="syn-string">&quot;Est. Std&quot;</span>]),
+                                    <span class="syn-keyword">None</span> <span class="syn-keyword">if</span> r[<span class="syn-string">&quot;p-value&quot;</span>] == <span class="syn-string">&quot;-&quot;</span> <span class="syn-keyword">else</span> float(r[<span class="syn-string">&quot;p-value&quot;</span>]))
+           <span class="syn-keyword">for</span> _, r <span class="syn-keyword">in</span> e.iterrows()}
+    boot = pd.read_csv(paths.result(<span class="syn-string">&quot;pref_bootstrap.csv&quot;</span>)).set_index(<span class="syn-string">&quot;key&quot;</span>)
+
+    out = [<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 </span>{W}<span class="syn-string"> </span>{H}<span class="syn-string">&quot; width=&quot;</span>{W}<span class="syn-string">&quot; height=&quot;</span>{H}<span class="syn-string">&quot;&gt;</span><span class="syn-string">&#x27;</span>,
+           <span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect width=&quot;</span>{W}<span class="syn-string">&quot; height=&quot;</span>{H}<span class="syn-string">&quot; fill=&quot;</span>{SURFACE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>, <span class="syn-string">&quot;&lt;defs&gt;&quot;</span>]
+    <span class="syn-keyword">for</span> c <span class="syn-keyword">in</span> (C_POS, C_NEG, C_NS, INK3):
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;marker id=&quot;ah-</span>{c[<span class="syn-number">1</span>:]}<span class="syn-string">&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;9&quot; refY=&quot;5&quot; </span><span class="syn-string">&#x27;</span>
+                   <span class="syn-string">f&#x27;</span><span class="syn-string">markerWidth=&quot;7&quot; markerHeight=&quot;7&quot; orient=&quot;auto-start-reverse&quot;&gt;</span><span class="syn-string">&#x27;</span>
+                   <span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;M0,1 L9,5 L0,9 z&quot; fill=&quot;</span>{c}<span class="syn-string">&quot;/&gt;&lt;/marker&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(<span class="syn-string">&quot;&lt;/defs&gt;&quot;</span>)
+
+    out.append(text(<span class="syn-number">48</span>, <span class="syn-number">52</span>, <span class="syn-string">&quot;都道府県の健康格差は、豊かさか、医療の量か — 47都道府県の構造方程式モデリング（SEM）&quot;</span>,
+                    <span class="syn-number">22</span>, INK, <span class="syn-string">&quot;700&quot;</span>))
+    out.append(text(<span class="syn-number">48</span>, <span class="syn-number">78</span>, <span class="syn-string">&quot;e-Stat 社会・人口統計体系「社会生活統計指標－都道府県の指標－2024」&quot;</span>
+                            <span class="syn-string">&quot;（2015年前後の値）　semopy 2.3.11・最尤法・全変数を標準化&quot;</span>, <span class="syn-number">13</span>, INK3))
+
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;40&quot; y=&quot;</span>{P}<span class="syn-string">&quot; width=&quot;</span>{W-<span class="syn-number">80</span>}<span class="syn-string">&quot; height=&quot;</span>{PH}<span class="syn-string">&quot; rx=&quot;10&quot; fill=&quot;#ffffff&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{BOX_LINE}<span class="syn-string">&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(text(<span class="syn-number">64</span>, P + <span class="syn-number">32</span>, <span class="syn-string">&quot;経済的豊かさ・入院医療キャパシティ → 男女別の平均寿命&quot;</span>, <span class="syn-number">16</span>, INK, <span class="syn-string">&quot;700&quot;</span>))
+    out.append(text(<span class="syn-number">64</span>, P + <span class="syn-number">56</span>,
+                    <span class="syn-string">f&quot;</span><span class="syn-string">N = 47 都道府県　χ²/df = </span>{s[<span class="syn-string">&#x27;chi2&#x27;</span>]/s[<span class="syn-string">&#x27;DoF&#x27;</span>]:<span class="syn-string">.2f</span>}<span class="syn-string">　CFI = </span>{s[<span class="syn-string">&#x27;CFI&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　</span><span class="syn-string">&quot;</span>
+                    <span class="syn-string">f&quot;</span><span class="syn-string">TLI = </span>{s[<span class="syn-string">&#x27;TLI&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　RMSEA = </span>{s[<span class="syn-string">&#x27;RMSEA&#x27;</span>]:<span class="syn-string">.3f</span>}<span class="syn-string">　残差相関の最大 |r| = 0.142</span><span class="syn-string">&quot;</span>,
+                    <span class="syn-number">12.5</span>, INK3))
+
+    WEALTH = Node(<span class="syn-number">400</span>, P + <span class="syn-number">180</span>, <span class="syn-number">172</span>, <span class="syn-number">66</span>, <span class="syn-string">&quot;経済的豊かさ&quot;</span>, <span class="syn-keyword">True</span>)
+    MED = Node(<span class="syn-number">400</span>, P + <span class="syn-number">430</span>, <span class="syn-number">210</span>, <span class="syn-number">66</span>, <span class="syn-string">&quot;入院医療キャパシティ&quot;</span>, <span class="syn-keyword">True</span>, <span class="syn-string">&quot;人口当たり&quot;</span>)
+    LE_M = Node(<span class="syn-number">985</span>, P + <span class="syn-number">185</span>, <span class="syn-number">224</span>, <span class="syn-number">58</span>, <span class="syn-string">&quot;平均寿命（男）&quot;</span>, <span class="syn-keyword">False</span>, <span class="syn-string">&quot;78.7〜81.8年（青森〜滋賀）&quot;</span>)
+    LE_F = Node(<span class="syn-number">985</span>, P + <span class="syn-number">430</span>, <span class="syn-number">224</span>, <span class="syn-number">58</span>, <span class="syn-string">&quot;平均寿命（女）&quot;</span>, <span class="syn-keyword">False</span>, <span class="syn-string">&quot;85.9〜87.7年（青森〜長野）&quot;</span>)
+
+    wb = [Node(<span class="syn-number">150</span>, P + <span class="syn-number">125</span> + i * <span class="syn-number">55</span>, <span class="syn-number">196</span>, <span class="syn-number">38</span>, LABELS[k])
+          <span class="syn-keyword">for</span> i, k <span class="syn-keyword">in</span> enumerate([<span class="syn-string">&quot;income&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>])]
+    mb = [Node(<span class="syn-number">150</span>, P + <span class="syn-number">375</span> + i * <span class="syn-number">55</span>, <span class="syn-number">196</span>, <span class="syn-number">38</span>, LABELS[k])
+          <span class="syn-keyword">for</span> i, k <span class="syn-keyword">in</span> enumerate([<span class="syn-string">&quot;nurses&quot;</span>, <span class="syn-string">&quot;beds&quot;</span>, <span class="syn-string">&quot;hosp&quot;</span>])]
+
+    <span class="syn-keyword">for</span> lat, boxes, keys <span class="syn-keyword">in</span> [(WEALTH, wb, [<span class="syn-string">&quot;income&quot;</span>, <span class="syn-string">&quot;tax_income&quot;</span>, <span class="syn-string">&quot;univ_rate&quot;</span>]),
+                             (MED, mb, [<span class="syn-string">&quot;nurses&quot;</span>, <span class="syn-string">&quot;beds&quot;</span>, <span class="syn-string">&quot;hosp&quot;</span>])]:
+        <span class="syn-keyword">for</span> n, k <span class="syn-keyword">in</span> zip(boxes, keys):
+            out.append(arrow(lat, n, loading_label(*est[(k, lat_key(lat), <span class="syn-string">&#x27;~&#x27;</span>)]), INK3, <span class="syn-number">1.3</span>, lab_t=<span class="syn-number">.46</span>))
+
+    <span class="syn-keyword">for</span> src, dst, key, t <span class="syn-keyword">in</span> [(WEALTH, MED, (<span class="syn-string">&quot;MED&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), <span class="syn-number">.5</span>),
+                             (WEALTH, LE_M, (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), <span class="syn-number">.5</span>),
+                             (WEALTH, LE_F, (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;WEALTH&quot;</span>), <span class="syn-number">.30</span>),
+                             (MED, LE_M, (<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>), <span class="syn-number">.30</span>),
+                             (MED, LE_F, (<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;MED&quot;</span>), <span class="syn-number">.5</span>)]:
+        v, p = est[(key[<span class="syn-number">0</span>], key[<span class="syn-number">1</span>], <span class="syn-string">&quot;~&quot;</span>)]
+        c, wd, d = path_style(v, p)
+        out.append(arrow(src, dst, <span class="syn-string">f&quot;</span>{v:<span class="syn-string">.2f</span>}{stars(p)}<span class="syn-string">&quot;</span>, c, wd, d, lab_t=t))
+
+    cov = est.get((<span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;~~&quot;</span>)) <span class="syn-keyword">or</span> est.get((<span class="syn-string">&quot;le_f&quot;</span>, <span class="syn-string">&quot;le_m&quot;</span>, <span class="syn-string">&quot;~~&quot;</span>))
+    out.append(covariance(LE_M, LE_F, <span class="syn-string">f&quot;</span><span class="syn-string">残差相関 </span>{cov[<span class="syn-number">0</span>]:<span class="syn-string">.2f</span>}<span class="syn-string">&quot;</span>))
+
+    <span class="syn-keyword">for</span> n <span class="syn-keyword">in</span> (WEALTH, MED, LE_M, LE_F, *wb, *mb):
+        out.append(n.svg())
+
+    <span class="syn-comment"># ---- 国レベルとの対比 ----</span>
+    by = P + <span class="syn-number">522</span>
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;60&quot; y=&quot;</span>{by}<span class="syn-string">&quot; width=&quot;520&quot; height=&quot;112&quot; rx=&quot;8&quot; fill=&quot;#f2f7fd&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;#cfe0f5&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(text(<span class="syn-number">78</span>, by + <span class="syn-number">24</span>, <span class="syn-string">&quot;国レベル（World Bank 128か国）との対比&quot;</span>, <span class="syn-number">12.5</span>, <span class="syn-string">&quot;#1c5cab&quot;</span>, <span class="syn-string">&quot;700&quot;</span>))
+    <span class="syn-keyword">for</span> i, line <span class="syn-keyword">in</span> enumerate([
+            <span class="syn-string">&quot;国の比較では「人的資本」と「経済的繁栄」が標準化係数 0.97 で&quot;</span>,
+            <span class="syn-string">&quot;潰れ、別々の潜在変数として立てられなかった。47都道府県では&quot;</span>,
+            <span class="syn-string">&quot;所得と平均寿命(女)の相関が 0.06 しかなく、豊かさと健康は&quot;</span>,
+            <span class="syn-string">&quot;はっきり別の次元として分離する。&quot;</span>]):
+        out.append(text(<span class="syn-number">78</span>, by + <span class="syn-number">46</span> + i * <span class="syn-number">17</span>, line, <span class="syn-number">11.5</span>, INK2))
+
+    <span class="syn-comment"># ---- ブートストラップ 95% 区間 ----</span>
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;600&quot; y=&quot;</span>{by}<span class="syn-string">&quot; width=&quot;630&quot; height=&quot;112&quot; rx=&quot;8&quot; fill=&quot;#fdf8ef&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;#e8d9b8&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(text(<span class="syn-number">618</span>, by + <span class="syn-number">24</span>, <span class="syn-string">&quot;ブートストラップ（復元抽出600回）標準化係数の 95% 区間&quot;</span>,
+                    <span class="syn-number">12.5</span>, <span class="syn-string">&quot;#8a6d1f&quot;</span>, <span class="syn-string">&quot;700&quot;</span>))
+    rows = [(<span class="syn-string">&quot;MED&lt;-WEALTH&quot;</span>, <span class="syn-string">&quot;豊かさ → 医療キャパ&quot;</span>), (<span class="syn-string">&quot;le_m&lt;-WEALTH&quot;</span>, <span class="syn-string">&quot;豊かさ → 平均寿命(男)&quot;</span>),
+            (<span class="syn-string">&quot;le_m&lt;-MED&quot;</span>, <span class="syn-string">&quot;医療キャパ → 平均寿命(男)&quot;</span>), (<span class="syn-string">&quot;le_f&lt;-WEALTH&quot;</span>, <span class="syn-string">&quot;豊かさ → 平均寿命(女)&quot;</span>),
+            (<span class="syn-string">&quot;le_f&lt;-MED&quot;</span>, <span class="syn-string">&quot;医療キャパ → 平均寿命(女)&quot;</span>)]
+    <span class="syn-keyword">for</span> i, (k, lab) <span class="syn-keyword">in</span> enumerate(rows):
+        r = boot.loc[k]
+        y = by + <span class="syn-number">46</span> + i * <span class="syn-number">13.5</span>
+        zero = r[<span class="syn-string">&quot;0をまたぐ&quot;</span>] == <span class="syn-string">&quot;はい&quot;</span>
+        col = INK3 <span class="syn-keyword">if</span> zero <span class="syn-keyword">else</span> INK2
+        out.append(text(<span class="syn-number">618</span>, y, lab, <span class="syn-number">11</span>, col))
+        out.append(text(<span class="syn-number">830</span>, y, <span class="syn-string">f&quot;</span>{r[<span class="syn-string">&#x27;中央値&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">&quot;</span>, <span class="syn-number">11</span>, col, <span class="syn-string">&quot;600&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+        out.append(text(<span class="syn-number">960</span>, y, <span class="syn-string">f&quot;</span><span class="syn-string">[</span>{r[<span class="syn-string">&#x27;2.5%&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">, </span>{r[<span class="syn-string">&#x27;97.5%&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">]</span><span class="syn-string">&quot;</span>, <span class="syn-number">11</span>, col, <span class="syn-string">&quot;400&quot;</span>, <span class="syn-string">&quot;end&quot;</span>))
+        out.append(text(<span class="syn-number">980</span>, y, <span class="syn-string">&quot;0をまたぐ（効果を示せない）&quot;</span> <span class="syn-keyword">if</span> zero <span class="syn-keyword">else</span> <span class="syn-string">&quot;0を含まない&quot;</span>, <span class="syn-number">11</span>, col))
+
+    <span class="syn-comment"># ---- 凡例 ----</span>
+    lg = H - <span class="syn-number">108</span>
+    out.append(text(<span class="syn-number">48</span>, lg, <span class="syn-string">&quot;凡例&quot;</span>, <span class="syn-number">12</span>, INK, <span class="syn-string">&quot;700&quot;</span>))
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;ellipse cx=&quot;110&quot; cy=&quot;</span>{lg-<span class="syn-number">5</span>}<span class="syn-string">&quot; rx=&quot;21&quot; ry=&quot;11&quot; fill=&quot;#eef4fd&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{C_POS}<span class="syn-string">&quot; stroke-width=&quot;2&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(text(<span class="syn-number">140</span>, lg, <span class="syn-string">&quot;潜在変数&quot;</span>, <span class="syn-number">12</span>, INK2))
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;rect x=&quot;206&quot; y=&quot;</span>{lg-<span class="syn-number">16</span>}<span class="syn-string">&quot; width=&quot;42&quot; height=&quot;22&quot; rx=&quot;4&quot; fill=&quot;#ffffff&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">stroke=&quot;</span>{BOX_LINE}<span class="syn-string">&quot; stroke-width=&quot;1.5&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+    out.append(text(<span class="syn-number">256</span>, lg, <span class="syn-string">&quot;観測変数&quot;</span>, <span class="syn-number">12</span>, INK2))
+    <span class="syn-keyword">for</span> x, col, wd, ds, lab <span class="syn-keyword">in</span> [(<span class="syn-number">330</span>, C_POS, <span class="syn-number">2.4</span>, <span class="syn-string">&quot;&quot;</span>, <span class="syn-string">&quot;正の効果（有意）&quot;</span>),
+                                (<span class="syn-number">500</span>, C_NEG, <span class="syn-number">2.4</span>, <span class="syn-string">&quot;&quot;</span>, <span class="syn-string">&quot;負の効果（有意）&quot;</span>),
+                                (<span class="syn-number">670</span>, C_NS, <span class="syn-number">1.6</span>, <span class="syn-string">&#x27; stroke-dasharray=&quot;6 4&quot;&#x27;</span>, <span class="syn-string">&quot;非有意&quot;</span>)]:
+        out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;path d=&quot;M</span>{x}<span class="syn-string">,</span>{lg-<span class="syn-number">5</span>}<span class="syn-string"> L</span>{x+<span class="syn-number">52</span>}<span class="syn-string">,</span>{lg-<span class="syn-number">5</span>}<span class="syn-string">&quot; stroke=&quot;</span>{col}<span class="syn-string">&quot; stroke-width=&quot;</span>{wd}<span class="syn-string">&quot;</span><span class="syn-string">&#x27;</span>
+                   <span class="syn-string">f&#x27;</span>{ds}<span class="syn-string"> marker-end=&quot;url(#ah-</span>{col[<span class="syn-number">1</span>:]}<span class="syn-string">)&quot;/&gt;</span><span class="syn-string">&#x27;</span>)
+        out.append(text(x + <span class="syn-number">60</span>, lg, lab, <span class="syn-number">12</span>, INK2))
+    out.append(text(<span class="syn-number">790</span>, lg, <span class="syn-string">&quot;数値は標準化係数　*** p&lt;.001　** p&lt;.01　* p&lt;.05&quot;</span>, <span class="syn-number">12</span>, INK3))
+    out.append(text(<span class="syn-number">48</span>, lg + <span class="syn-number">22</span>,
+                    <span class="syn-string">&quot;※ N = 47 に対して推定パラメータが多く、RMSEA は小標本で過大に出る。&quot;</span>
+                    <span class="syn-string">&quot;有意性の判断はブートストラップ区間を優先すること。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(text(<span class="syn-number">48</span>, lg + <span class="syn-number">40</span>,
+                    <span class="syn-string">&quot;※ 医師数は他指標との残差相関が大きい（医学部の所在に規定される）ため、&quot;</span>
+                    <span class="syn-string">&quot;入院医療キャパシティの指標から除外した。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    inf = pd.read_csv(paths.result(<span class="syn-string">&quot;pref_influence.csv&quot;</span>))
+    inf = inf[inf[<span class="syn-string">&quot;モデル&quot;</span>] == <span class="syn-string">&quot;健康&quot;</span>]
+    g = <span class="syn-keyword">lambda</span> k: inf[inf[<span class="syn-string">&quot;パス&quot;</span>].str.contains(k)].iloc[<span class="syn-number">0</span>]
+    a, b = g(<span class="syn-string">&quot;平均寿命\\(男\\)$&quot;</span>), g(<span class="syn-string">&quot;入院医療キャパシティ$&quot;</span>)
+    out.append(text(<span class="syn-number">48</span>, lg + <span class="syn-number">58</span>,
+                    <span class="syn-string">f&quot;</span><span class="syn-string">※ 1県抜き（47通り）での振れ: 豊かさ→平均寿命(男) </span>{a[<span class="syn-string">&#x27;LOO最小&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">〜</span>{a[<span class="syn-string">&#x27;LOO最大&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">、</span><span class="syn-string">&quot;</span>
+                    <span class="syn-string">f&quot;</span><span class="syn-string">豊かさ→医療キャパ </span>{b[<span class="syn-string">&#x27;LOO最小&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">〜</span>{b[<span class="syn-string">&#x27;LOO最大&#x27;</span>]:<span class="syn-string">+.2f</span>}<span class="syn-string">。</span><span class="syn-string">&quot;</span>
+                    <span class="syn-string">&quot;確立した2本はどちらも符号が反転しない。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(<span class="syn-string">f&#x27;</span><span class="syn-string">&lt;text x=&quot;</span>{W-<span class="syn-number">48</span>}<span class="syn-string">&quot; y=&quot;</span>{lg+<span class="syn-number">22</span>}<span class="syn-string">&quot; text-anchor=&quot;end&quot; font-family=&quot;</span>{FONT}<span class="syn-string">&quot; </span><span class="syn-string">&#x27;</span>
+               <span class="syn-string">f&#x27;</span><span class="syn-string">font-size=&quot;11&quot; fill=&quot;</span>{INK3}<span class="syn-string">&quot;&gt;出典: 総務省統計局 e-Stat 社会・人口統計体系&lt;/text&gt;</span><span class="syn-string">&#x27;</span>)
+
+    out.append(text(<span class="syn-number">48</span>, H - <span class="syn-number">25</span>,
+                    <span class="syn-string">&quot;因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(text(<span class="syn-number">48</span>, H - <span class="syn-number">9</span>,
+                    <span class="syn-string">&quot;星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。&quot;</span>, <span class="syn-number">11</span>, INK3))
+    out.append(<span class="syn-string">&quot;&lt;/svg&gt;&quot;</span>)
+    <span class="syn-keyword">return</span> <span class="syn-string">&quot;\n&quot;</span>.join(out)
+
+
+<span class="syn-keyword">def</span> <span class="syn-definition">lat_key</span>(node):
+    <span class="syn-keyword">return</span> <span class="syn-string">&quot;WEALTH&quot;</span> <span class="syn-keyword">if</span> node.label == <span class="syn-string">&quot;経済的豊かさ&quot;</span> <span class="syn-keyword">else</span> <span class="syn-string">&quot;MED&quot;</span>
+
+
+<span class="syn-keyword">if</span> __name__ == <span class="syn-string">&quot;__main__&quot;</span>:
+    svg = build()
+    <span class="syn-keyword">with</span> open(paths.figure(<span class="syn-string">&quot;pref_path_diagram.svg&quot;</span>), <span class="syn-string">&quot;w&quot;</span>) <span class="syn-keyword">as</span> f:
+        f.write(svg)
+    print(<span class="syn-string">f&quot;</span><span class="syn-string">-&gt; pref_path_diagram.svg  (</span>{len(svg)/<span class="syn-number">1024</span>:<span class="syn-string">.1f</span>}<span class="syn-string"> KB)</span><span class="syn-string">&quot;</span>)
+</code></pre></div></details></li></ul><p><a href='https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/02-prefectures.md'>詳細ドキュメント →</a></p></section>
+<nav aria-label="分析ページ"><a href='index.html'>← 分析の一覧に戻る</a><a href='country.html'>01 国レベル</a><a href='pref-health.html' aria-current='page'>02 都道府県の健康</a><a href='pref-job.html'>03 都道府県の転職</a><a href='muni.html'>04 市区町村</a><a href='guide.html'>図の読み方</a></nav>
+
+<section id="repro"><h2>再現と、詳細ドキュメント</h2>
+<p>Python 3.13 が必要（3.14 には semopy の wheel が無い）。
+<code>make setup &amp;&amp; make all</code> で全分析と全図が約50秒で再生成される。
+<code>data/raw/</code> に生データをコミットしてあるためネットワークは不要。</p>
+<ul class="files">
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/README.md">README</a><span>結果の要約・方法論の教訓・リポジトリ構成</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/AGENTS.md">AGENTS.md</a><span>後続の分析者（人・AI）向けの作法と落とし穴</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/01-countries.md">01 国レベル</a><span>docs/01-countries.md</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/02-prefectures.md">02 都道府県</a><span>docs/02-prefectures.md</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/03-municipalities.md">03 市区町村</a><span>docs/03-municipalities.md</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/04-methodology.md">04 方法論の教訓</a><span>docs/04-methodology.md</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
+<li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/Makefile">Makefile</a><span>再現用エントリポイント</span></li>
+</ul></section>
+
+<footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
+このページは <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
+</main><script>
+document.querySelectorAll('.file-search').forEach(label => {
+  label.hidden = false;
+  const details = label.closest('details');
+  const rows = Array.from(details.querySelectorAll('tbody tr'));
+  const searchable = rows.map(row => row.textContent.toLocaleLowerCase());
+  const output = details.querySelector('output');
+  label.querySelector('input').addEventListener('input', event => {
+    const query = event.target.value.trim().toLocaleLowerCase();
+    let count = 0;
+    rows.forEach((row, index) => {
+      row.hidden = !searchable[index].includes(query);
+      if (!row.hidden) count++;
+    });
+    output.textContent = `${count.toLocaleString()} / ${rows.length.toLocaleString()} 行`;
+  });
+});
+</script></body></html>

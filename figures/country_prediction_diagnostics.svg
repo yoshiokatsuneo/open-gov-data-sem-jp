@@ -1,0 +1,313 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690" role="img">
+<title>国：一人当たりGDPの成長：実測・予測と残差</title>
+<rect width="1280" height="690" fill="#fcfcfb"/>
+<text x="40" y="38" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="22" font-weight="700" fill="#0b0b0b">国：一人当たりGDPの成長 — 予測とのずれ</text>
+<text x="40" y="66" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#77766f">N = 128 ｜単位：対数差×100｜全点を表示・各点は国／地域</text>
+<text x="40" y="92" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">補助回帰：制度・所得調整後人的資本の標準化平均と初期所得。SEMの潜在成長因子の予測ではない。</text>
+<text x="92" y="128" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">実測値と予測値（破線は一致線）</text>
+<path d="M92.00,154v440" stroke="#d5d4cf"/>
+<text x="92.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-50.32</text>
+<path d="M202.00,154v440" stroke="#d5d4cf"/>
+<text x="202.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-17.22</text>
+<path d="M312.00,154v440" stroke="#d5d4cf"/>
+<text x="312.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">15.88</text>
+<path d="M422.00,154v440" stroke="#d5d4cf"/>
+<text x="422.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">48.99</text>
+<path d="M532.00,154v440" stroke="#d5d4cf"/>
+<text x="532.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">82.09</text>
+<path d="M92,594.00h440" stroke="#d5d4cf"/>
+<text x="82" y="598.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-50.32</text>
+<path d="M92,484.00h440" stroke="#d5d4cf"/>
+<text x="82" y="488.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-17.22</text>
+<path d="M92,374.00h440" stroke="#d5d4cf"/>
+<text x="82" y="378.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">15.88</text>
+<path d="M92,264.00h440" stroke="#d5d4cf"/>
+<text x="82" y="268.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">48.99</text>
+<path d="M92,154.00h440" stroke="#d5d4cf"/>
+<text x="82" y="158.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">82.09</text>
+<path d="M92,154v440h440" fill="none" stroke="#77766f"/>
+<path d="M92.0,594.0L532.0,154.0" stroke="#77766f" stroke-dasharray="5 4" fill="none"/>
+<circle cx="222.91" cy="518.04" r="3" fill="#2a78d6" opacity="0.6"><title>Angola：実測 -27.464 / 予測 -10.927 / 残差 -16.537</title></circle>
+<circle cx="336.43" cy="279.94" r="3" fill="#2a78d6" opacity="0.6"><title>Albania：実測 44.189 / 予測 23.235 / 残差 +20.954</title></circle>
+<circle cx="291.23" cy="438.53" r="3" fill="#2a78d6" opacity="0.6"><title>Argentina：実測 -3.534 / 予測 9.632 / 残差 -13.166</title></circle>
+<circle cx="321.68" cy="288.47" r="3" fill="#2a78d6" opacity="0.6"><title>Armenia：実測 41.624 / 予測 18.796 / 残差 +22.828</title></circle>
+<circle cx="306.84" cy="404.19" r="3" fill="#2a78d6" opacity="0.6"><title>Austria：実測 6.799 / 予測 14.330 / 残差 -7.531</title></circle>
+<circle cx="343.43" cy="391.85" r="3" fill="#2a78d6" opacity="0.6"><title>Belgium：実測 10.511 / 予測 25.343 / 残差 -14.832</title></circle>
+<circle cx="306.12" cy="341.94" r="3" fill="#2a78d6" opacity="0.6"><title>Benin：実測 25.533 / 予測 14.114 / 残差 +11.419</title></circle>
+<circle cx="303.89" cy="357.36" r="3" fill="#2a78d6" opacity="0.6"><title>Burkina Faso：実測 20.892 / 予測 13.442 / 残差 +7.449</title></circle>
+<circle cx="304.98" cy="307.02" r="3" fill="#2a78d6" opacity="0.6"><title>Bulgaria：実測 36.041 / 予測 13.771 / 残差 +22.271</title></circle>
+<circle cx="282.61" cy="408.66" r="3" fill="#2a78d6" opacity="0.6"><title>Bahrain：実測 5.454 / 予測 7.040 / 残差 -1.585</title></circle>
+<circle cx="288.37" cy="420.18" r="3" fill="#2a78d6" opacity="0.6"><title>Bahamas, The：実測 1.986 / 予測 8.773 / 残差 -6.787</title></circle>
+<circle cx="339.18" cy="285.83" r="3" fill="#2a78d6" opacity="0.6"><title>Bosnia and Herzegovina：実測 42.418 / 予測 24.064 / 残差 +18.354</title></circle>
+<circle cx="304.97" cy="418.43" r="3" fill="#2a78d6" opacity="0.6"><title>Belarus：実測 2.512 / 予測 13.769 / 残差 -11.257</title></circle>
+<circle cx="308.76" cy="407.12" r="3" fill="#2a78d6" opacity="0.6"><title>Belize：実測 5.917 / 予測 14.910 / 残差 -8.992</title></circle>
+<circle cx="298.14" cy="376.83" r="3" fill="#2a78d6" opacity="0.6"><title>Bolivia：実測 15.031 / 予測 11.714 / 残差 +3.317</title></circle>
+<circle cx="305.81" cy="431.73" r="3" fill="#2a78d6" opacity="0.6"><title>Brazil：実測 -1.488 / 予測 14.021 / 残差 -15.509</title></circle>
+<circle cx="256.29" cy="480.36" r="3" fill="#2a78d6" opacity="0.6"><title>Brunei Darussalam：実測 -16.125 / 予測 -0.880 / 残差 -15.245</title></circle>
+<circle cx="298.38" cy="349.51" r="3" fill="#2a78d6" opacity="0.6"><title>Bhutan：実測 23.253 / 予測 11.786 / 残差 +11.467</title></circle>
+<circle cx="286.76" cy="535.75" r="3" fill="#2a78d6" opacity="0.6"><title>Central African Republic：実測 -32.793 / 予測 8.288 / 残差 -41.081</title></circle>
+<circle cx="318.10" cy="399.93" r="3" fill="#2a78d6" opacity="0.6"><title>Canada：実測 8.082 / 予測 17.721 / 残差 -9.639</title></circle>
+<circle cx="301.90" cy="389.11" r="3" fill="#2a78d6" opacity="0.6"><title>Switzerland：実測 11.337 / 予測 12.843 / 残差 -1.506</title></circle>
+<circle cx="322.97" cy="392.67" r="3" fill="#2a78d6" opacity="0.6"><title>Chile：実測 10.264 / 予測 19.185 / 残差 -8.921</title></circle>
+<circle cx="271.71" cy="296.21" r="3" fill="#2a78d6" opacity="0.6"><title>Cote d'Ivoire：実測 39.294 / 予測 3.760 / 残差 +35.534</title></circle>
+<circle cx="278.74" cy="393.51" r="3" fill="#2a78d6" opacity="0.6"><title>Cameroon：実測 10.014 / 予測 5.874 / 残差 +4.139</title></circle>
+<circle cx="326.65" cy="351.14" r="3" fill="#2a78d6" opacity="0.6"><title>Congo, Dem. Rep.：実測 22.764 / 予測 20.293 / 残差 +2.472</title></circle>
+<circle cx="258.23" cy="553.28" r="3" fill="#2a78d6" opacity="0.6"><title>Congo, Rep.：実測 -38.067 / 予測 -0.298 / 残差 -37.769</title></circle>
+<circle cx="317.41" cy="363.97" r="3" fill="#2a78d6" opacity="0.6"><title>Colombia：実測 18.903 / 予測 17.511 / 残差 +1.392</title></circle>
+<circle cx="313.97" cy="413.55" r="3" fill="#2a78d6" opacity="0.6"><title>Comoros：実測 3.983 / 予測 16.476 / 残差 -12.493</title></circle>
+<circle cx="344.58" cy="367.22" r="3" fill="#2a78d6" opacity="0.6"><title>Cabo Verde：実測 17.924 / 予測 25.689 / 残差 -7.765</title></circle>
+<circle cx="334.34" cy="348.31" r="3" fill="#2a78d6" opacity="0.6"><title>Costa Rica：実測 23.614 / 予測 22.607 / 残差 +1.007</title></circle>
+<circle cx="326.96" cy="340.29" r="3" fill="#2a78d6" opacity="0.6"><title>Cyprus：実測 26.027 / 予測 20.386 / 残差 +5.642</title></circle>
+<circle cx="316.79" cy="358.03" r="3" fill="#2a78d6" opacity="0.6"><title>Czechia：実測 20.689 / 予測 17.325 / 残差 +3.364</title></circle>
+<circle cx="312.53" cy="395.86" r="3" fill="#2a78d6" opacity="0.6"><title>Germany：実測 9.306 / 予測 16.044 / 残差 -6.738</title></circle>
+<circle cx="325.88" cy="380.80" r="3" fill="#2a78d6" opacity="0.6"><title>Denmark：実測 13.837 / 予測 20.060 / 残差 -6.223</title></circle>
+<circle cx="284.19" cy="295.56" r="3" fill="#2a78d6" opacity="0.6"><title>Dominican Republic：実測 39.491 / 予測 7.515 / 残差 +31.976</title></circle>
+<circle cx="306.68" cy="424.87" r="3" fill="#2a78d6" opacity="0.6"><title>Algeria：実測 0.574 / 予測 14.284 / 残差 -13.710</title></circle>
+<circle cx="318.82" cy="396.76" r="3" fill="#2a78d6" opacity="0.6"><title>Ecuador：実測 9.035 / 予測 17.937 / 残差 -8.902</title></circle>
+<circle cx="286.13" cy="352.34" r="3" fill="#2a78d6" opacity="0.6"><title>Egypt, Arab Rep.：実測 22.402 / 予測 8.098 / 残差 +14.304</title></circle>
+<circle cx="340.91" cy="383.56" r="3" fill="#2a78d6" opacity="0.6"><title>Spain：実測 13.006 / 予測 24.585 / 残差 -11.579</title></circle>
+<circle cx="330.86" cy="345.48" r="3" fill="#2a78d6" opacity="0.6"><title>Estonia：実測 24.466 / 予測 21.559 / 残差 +2.907</title></circle>
+<circle cx="332.96" cy="253.56" r="3" fill="#2a78d6" opacity="0.6"><title>Ethiopia：実測 52.129 / 予測 22.191 / 残差 +29.938</title></circle>
+<circle cx="330.95" cy="408.16" r="3" fill="#2a78d6" opacity="0.6"><title>Finland：実測 5.605 / 予測 21.587 / 残差 -15.982</title></circle>
+<circle cx="319.54" cy="402.79" r="3" fill="#2a78d6" opacity="0.6"><title>France：実測 7.219 / 予測 18.152 / 残差 -10.933</title></circle>
+<circle cx="310.95" cy="388.46" r="3" fill="#2a78d6" opacity="0.6"><title>United Kingdom：実測 11.533 / 予測 15.569 / 残差 -4.036</title></circle>
+<circle cx="338.64" cy="272.87" r="3" fill="#2a78d6" opacity="0.6"><title>Georgia：実測 46.317 / 予測 23.902 / 残差 +22.415</title></circle>
+<circle cx="299.73" cy="349.96" r="3" fill="#2a78d6" opacity="0.6"><title>Ghana：実測 23.117 / 予測 12.190 / 残差 +10.927</title></circle>
+<circle cx="284.17" cy="321.57" r="3" fill="#2a78d6" opacity="0.6"><title>Guinea：実測 31.661 / 予測 7.509 / 残差 +24.153</title></circle>
+<circle cx="318.26" cy="391.52" r="3" fill="#2a78d6" opacity="0.6"><title>Gambia, The：実測 10.611 / 予測 17.769 / 残差 -7.158</title></circle>
+<circle cx="326.27" cy="381.35" r="3" fill="#2a78d6" opacity="0.6"><title>Greece：実測 13.671 / 予測 20.179 / 残差 -6.509</title></circle>
+<circle cx="284.76" cy="366.41" r="3" fill="#2a78d6" opacity="0.6"><title>Guatemala：実測 18.169 / 予測 7.688 / 残差 +10.481</title></circle>
+<circle cx="323.89" cy="384.92" r="3" fill="#2a78d6" opacity="0.6"><title>Honduras：実測 12.599 / 予測 19.462 / 残差 -6.863</title></circle>
+<circle cx="316.89" cy="312.45" r="3" fill="#2a78d6" opacity="0.6"><title>Croatia：実測 34.405 / 予測 17.355 / 残差 +17.050</title></circle>
+<circle cx="316.22" cy="305.35" r="3" fill="#2a78d6" opacity="0.6"><title>Hungary：実測 36.544 / 予測 17.154 / 残差 +19.390</title></circle>
+<circle cx="304.40" cy="321.34" r="3" fill="#2a78d6" opacity="0.6"><title>Indonesia：実測 31.732 / 予測 13.598 / 残差 +18.134</title></circle>
+<circle cx="318.07" cy="276.06" r="3" fill="#2a78d6" opacity="0.6"><title>India：実測 45.358 / 予測 17.710 / 残差 +27.648</title></circle>
+<circle cx="318.02" cy="184.34" r="3" fill="#2a78d6" opacity="0.6"><title>Ireland：実測 72.958 / 予測 17.697 / 残差 +55.262</title></circle>
+<circle cx="298.55" cy="401.09" r="3" fill="#2a78d6" opacity="0.6"><title>Iran, Islamic Rep.：実測 7.732 / 予測 11.836 / 残差 -4.103</title></circle>
+<circle cx="328.41" cy="382.10" r="3" fill="#2a78d6" opacity="0.6"><title>Iceland：実測 13.448 / 予測 20.823 / 残差 -7.376</title></circle>
+<circle cx="321.16" cy="358.95" r="3" fill="#2a78d6" opacity="0.6"><title>Israel：実測 20.412 / 予測 18.641 / 残差 +1.770</title></circle>
+<circle cx="308.88" cy="396.65" r="3" fill="#2a78d6" opacity="0.6"><title>Italy：実測 9.069 / 予測 14.945 / 残差 -5.876</title></circle>
+<circle cx="331.88" cy="393.80" r="3" fill="#2a78d6" opacity="0.6"><title>Japan：実測 9.927 / 予測 21.867 / 残差 -11.940</title></circle>
+<circle cx="272.70" cy="377.42" r="3" fill="#2a78d6" opacity="0.6"><title>Kazakhstan：実測 14.854 / 予測 4.056 / 残差 +10.798</title></circle>
+<circle cx="339.56" cy="358.11" r="3" fill="#2a78d6" opacity="0.6"><title>Kyrgyz Republic：実測 20.667 / 予測 24.178 / 残差 -3.510</title></circle>
+<circle cx="317.73" cy="344.37" r="3" fill="#2a78d6" opacity="0.6"><title>Korea, Rep.：実測 24.800 / 予測 17.607 / 残差 +7.192</title></circle>
+<circle cx="266.10" cy="504.45" r="3" fill="#2a78d6" opacity="0.6"><title>Kuwait：実測 -23.373 / 予測 2.072 / 残差 -25.445</title></circle>
+<circle cx="301.66" cy="563.66" r="3" fill="#2a78d6" opacity="0.6"><title>Lebanon：実測 -41.190 / 予測 12.773 / 残差 -53.963</title></circle>
+<circle cx="296.25" cy="465.29" r="3" fill="#2a78d6" opacity="0.6"><title>Lesotho：実測 -11.588 / 予測 11.145 / 残差 -22.733</title></circle>
+<circle cx="315.77" cy="290.30" r="3" fill="#2a78d6" opacity="0.6"><title>Lithuania：実測 41.072 / 予測 17.019 / 残差 +24.053</title></circle>
+<circle cx="283.20" cy="417.44" r="3" fill="#2a78d6" opacity="0.6"><title>Luxembourg：実測 2.810 / 予測 7.218 / 残差 -4.408</title></circle>
+<circle cx="316.67" cy="321.74" r="3" fill="#2a78d6" opacity="0.6"><title>Latvia：実測 31.610 / 予測 17.290 / 残差 +14.320</title></circle>
+<circle cx="317.50" cy="383.48" r="3" fill="#2a78d6" opacity="0.6"><title>Morocco：実測 13.031 / 予測 17.540 / 残差 -4.509</title></circle>
+<circle cx="319.07" cy="289.60" r="3" fill="#2a78d6" opacity="0.6"><title>Moldova：実測 41.284 / 予測 18.011 / 残差 +23.273</title></circle>
+<circle cx="334.73" cy="429.95" r="3" fill="#2a78d6" opacity="0.6"><title>Madagascar：実測 -0.954 / 予測 22.726 / 残差 -23.680</title></circle>
+<circle cx="302.96" cy="358.49" r="3" fill="#2a78d6" opacity="0.6"><title>Maldives：実測 20.551 / 予測 13.163 / 残差 +7.388</title></circle>
+<circle cx="295.39" cy="419.04" r="3" fill="#2a78d6" opacity="0.6"><title>Mexico：実測 2.331 / 予測 10.886 / 残差 -8.554</title></circle>
+<circle cx="313.42" cy="332.61" r="3" fill="#2a78d6" opacity="0.6"><title>North Macedonia：実測 28.341 / 予測 16.311 / 残差 +12.030</title></circle>
+<circle cx="294.48" cy="390.21" r="3" fill="#2a78d6" opacity="0.6"><title>Mali：実測 11.007 / 予測 10.612 / 残差 +0.395</title></circle>
+<circle cx="311.85" cy="300.88" r="3" fill="#2a78d6" opacity="0.6"><title>Malta：実測 37.890 / 予測 15.838 / 残差 +22.052</title></circle>
+<circle cx="323.64" cy="337.85" r="3" fill="#2a78d6" opacity="0.6"><title>Montenegro：実測 26.762 / 予測 19.386 / 残差 +7.375</title></circle>
+<circle cx="305.70" cy="348.00" r="3" fill="#2a78d6" opacity="0.6"><title>Mongolia：実測 23.707 / 予測 13.988 / 残差 +9.719</title></circle>
+<circle cx="323.87" cy="394.13" r="3" fill="#2a78d6" opacity="0.6"><title>Mozambique：実測 9.827 / 予測 19.457 / 残差 -9.630</title></circle>
+<circle cx="278.23" cy="407.75" r="3" fill="#2a78d6" opacity="0.6"><title>Mauritania：実測 5.728 / 予測 5.722 / 残差 +0.006</title></circle>
+<circle cx="311.94" cy="357.73" r="3" fill="#2a78d6" opacity="0.6"><title>Mauritius：実測 20.782 / 予測 15.866 / 残差 +4.916</title></circle>
+<circle cx="272.06" cy="467.97" r="3" fill="#2a78d6" opacity="0.6"><title>Namibia：実測 -12.396 / 予測 3.863 / 残差 -16.259</title></circle>
+<circle cx="310.47" cy="360.16" r="3" fill="#2a78d6" opacity="0.6"><title>Niger：実測 20.050 / 予測 15.423 / 残差 +4.627</title></circle>
+<circle cx="329.39" cy="377.56" r="3" fill="#2a78d6" opacity="0.6"><title>Nicaragua：実測 14.813 / 予測 21.117 / 残差 -6.304</title></circle>
+<circle cx="317.17" cy="377.43" r="3" fill="#2a78d6" opacity="0.6"><title>Netherlands：実測 14.851 / 予測 17.440 / 残差 -2.589</title></circle>
+<circle cx="308.87" cy="393.04" r="3" fill="#2a78d6" opacity="0.6"><title>Norway：実測 10.155 / 予測 14.941 / 残差 -4.787</title></circle>
+<circle cx="331.14" cy="306.48" r="3" fill="#2a78d6" opacity="0.6"><title>Nepal：実測 36.205 / 予測 21.645 / 残差 +14.560</title></circle>
+<circle cx="333.99" cy="375.33" r="3" fill="#2a78d6" opacity="0.6"><title>New Zealand：実測 15.483 / 予測 22.502 / 残差 -7.019</title></circle>
+<circle cx="294.21" cy="444.54" r="3" fill="#2a78d6" opacity="0.6"><title>Oman：実測 -5.344 / 予測 10.530 / 残差 -15.874</title></circle>
+<circle cx="283.21" cy="342.79" r="3" fill="#2a78d6" opacity="0.6"><title>Pakistan：実測 25.276 / 予測 7.221 / 残差 +18.055</title></circle>
+<circle cx="281.38" cy="350.11" r="3" fill="#2a78d6" opacity="0.6"><title>Panama：実測 23.074 / 予測 6.670 / 残差 +16.403</title></circle>
+<circle cx="319.00" cy="376.82" r="3" fill="#2a78d6" opacity="0.6"><title>Peru：実測 15.035 / 予測 17.991 / 残差 -2.956</title></circle>
+<circle cx="327.09" cy="312.13" r="3" fill="#2a78d6" opacity="0.6"><title>Philippines：実測 34.502 / 予測 20.426 / 残差 +14.076</title></circle>
+<circle cx="302.71" cy="461.05" r="3" fill="#2a78d6" opacity="0.6"><title>Palau：実測 -10.312 / 予測 13.088 / 残差 -23.401</title></circle>
+<circle cx="321.49" cy="292.23" r="3" fill="#2a78d6" opacity="0.6"><title>Poland：実測 40.490 / 予測 18.740 / 残差 +21.750</title></circle>
+<circle cx="332.05" cy="371.77" r="3" fill="#2a78d6" opacity="0.6"><title>Portugal：実測 16.555 / 予測 21.918 / 残差 -5.363</title></circle>
+<circle cx="300.71" cy="370.04" r="3" fill="#2a78d6" opacity="0.6"><title>Paraguay：実測 17.077 / 予測 12.485 / 残差 +4.592</title></circle>
+<circle cx="346.58" cy="441.25" r="3" fill="#2a78d6" opacity="0.6"><title>West Bank and Gaza：実測 -4.354 / 予測 26.291 / 残差 -30.645</title></circle>
+<circle cx="297.27" cy="299.53" r="3" fill="#2a78d6" opacity="0.6"><title>Romania：実測 38.294 / 予測 11.452 / 残差 +26.842</title></circle>
+<circle cx="266.58" cy="404.54" r="3" fill="#2a78d6" opacity="0.6"><title>Russian Federation：実測 6.693 / 予測 2.214 / 残差 +4.479</title></circle>
+<circle cx="340.21" cy="304.34" r="3" fill="#2a78d6" opacity="0.6"><title>Rwanda：実測 36.848 / 予測 24.373 / 残差 +12.475</title></circle>
+<circle cx="259.77" cy="386.29" r="3" fill="#2a78d6" opacity="0.6"><title>Saudi Arabia：実測 12.185 / 予測 0.166 / 残差 +12.019</title></circle>
+<circle cx="318.73" cy="354.80" r="3" fill="#2a78d6" opacity="0.6"><title>Senegal：実測 21.663 / 予測 17.910 / 残差 +3.752</title></circle>
+<circle cx="345.69" cy="481.05" r="3" fill="#2a78d6" opacity="0.6"><title>Solomon Islands：実測 -16.331 / 予測 26.023 / 残差 -42.353</title></circle>
+<circle cx="281.41" cy="410.32" r="3" fill="#2a78d6" opacity="0.6"><title>Sierra Leone：実測 4.953 / 予測 6.677 / 残差 -1.725</title></circle>
+<circle cx="317.17" cy="363.47" r="3" fill="#2a78d6" opacity="0.6"><title>El Salvador：実測 19.052 / 予測 17.438 / 残差 +1.614</title></circle>
+<circle cx="319.54" cy="322.17" r="3" fill="#2a78d6" opacity="0.6"><title>Serbia：実測 31.482 / 予測 18.153 / 残差 +13.330</title></circle>
+<circle cx="312.32" cy="381.83" r="3" fill="#2a78d6" opacity="0.6"><title>Sao Tome and Principe：実測 13.527 / 予測 15.979 / 残差 -2.452</title></circle>
+<circle cx="307.22" cy="352.37" r="3" fill="#2a78d6" opacity="0.6"><title>Slovak Republic：実測 22.395 / 予測 14.444 / 残差 +7.951</title></circle>
+<circle cx="324.41" cy="347.24" r="3" fill="#2a78d6" opacity="0.6"><title>Slovenia：実測 23.938 / 予測 19.618 / 残差 +4.321</title></circle>
+<circle cx="325.08" cy="391.20" r="3" fill="#2a78d6" opacity="0.6"><title>Sweden：実測 10.708 / 予測 19.820 / 残差 -9.112</title></circle>
+<circle cx="257.77" cy="380.85" r="3" fill="#2a78d6" opacity="0.6"><title>Eswatini：実測 13.824 / 予測 -0.435 / 残差 +14.259</title></circle>
+<circle cx="293.12" cy="396.77" r="3" fill="#2a78d6" opacity="0.6"><title>Seychelles：実測 9.033 / 予測 10.202 / 残差 -1.169</title></circle>
+<circle cx="256.77" cy="481.31" r="3" fill="#2a78d6" opacity="0.6"><title>Chad：実測 -16.409 / 予測 -0.736 / 残差 -15.673</title></circle>
+<circle cx="312.39" cy="333.82" r="3" fill="#2a78d6" opacity="0.6"><title>Togo：実測 27.977 / 予測 16.002 / 残差 +11.975</title></circle>
+<circle cx="358.98" cy="278.89" r="3" fill="#2a78d6" opacity="0.6"><title>Tajikistan：実測 44.507 / 予測 30.023 / 残差 +14.483</title></circle>
+<circle cx="308.12" cy="354.11" r="3" fill="#2a78d6" opacity="0.6"><title>Timor-Leste：実測 21.868 / 予測 14.718 / 残差 +7.151</title></circle>
+<circle cx="358.30" cy="379.50" r="3" fill="#2a78d6" opacity="0.6"><title>Tonga：実測 14.230 / 予測 29.818 / 残差 -15.588</title></circle>
+<circle cx="319.69" cy="419.49" r="3" fill="#2a78d6" opacity="0.6"><title>Tunisia：実測 2.194 / 予測 18.199 / 残差 -16.005</title></circle>
+<circle cx="309.13" cy="350.86" r="3" fill="#2a78d6" opacity="0.6"><title>Tanzania：実測 22.848 / 予測 15.019 / 残差 +7.829</title></circle>
+<circle cx="303.02" cy="512.58" r="3" fill="#2a78d6" opacity="0.6"><title>Ukraine：実測 -25.820 / 予測 13.180 / 残差 -39.000</title></circle>
+<circle cx="289.72" cy="368.66" r="3" fill="#2a78d6" opacity="0.6"><title>United States：実測 17.491 / 予測 9.178 / 残差 +8.312</title></circle>
+<circle cx="348.89" cy="440.74" r="3" fill="#2a78d6" opacity="0.6"><title>Vanuatu：実測 -4.199 / 予測 26.984 / 残差 -31.183</title></circle>
+<circle cx="345.80" cy="419.63" r="3" fill="#2a78d6" opacity="0.6"><title>Samoa：実測 2.154 / 予測 26.056 / 残差 -23.902</title></circle>
+<circle cx="280.24" cy="445.47" r="3" fill="#2a78d6" opacity="0.6"><title>South Africa：実測 -5.623 / 予測 6.326 / 残差 -11.948</title></circle>
+<circle cx="281.53" cy="424.58" r="3" fill="#2a78d6" opacity="0.6"><title>Zimbabwe：実測 0.663 / 予測 6.714 / 残差 -6.052</title></circle>
+<text x="312.0" y="642" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#0b0b0b">予測値</text>
+<text x="712" y="128" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">残差＝実測値−予測値（破線は0）</text>
+<path d="M712.00,154v440" stroke="#d5d4cf"/>
+<text x="712.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-14.20</text>
+<path d="M822.00,154v440" stroke="#d5d4cf"/>
+<text x="822.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-2.33</text>
+<path d="M932.00,154v440" stroke="#d5d4cf"/>
+<text x="932.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">9.55</text>
+<path d="M1042.00,154v440" stroke="#d5d4cf"/>
+<text x="1042.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">21.42</text>
+<path d="M1152.00,154v440" stroke="#d5d4cf"/>
+<text x="1152.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">33.30</text>
+<path d="M712,594.00h440" stroke="#d5d4cf"/>
+<text x="702" y="598.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-59.68</text>
+<path d="M712,484.00h440" stroke="#d5d4cf"/>
+<text x="702" y="488.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-29.84</text>
+<path d="M712,374.00h440" stroke="#d5d4cf"/>
+<text x="702" y="378.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">0.00</text>
+<path d="M712,264.00h440" stroke="#d5d4cf"/>
+<text x="702" y="268.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">29.84</text>
+<path d="M712,154.00h440" stroke="#d5d4cf"/>
+<text x="702" y="158.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">59.68</text>
+<path d="M712,154v440h440" fill="none" stroke="#77766f"/>
+<path d="M712,374.0h440" stroke="#77766f" stroke-dasharray="5 4" fill="none"/>
+<circle cx="742.34" cy="434.96" r="3" fill="#2a78d6" opacity="0.6"><title>Angola：実測 -27.464 / 予測 -10.927 / 残差 -16.537</title></circle>
+<circle cx="1058.77" cy="296.76" r="3" fill="#2a78d6" opacity="0.6"><title>Albania：実測 44.189 / 予測 23.235 / 残差 +20.954</title></circle>
+<circle cx="932.78" cy="422.53" r="3" fill="#2a78d6" opacity="0.6"><title>Argentina：実測 -3.534 / 予測 9.632 / 残差 -13.166</title></circle>
+<circle cx="1017.66" cy="289.85" r="3" fill="#2a78d6" opacity="0.6"><title>Armenia：実測 41.624 / 予測 18.796 / 残差 +22.828</title></circle>
+<circle cx="976.29" cy="401.76" r="3" fill="#2a78d6" opacity="0.6"><title>Austria：実測 6.799 / 予測 14.330 / 残差 -7.531</title></circle>
+<circle cx="1078.30" cy="428.67" r="3" fill="#2a78d6" opacity="0.6"><title>Belgium：実測 10.511 / 予測 25.343 / 残差 -14.832</title></circle>
+<circle cx="974.29" cy="331.91" r="3" fill="#2a78d6" opacity="0.6"><title>Benin：実測 25.533 / 予測 14.114 / 残差 +11.419</title></circle>
+<circle cx="968.07" cy="346.54" r="3" fill="#2a78d6" opacity="0.6"><title>Burkina Faso：実測 20.892 / 予測 13.442 / 残差 +7.449</title></circle>
+<circle cx="971.11" cy="291.91" r="3" fill="#2a78d6" opacity="0.6"><title>Bulgaria：実測 36.041 / 予測 13.771 / 残差 +22.271</title></circle>
+<circle cx="908.76" cy="379.84" r="3" fill="#2a78d6" opacity="0.6"><title>Bahrain：実測 5.454 / 予測 7.040 / 残差 -1.585</title></circle>
+<circle cx="924.82" cy="399.02" r="3" fill="#2a78d6" opacity="0.6"><title>Bahamas, The：実測 1.986 / 予測 8.773 / 残差 -6.787</title></circle>
+<circle cx="1066.45" cy="306.34" r="3" fill="#2a78d6" opacity="0.6"><title>Bosnia and Herzegovina：実測 42.418 / 予測 24.064 / 残差 +18.354</title></circle>
+<circle cx="971.10" cy="415.49" r="3" fill="#2a78d6" opacity="0.6"><title>Belarus：実測 2.512 / 予測 13.769 / 残差 -11.257</title></circle>
+<circle cx="981.66" cy="407.15" r="3" fill="#2a78d6" opacity="0.6"><title>Belize：実測 5.917 / 予測 14.910 / 残差 -8.992</title></circle>
+<circle cx="952.06" cy="361.77" r="3" fill="#2a78d6" opacity="0.6"><title>Bolivia：実測 15.031 / 予測 11.714 / 残差 +3.317</title></circle>
+<circle cx="973.43" cy="431.17" r="3" fill="#2a78d6" opacity="0.6"><title>Brazil：実測 -1.488 / 予測 14.021 / 残差 -15.509</title></circle>
+<circle cx="835.41" cy="430.19" r="3" fill="#2a78d6" opacity="0.6"><title>Brunei Darussalam：実測 -16.125 / 予測 -0.880 / 残差 -15.245</title></circle>
+<circle cx="952.73" cy="331.73" r="3" fill="#2a78d6" opacity="0.6"><title>Bhutan：実測 23.253 / 予測 11.786 / 残差 +11.467</title></circle>
+<circle cx="920.33" cy="525.43" r="3" fill="#2a78d6" opacity="0.6"><title>Central African Republic：実測 -32.793 / 予測 8.288 / 残差 -41.081</title></circle>
+<circle cx="1007.70" cy="409.53" r="3" fill="#2a78d6" opacity="0.6"><title>Canada：実測 8.082 / 予測 17.721 / 残差 -9.639</title></circle>
+<circle cx="962.52" cy="379.55" r="3" fill="#2a78d6" opacity="0.6"><title>Switzerland：実測 11.337 / 予測 12.843 / 残差 -1.506</title></circle>
+<circle cx="1021.26" cy="406.88" r="3" fill="#2a78d6" opacity="0.6"><title>Chile：実測 10.264 / 予測 19.185 / 残差 -8.921</title></circle>
+<circle cx="878.39" cy="243.02" r="3" fill="#2a78d6" opacity="0.6"><title>Cote d'Ivoire：実測 39.294 / 予測 3.760 / 残差 +35.534</title></circle>
+<circle cx="897.97" cy="358.74" r="3" fill="#2a78d6" opacity="0.6"><title>Cameroon：実測 10.014 / 予測 5.874 / 残差 +4.139</title></circle>
+<circle cx="1031.52" cy="364.89" r="3" fill="#2a78d6" opacity="0.6"><title>Congo, Dem. Rep.：実測 22.764 / 予測 20.293 / 残差 +2.472</title></circle>
+<circle cx="840.80" cy="513.22" r="3" fill="#2a78d6" opacity="0.6"><title>Congo, Rep.：実測 -38.067 / 予測 -0.298 / 残差 -37.769</title></circle>
+<circle cx="1005.76" cy="368.87" r="3" fill="#2a78d6" opacity="0.6"><title>Colombia：実測 18.903 / 予測 17.511 / 残差 +1.392</title></circle>
+<circle cx="996.17" cy="420.05" r="3" fill="#2a78d6" opacity="0.6"><title>Comoros：実測 3.983 / 予測 16.476 / 残差 -12.493</title></circle>
+<circle cx="1081.51" cy="402.62" r="3" fill="#2a78d6" opacity="0.6"><title>Cabo Verde：実測 17.924 / 予測 25.689 / 残差 -7.765</title></circle>
+<circle cx="1052.96" cy="370.29" r="3" fill="#2a78d6" opacity="0.6"><title>Costa Rica：実測 23.614 / 予測 22.607 / 残差 +1.007</title></circle>
+<circle cx="1032.38" cy="353.20" r="3" fill="#2a78d6" opacity="0.6"><title>Cyprus：実測 26.027 / 予測 20.386 / 残差 +5.642</title></circle>
+<circle cx="1004.03" cy="361.60" r="3" fill="#2a78d6" opacity="0.6"><title>Czechia：実測 20.689 / 予測 17.325 / 残差 +3.364</title></circle>
+<circle cx="992.17" cy="398.84" r="3" fill="#2a78d6" opacity="0.6"><title>Germany：実測 9.306 / 予測 16.044 / 残差 -6.738</title></circle>
+<circle cx="1029.37" cy="396.94" r="3" fill="#2a78d6" opacity="0.6"><title>Denmark：実測 13.837 / 予測 20.060 / 残差 -6.223</title></circle>
+<circle cx="913.16" cy="256.13" r="3" fill="#2a78d6" opacity="0.6"><title>Dominican Republic：実測 39.491 / 予測 7.515 / 残差 +31.976</title></circle>
+<circle cx="975.87" cy="424.54" r="3" fill="#2a78d6" opacity="0.6"><title>Algeria：実測 0.574 / 予測 14.284 / 残差 -13.710</title></circle>
+<circle cx="1009.71" cy="406.81" r="3" fill="#2a78d6" opacity="0.6"><title>Ecuador：実測 9.035 / 予測 17.937 / 残差 -8.902</title></circle>
+<circle cx="918.57" cy="321.27" r="3" fill="#2a78d6" opacity="0.6"><title>Egypt, Arab Rep.：実測 22.402 / 予測 8.098 / 残差 +14.304</title></circle>
+<circle cx="1071.28" cy="416.68" r="3" fill="#2a78d6" opacity="0.6"><title>Spain：実測 13.006 / 予測 24.585 / 残差 -11.579</title></circle>
+<circle cx="1043.25" cy="363.28" r="3" fill="#2a78d6" opacity="0.6"><title>Estonia：実測 24.466 / 予測 21.559 / 残差 +2.907</title></circle>
+<circle cx="1049.11" cy="263.65" r="3" fill="#2a78d6" opacity="0.6"><title>Ethiopia：実測 52.129 / 予測 22.191 / 残差 +29.938</title></circle>
+<circle cx="1043.51" cy="432.91" r="3" fill="#2a78d6" opacity="0.6"><title>Finland：実測 5.605 / 予測 21.587 / 残差 -15.982</title></circle>
+<circle cx="1011.70" cy="414.30" r="3" fill="#2a78d6" opacity="0.6"><title>France：実測 7.219 / 予測 18.152 / 残差 -10.933</title></circle>
+<circle cx="987.77" cy="388.88" r="3" fill="#2a78d6" opacity="0.6"><title>United Kingdom：実測 11.533 / 予測 15.569 / 残差 -4.036</title></circle>
+<circle cx="1064.96" cy="291.38" r="3" fill="#2a78d6" opacity="0.6"><title>Georgia：実測 46.317 / 予測 23.902 / 残差 +22.415</title></circle>
+<circle cx="956.47" cy="333.72" r="3" fill="#2a78d6" opacity="0.6"><title>Ghana：実測 23.117 / 予測 12.190 / 残差 +10.927</title></circle>
+<circle cx="913.11" cy="284.97" r="3" fill="#2a78d6" opacity="0.6"><title>Guinea：実測 31.661 / 予測 7.509 / 残差 +24.153</title></circle>
+<circle cx="1008.14" cy="400.38" r="3" fill="#2a78d6" opacity="0.6"><title>Gambia, The：実測 10.611 / 予測 17.769 / 残差 -7.158</title></circle>
+<circle cx="1030.47" cy="397.99" r="3" fill="#2a78d6" opacity="0.6"><title>Greece：実測 13.671 / 予測 20.179 / 残差 -6.509</title></circle>
+<circle cx="914.77" cy="335.37" r="3" fill="#2a78d6" opacity="0.6"><title>Guatemala：実測 18.169 / 予測 7.688 / 残差 +10.481</title></circle>
+<circle cx="1023.83" cy="399.30" r="3" fill="#2a78d6" opacity="0.6"><title>Honduras：実測 12.599 / 予測 19.462 / 残差 -6.863</title></circle>
+<circle cx="1004.31" cy="311.15" r="3" fill="#2a78d6" opacity="0.6"><title>Croatia：実測 34.405 / 予測 17.355 / 残差 +17.050</title></circle>
+<circle cx="1002.45" cy="302.53" r="3" fill="#2a78d6" opacity="0.6"><title>Hungary：実測 36.544 / 予測 17.154 / 残差 +19.390</title></circle>
+<circle cx="969.51" cy="307.15" r="3" fill="#2a78d6" opacity="0.6"><title>Indonesia：実測 31.732 / 予測 13.598 / 残差 +18.134</title></circle>
+<circle cx="1007.60" cy="272.09" r="3" fill="#2a78d6" opacity="0.6"><title>India：実測 45.358 / 予測 17.710 / 残差 +27.648</title></circle>
+<circle cx="1007.48" cy="170.30" r="3" fill="#2a78d6" opacity="0.6"><title>Ireland：実測 72.958 / 予測 17.697 / 残差 +55.262</title></circle>
+<circle cx="953.19" cy="389.13" r="3" fill="#2a78d6" opacity="0.6"><title>Iran, Islamic Rep.：実測 7.732 / 予測 11.836 / 残差 -4.103</title></circle>
+<circle cx="1036.44" cy="401.19" r="3" fill="#2a78d6" opacity="0.6"><title>Iceland：実測 13.448 / 予測 20.823 / 残差 -7.376</title></circle>
+<circle cx="1016.23" cy="367.47" r="3" fill="#2a78d6" opacity="0.6"><title>Israel：実測 20.412 / 予測 18.641 / 残差 +1.770</title></circle>
+<circle cx="981.99" cy="395.66" r="3" fill="#2a78d6" opacity="0.6"><title>Italy：実測 9.069 / 予測 14.945 / 残差 -5.876</title></circle>
+<circle cx="1046.11" cy="418.01" r="3" fill="#2a78d6" opacity="0.6"><title>Japan：実測 9.927 / 予測 21.867 / 残差 -11.940</title></circle>
+<circle cx="881.13" cy="334.20" r="3" fill="#2a78d6" opacity="0.6"><title>Kazakhstan：実測 14.854 / 予測 4.056 / 残差 +10.798</title></circle>
+<circle cx="1067.51" cy="386.94" r="3" fill="#2a78d6" opacity="0.6"><title>Kyrgyz Republic：実測 20.667 / 予測 24.178 / 残差 -3.510</title></circle>
+<circle cx="1006.65" cy="347.49" r="3" fill="#2a78d6" opacity="0.6"><title>Korea, Rep.：実測 24.800 / 予測 17.607 / 残差 +7.192</title></circle>
+<circle cx="862.75" cy="467.79" r="3" fill="#2a78d6" opacity="0.6"><title>Kuwait：実測 -23.373 / 予測 2.072 / 残差 -25.445</title></circle>
+<circle cx="961.87" cy="572.92" r="3" fill="#2a78d6" opacity="0.6"><title>Lebanon：実測 -41.190 / 予測 12.773 / 残差 -53.963</title></circle>
+<circle cx="946.79" cy="457.80" r="3" fill="#2a78d6" opacity="0.6"><title>Lesotho：実測 -11.588 / 予測 11.145 / 残差 -22.733</title></circle>
+<circle cx="1001.20" cy="285.34" r="3" fill="#2a78d6" opacity="0.6"><title>Lithuania：実測 41.072 / 予測 17.019 / 残差 +24.053</title></circle>
+<circle cx="910.41" cy="390.25" r="3" fill="#2a78d6" opacity="0.6"><title>Luxembourg：実測 2.810 / 予測 7.218 / 残差 -4.408</title></circle>
+<circle cx="1003.71" cy="321.22" r="3" fill="#2a78d6" opacity="0.6"><title>Latvia：実測 31.610 / 予測 17.290 / 残差 +14.320</title></circle>
+<circle cx="1006.02" cy="390.62" r="3" fill="#2a78d6" opacity="0.6"><title>Morocco：実測 13.031 / 予測 17.540 / 残差 -4.509</title></circle>
+<circle cx="1010.38" cy="288.21" r="3" fill="#2a78d6" opacity="0.6"><title>Moldova：実測 41.284 / 予測 18.011 / 残差 +23.273</title></circle>
+<circle cx="1054.06" cy="461.29" r="3" fill="#2a78d6" opacity="0.6"><title>Madagascar：実測 -0.954 / 予測 22.726 / 残差 -23.680</title></circle>
+<circle cx="965.48" cy="346.76" r="3" fill="#2a78d6" opacity="0.6"><title>Maldives：実測 20.551 / 予測 13.163 / 残差 +7.388</title></circle>
+<circle cx="944.39" cy="405.53" r="3" fill="#2a78d6" opacity="0.6"><title>Mexico：実測 2.331 / 予測 10.886 / 残差 -8.554</title></circle>
+<circle cx="994.64" cy="329.65" r="3" fill="#2a78d6" opacity="0.6"><title>North Macedonia：実測 28.341 / 予測 16.311 / 残差 +12.030</title></circle>
+<circle cx="941.85" cy="372.54" r="3" fill="#2a78d6" opacity="0.6"><title>Mali：実測 11.007 / 予測 10.612 / 残差 +0.395</title></circle>
+<circle cx="990.26" cy="292.71" r="3" fill="#2a78d6" opacity="0.6"><title>Malta：実測 37.890 / 予測 15.838 / 残差 +22.052</title></circle>
+<circle cx="1023.13" cy="346.81" r="3" fill="#2a78d6" opacity="0.6"><title>Montenegro：実測 26.762 / 予測 19.386 / 残差 +7.375</title></circle>
+<circle cx="973.13" cy="338.17" r="3" fill="#2a78d6" opacity="0.6"><title>Mongolia：実測 23.707 / 予測 13.988 / 残差 +9.719</title></circle>
+<circle cx="1023.79" cy="409.50" r="3" fill="#2a78d6" opacity="0.6"><title>Mozambique：実測 9.827 / 予測 19.457 / 残差 -9.630</title></circle>
+<circle cx="896.56" cy="373.98" r="3" fill="#2a78d6" opacity="0.6"><title>Mauritania：実測 5.728 / 予測 5.722 / 残差 +0.006</title></circle>
+<circle cx="990.52" cy="355.88" r="3" fill="#2a78d6" opacity="0.6"><title>Mauritius：実測 20.782 / 予測 15.866 / 残差 +4.916</title></circle>
+<circle cx="879.34" cy="433.93" r="3" fill="#2a78d6" opacity="0.6"><title>Namibia：実測 -12.396 / 予測 3.863 / 残差 -16.259</title></circle>
+<circle cx="986.41" cy="356.94" r="3" fill="#2a78d6" opacity="0.6"><title>Niger：実測 20.050 / 予測 15.423 / 残差 +4.627</title></circle>
+<circle cx="1039.16" cy="397.24" r="3" fill="#2a78d6" opacity="0.6"><title>Nicaragua：実測 14.813 / 予測 21.117 / 残差 -6.304</title></circle>
+<circle cx="1005.10" cy="383.54" r="3" fill="#2a78d6" opacity="0.6"><title>Netherlands：実測 14.851 / 予測 17.440 / 残差 -2.589</title></circle>
+<circle cx="981.95" cy="391.64" r="3" fill="#2a78d6" opacity="0.6"><title>Norway：実測 10.155 / 予測 14.941 / 残差 -4.787</title></circle>
+<circle cx="1044.05" cy="320.33" r="3" fill="#2a78d6" opacity="0.6"><title>Nepal：実測 36.205 / 予測 21.645 / 残差 +14.560</title></circle>
+<circle cx="1051.99" cy="399.87" r="3" fill="#2a78d6" opacity="0.6"><title>New Zealand：実測 15.483 / 予測 22.502 / 残差 -7.019</title></circle>
+<circle cx="941.09" cy="432.51" r="3" fill="#2a78d6" opacity="0.6"><title>Oman：実測 -5.344 / 予測 10.530 / 残差 -15.874</title></circle>
+<circle cx="910.44" cy="307.45" r="3" fill="#2a78d6" opacity="0.6"><title>Pakistan：実測 25.276 / 予測 7.221 / 残差 +18.055</title></circle>
+<circle cx="905.34" cy="313.54" r="3" fill="#2a78d6" opacity="0.6"><title>Panama：実測 23.074 / 予測 6.670 / 残差 +16.403</title></circle>
+<circle cx="1010.20" cy="384.90" r="3" fill="#2a78d6" opacity="0.6"><title>Peru：実測 15.035 / 予測 17.991 / 残差 -2.956</title></circle>
+<circle cx="1032.76" cy="322.11" r="3" fill="#2a78d6" opacity="0.6"><title>Philippines：実測 34.502 / 予測 20.426 / 残差 +14.076</title></circle>
+<circle cx="964.79" cy="460.26" r="3" fill="#2a78d6" opacity="0.6"><title>Palau：実測 -10.312 / 予測 13.088 / 残差 -23.401</title></circle>
+<circle cx="1017.14" cy="293.83" r="3" fill="#2a78d6" opacity="0.6"><title>Poland：実測 40.490 / 予測 18.740 / 残差 +21.750</title></circle>
+<circle cx="1046.58" cy="393.77" r="3" fill="#2a78d6" opacity="0.6"><title>Portugal：実測 16.555 / 予測 21.918 / 残差 -5.363</title></circle>
+<circle cx="959.20" cy="357.07" r="3" fill="#2a78d6" opacity="0.6"><title>Paraguay：実測 17.077 / 予測 12.485 / 残差 +4.592</title></circle>
+<circle cx="1087.08" cy="486.96" r="3" fill="#2a78d6" opacity="0.6"><title>West Bank and Gaza：実測 -4.354 / 予測 26.291 / 残差 -30.645</title></circle>
+<circle cx="949.63" cy="275.06" r="3" fill="#2a78d6" opacity="0.6"><title>Romania：実測 38.294 / 予測 11.452 / 残差 +26.842</title></circle>
+<circle cx="864.07" cy="357.49" r="3" fill="#2a78d6" opacity="0.6"><title>Russian Federation：実測 6.693 / 予測 2.214 / 残差 +4.479</title></circle>
+<circle cx="1069.32" cy="328.01" r="3" fill="#2a78d6" opacity="0.6"><title>Rwanda：実測 36.848 / 予測 24.373 / 残差 +12.475</title></circle>
+<circle cx="845.10" cy="329.70" r="3" fill="#2a78d6" opacity="0.6"><title>Saudi Arabia：実測 12.185 / 予測 0.166 / 残差 +12.019</title></circle>
+<circle cx="1009.45" cy="360.17" r="3" fill="#2a78d6" opacity="0.6"><title>Senegal：実測 21.663 / 予測 17.910 / 残差 +3.752</title></circle>
+<circle cx="1084.60" cy="530.12" r="3" fill="#2a78d6" opacity="0.6"><title>Solomon Islands：実測 -16.331 / 予測 26.023 / 残差 -42.353</title></circle>
+<circle cx="905.41" cy="380.36" r="3" fill="#2a78d6" opacity="0.6"><title>Sierra Leone：実測 4.953 / 予測 6.677 / 残差 -1.725</title></circle>
+<circle cx="1005.08" cy="368.05" r="3" fill="#2a78d6" opacity="0.6"><title>El Salvador：実測 19.052 / 予測 17.438 / 残差 +1.614</title></circle>
+<circle cx="1011.70" cy="324.86" r="3" fill="#2a78d6" opacity="0.6"><title>Serbia：実測 31.482 / 予測 18.153 / 残差 +13.330</title></circle>
+<circle cx="991.57" cy="383.04" r="3" fill="#2a78d6" opacity="0.6"><title>Sao Tome and Principe：実測 13.527 / 予測 15.979 / 残差 -2.452</title></circle>
+<circle cx="977.35" cy="344.69" r="3" fill="#2a78d6" opacity="0.6"><title>Slovak Republic：実測 22.395 / 予測 14.444 / 残差 +7.951</title></circle>
+<circle cx="1025.27" cy="358.07" r="3" fill="#2a78d6" opacity="0.6"><title>Slovenia：実測 23.938 / 予測 19.618 / 残差 +4.321</title></circle>
+<circle cx="1027.14" cy="407.59" r="3" fill="#2a78d6" opacity="0.6"><title>Sweden：実測 10.708 / 予測 19.820 / 残差 -9.112</title></circle>
+<circle cx="839.53" cy="321.44" r="3" fill="#2a78d6" opacity="0.6"><title>Eswatini：実測 13.824 / 予測 -0.435 / 残差 +14.259</title></circle>
+<circle cx="938.05" cy="378.31" r="3" fill="#2a78d6" opacity="0.6"><title>Seychelles：実測 9.033 / 予測 10.202 / 残差 -1.169</title></circle>
+<circle cx="836.74" cy="431.77" r="3" fill="#2a78d6" opacity="0.6"><title>Chad：実測 -16.409 / 予測 -0.736 / 残差 -15.673</title></circle>
+<circle cx="991.78" cy="329.86" r="3" fill="#2a78d6" opacity="0.6"><title>Togo：実測 27.977 / 予測 16.002 / 残差 +11.975</title></circle>
+<circle cx="1121.66" cy="320.61" r="3" fill="#2a78d6" opacity="0.6"><title>Tajikistan：実測 44.507 / 予測 30.023 / 残差 +14.483</title></circle>
+<circle cx="979.88" cy="347.64" r="3" fill="#2a78d6" opacity="0.6"><title>Timor-Leste：実測 21.868 / 予測 14.718 / 残差 +7.151</title></circle>
+<circle cx="1119.75" cy="431.46" r="3" fill="#2a78d6" opacity="0.6"><title>Tonga：実測 14.230 / 予測 29.818 / 残差 -15.588</title></circle>
+<circle cx="1012.13" cy="433.00" r="3" fill="#2a78d6" opacity="0.6"><title>Tunisia：実測 2.194 / 予測 18.199 / 残差 -16.005</title></circle>
+<circle cx="982.68" cy="345.14" r="3" fill="#2a78d6" opacity="0.6"><title>Tanzania：実測 22.848 / 予測 15.019 / 残差 +7.829</title></circle>
+<circle cx="965.64" cy="517.76" r="3" fill="#2a78d6" opacity="0.6"><title>Ukraine：実測 -25.820 / 予測 13.180 / 残差 -39.000</title></circle>
+<circle cx="928.57" cy="343.36" r="3" fill="#2a78d6" opacity="0.6"><title>United States：実測 17.491 / 予測 9.178 / 残差 +8.312</title></circle>
+<circle cx="1093.50" cy="488.95" r="3" fill="#2a78d6" opacity="0.6"><title>Vanuatu：実測 -4.199 / 予測 26.984 / 残差 -31.183</title></circle>
+<circle cx="1084.90" cy="462.11" r="3" fill="#2a78d6" opacity="0.6"><title>Samoa：実測 2.154 / 予測 26.056 / 残差 -23.902</title></circle>
+<circle cx="902.15" cy="418.04" r="3" fill="#2a78d6" opacity="0.6"><title>South Africa：実測 -5.623 / 予測 6.326 / 残差 -11.948</title></circle>
+<circle cx="905.75" cy="396.31" r="3" fill="#2a78d6" opacity="0.6"><title>Zimbabwe：実測 0.663 / 予測 6.714 / 残差 -6.052</title></circle>
+<text x="932.0" y="642" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#0b0b0b">予測値</text>
+<text x="40" y="658" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">同じデータで推定した標本内の当てはめ。未知の地域・将来に対する予測精度ではない。</text>
+<text x="40" y="679" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">補助回帰の平均予測の95%区間はCSVに収録（600回・指標固定）。個々の実測値の予測区間ではない。</text>
+</svg>

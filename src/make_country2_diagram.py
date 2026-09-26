@@ -6,10 +6,10 @@ import pandas as pd
 import semopy
 
 from make_path_diagram import (BOX_LINE, C_NEG, C_NS, C_POS, FONT, INK, INK2, INK3,
-                               SURFACE, Node, arrow, path_style, stars, text)
+                               SURFACE, Node, arrow, path_style, stars, loading_label, text)
 from sem_country_v2 import HCR, LABELS, MODEL, BASE, prepare
 
-W, H = 1280, 916
+W, H = 1280, 956
 P, PH = 116, 700
 
 
@@ -52,7 +52,7 @@ def build():
                    f'<path d="M0,1 L9,5 L0,9 z" fill="{c}"/></marker>')
     out.append("</defs>")
 
-    out.append(text(48, 50, "所得の割に人的資本が厚い国は、その後10年よく伸びる — 128か国の構造方程式モデリング",
+    out.append(text(48, 50, "所得の割に人的資本が厚い国は、その後10年よく伸びる — 128か国の構造方程式モデリング（SEM）",
                     21, INK, "700"))
     out.append(text(48, 76, "World Bank Open Data（WGI 2012 ／ WDI 2010-14, 2020-23）。"
                             "人的資本の各指標は初期所得に回帰した残差に置き換え、所得と直交させた。", 12.5, INK3))
@@ -82,7 +82,7 @@ def build():
     for lat, boxes, keys, key in ((GOV, gb, gov_ind, "GOV"), (HCX, hb, HCR, "HCX"),
                                   (GR, rb, gr_ind, "GROWTH")):
         for n, k in zip(boxes, keys):
-            out.append(arrow(lat, n, f"{est[(k, key, '~')][0]:.2f}", INK3, 1.3, lab_t=.46))
+            out.append(arrow(lat, n, loading_label(*est[(k, key, '~')]), INK3, 1.3, lab_t=.46))
 
     for src, dst, key, bow, t in ((GOV, HCX, ("HCX", "GOV", "~"), 0, .42),
                                   (HCX, GR, ("GROWTH", "HCX", "~"), 0, .5),
@@ -122,7 +122,7 @@ def build():
     out.append(text(702, by + 42, txt, 11, INK2))
 
     # ---- 凡例 ----
-    lg = H - 62
+    lg = H - 102
     out.append(text(48, lg, "凡例", 12, INK, "700"))
     out.append(f'<ellipse cx="110" cy="{lg-5}" rx="21" ry="11" fill="#eef4fd" '
                f'stroke="{C_POS}" stroke-width="2"/>')
@@ -148,6 +148,10 @@ def build():
                     "WGI の4指標には同一原データ由来の残差相関を2本許容。", 11, INK3))
     out.append(f'<text x="{W-48}" y="{lg+38}" text-anchor="end" font-family="{FONT}" '
                f'font-size="11" fill="{INK3}">出典: World Bank Open Data (WGI / WDI)</text>')
+    out.append(text(48, H - 25,
+                    "因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。", 11, INK3))
+    out.append(text(48, H - 9,
+                    "星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。", 11, INK3))
     out.append("</svg>")
     return "\n".join(out)
 

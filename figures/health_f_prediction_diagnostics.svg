@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690" role="img">
+<title>都道府県：平均寿命（女）：実測・予測と残差</title>
+<rect width="1280" height="690" fill="#fcfcfb"/>
+<text x="40" y="38" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="22" font-weight="700" fill="#0b0b0b">都道府県：平均寿命（女） — 予測とのずれ</text>
+<text x="40" y="66" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#77766f">N = 47 ｜単位：年｜全点を表示・各点は国／地域</text>
+<text x="40" y="92" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">補助回帰：豊かさの3指標の標準化平均のみ。医療供給量を含むSEM全体の予測ではない。</text>
+<text x="92" y="128" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">実測値と予測値（破線は一致線）</text>
+<path d="M92.00,154v440" stroke="#d5d4cf"/>
+<text x="92.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">85.79</text>
+<path d="M202.00,154v440" stroke="#d5d4cf"/>
+<text x="201.99999999999923" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">86.30</text>
+<path d="M312.00,154v440" stroke="#d5d4cf"/>
+<text x="312.0000000000016" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">86.80</text>
+<path d="M422.00,154v440" stroke="#d5d4cf"/>
+<text x="422.0000000000008" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.30</text>
+<path d="M532.00,154v440" stroke="#d5d4cf"/>
+<text x="532.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.81</text>
+<path d="M92,594.00h440" stroke="#d5d4cf"/>
+<text x="82" y="598.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">85.79</text>
+<path d="M92,484.00h440" stroke="#d5d4cf"/>
+<text x="82" y="488.0000000000008" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">86.30</text>
+<path d="M92,374.00h440" stroke="#d5d4cf"/>
+<text x="82" y="377.9999999999984" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">86.80</text>
+<path d="M92,264.00h440" stroke="#d5d4cf"/>
+<text x="82" y="267.9999999999992" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.30</text>
+<path d="M92,154.00h440" stroke="#d5d4cf"/>
+<text x="82" y="158.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.81</text>
+<path d="M92,154v440h440" fill="none" stroke="#77766f"/>
+<path d="M92.0,594.0L532.0,154.0" stroke="#77766f" stroke-dasharray="5 4" fill="none"/>
+<circle cx="357.57" cy="184.34" r="3" fill="#2a78d6" opacity="0.6"><title>長野県：実測 87.670 / 予測 87.009 / 残差 +0.661</title></circle>
+<circle cx="366.67" cy="206.14" r="3" fill="#2a78d6" opacity="0.6"><title>滋賀県：実測 87.570 / 予測 87.051 / 残差 +0.519</title></circle>
+<circle cx="350.91" cy="223.58" r="3" fill="#2a78d6" opacity="0.6"><title>熊本県：実測 87.490 / 予測 86.978 / 残差 +0.512</title></circle>
+<circle cx="352.52" cy="262.82" r="3" fill="#2a78d6" opacity="0.6"><title>大分県：実測 87.310 / 予測 86.986 / 残差 +0.324</title></circle>
+<circle cx="363.12" cy="212.68" r="3" fill="#2a78d6" opacity="0.6"><title>福井県：実測 87.540 / 予測 87.034 / 残差 +0.506</title></circle>
+<circle cx="367.81" cy="275.90" r="3" fill="#2a78d6" opacity="0.6"><title>奈良県：実測 87.250 / 予測 87.056 / 残差 +0.194</title></circle>
+<circle cx="373.34" cy="254.10" r="3" fill="#2a78d6" opacity="0.6"><title>京都府：実測 87.350 / 予測 87.081 / 残差 +0.269</title></circle>
+<circle cx="359.14" cy="184.34" r="3" fill="#2a78d6" opacity="0.6"><title>岡山県：実測 87.670 / 予測 87.016 / 残差 +0.654</title></circle>
+<circle cx="362.52" cy="269.36" r="3" fill="#2a78d6" opacity="0.6"><title>石川県：実測 87.280 / 予測 87.032 / 残差 +0.248</title></circle>
+<circle cx="361.06" cy="295.52" r="3" fill="#2a78d6" opacity="0.6"><title>宮城県：実測 87.160 / 予測 87.025 / 残差 +0.135</title></circle>
+<circle cx="353.57" cy="190.88" r="3" fill="#2a78d6" opacity="0.6"><title>島根県：実測 87.640 / 予測 86.991 / 残差 +0.649</title></circle>
+<circle cx="362.69" cy="369.64" r="3" fill="#2a78d6" opacity="0.6"><title>岐阜県：実測 86.820 / 予測 87.033 / 残差 -0.213</title></circle>
+<circle cx="349.74" cy="304.24" r="3" fill="#2a78d6" opacity="0.6"><title>佐賀県：実測 87.120 / 予測 86.973 / 残差 +0.147</title></circle>
+<circle cx="377.59" cy="278.08" r="3" fill="#2a78d6" opacity="0.6"><title>神奈川県：実測 87.240 / 予測 87.101 / 残差 +0.139</title></circle>
+<circle cx="359.25" cy="284.62" r="3" fill="#2a78d6" opacity="0.6"><title>香川県：実測 87.210 / 予測 87.017 / 残差 +0.193</title></circle>
+<circle cx="353.65" cy="260.64" r="3" fill="#2a78d6" opacity="0.6"><title>新潟県：実測 87.320 / 予測 86.991 / 残差 +0.329</title></circle>
+<circle cx="369.54" cy="258.46" r="3" fill="#2a78d6" opacity="0.6"><title>広島県：実測 87.330 / 予測 87.064 / 残差 +0.266</title></circle>
+<circle cx="362.40" cy="332.58" r="3" fill="#2a78d6" opacity="0.6"><title>三重県：実測 86.990 / 予測 87.031 / 残差 -0.041</title></circle>
+<circle cx="366.42" cy="308.60" r="3" fill="#2a78d6" opacity="0.6"><title>静岡県：実測 87.100 / 予測 87.050 / 残差 +0.050</title></circle>
+<circle cx="362.88" cy="282.44" r="3" fill="#2a78d6" opacity="0.6"><title>山梨県：実測 87.220 / 予測 87.033 / 残差 +0.187</title></circle>
+<circle cx="350.25" cy="339.12" r="3" fill="#2a78d6" opacity="0.6"><title>山形県：実測 86.960 / 予測 86.975 / 残差 -0.015</title></circle>
+<circle cx="369.77" cy="350.02" r="3" fill="#2a78d6" opacity="0.6"><title>千葉県：実測 86.910 / 予測 87.065 / 残差 -0.155</title></circle>
+<circle cx="344.42" cy="234.48" r="3" fill="#2a78d6" opacity="0.6"><title>沖縄県：実測 87.440 / 予測 86.949 / 残差 +0.491</title></circle>
+<circle cx="354.45" cy="356.56" r="3" fill="#2a78d6" opacity="0.6"><title>山口県：実測 86.880 / 予測 86.995 / 残差 -0.115</title></circle>
+<circle cx="348.05" cy="304.24" r="3" fill="#2a78d6" opacity="0.6"><title>宮崎県：実測 87.120 / 予測 86.965 / 残差 +0.155</title></circle>
+<circle cx="350.14" cy="336.94" r="3" fill="#2a78d6" opacity="0.6"><title>長崎県：実測 86.970 / 予測 86.975 / 残差 -0.005</title></circle>
+<circle cx="371.52" cy="315.14" r="3" fill="#2a78d6" opacity="0.6"><title>兵庫県：実測 87.070 / 予測 87.073 / 残差 -0.003</title></circle>
+<circle cx="378.93" cy="360.92" r="3" fill="#2a78d6" opacity="0.6"><title>愛知県：実測 86.860 / 予測 87.107 / 残差 -0.247</title></circle>
+<circle cx="362.23" cy="299.88" r="3" fill="#2a78d6" opacity="0.6"><title>福岡県：実測 87.140 / 予測 87.030 / 残差 +0.110</title></circle>
+<circle cx="368.60" cy="404.52" r="3" fill="#2a78d6" opacity="0.6"><title>埼玉県：実測 86.660 / 予測 87.060 / 残差 -0.400</title></circle>
+<circle cx="361.98" cy="238.84" r="3" fill="#2a78d6" opacity="0.6"><title>富山県：実測 87.420 / 予測 87.029 / 残差 +0.391</title></circle>
+<circle cx="363.96" cy="365.28" r="3" fill="#2a78d6" opacity="0.6"><title>群馬県：実測 86.840 / 予測 87.038 / 残差 -0.198</title></circle>
+<circle cx="347.06" cy="271.54" r="3" fill="#2a78d6" opacity="0.6"><title>鳥取県：実測 87.270 / 予測 86.961 / 残差 +0.309</title></circle>
+<circle cx="352.37" cy="380.54" r="3" fill="#2a78d6" opacity="0.6"><title>北海道：実測 86.770 / 予測 86.985 / 残差 -0.215</title></circle>
+<circle cx="351.69" cy="328.22" r="3" fill="#2a78d6" opacity="0.6"><title>高知県：実測 87.010 / 予測 86.982 / 残差 +0.028</title></circle>
+<circle cx="348.01" cy="378.36" r="3" fill="#2a78d6" opacity="0.6"><title>鹿児島県：実測 86.780 / 予測 86.965 / 残差 -0.185</title></circle>
+<circle cx="361.20" cy="404.52" r="3" fill="#2a78d6" opacity="0.6"><title>徳島県：実測 86.660 / 予測 87.026 / 残差 -0.366</title></circle>
+<circle cx="356.42" cy="369.64" r="3" fill="#2a78d6" opacity="0.6"><title>愛媛県：実測 86.820 / 予測 87.004 / 残差 -0.184</title></circle>
+<circle cx="355.06" cy="461.20" r="3" fill="#2a78d6" opacity="0.6"><title>福島県：実測 86.400 / 予測 86.998 / 残差 -0.598</title></circle>
+<circle cx="362.84" cy="476.46" r="3" fill="#2a78d6" opacity="0.6"><title>茨城県：実測 86.330 / 予測 87.033 / 残差 -0.703</title></circle>
+<circle cx="349.95" cy="452.48" r="3" fill="#2a78d6" opacity="0.6"><title>岩手県：実測 86.440 / 予測 86.974 / 残差 -0.534</title></circle>
+<circle cx="358.07" cy="445.94" r="3" fill="#2a78d6" opacity="0.6"><title>和歌山県：実測 86.470 / 予測 87.011 / 残差 -0.541</title></circle>
+<circle cx="364.65" cy="496.08" r="3" fill="#2a78d6" opacity="0.6"><title>栃木県：実測 86.240 / 予測 87.042 / 残差 -0.802</title></circle>
+<circle cx="370.58" cy="389.26" r="3" fill="#2a78d6" opacity="0.6"><title>大阪府：実測 86.730 / 予測 87.069 / 残差 -0.339</title></circle>
+<circle cx="408.10" cy="273.72" r="3" fill="#2a78d6" opacity="0.6"><title>東京都：実測 87.260 / 予測 87.241 / 残差 +0.019</title></circle>
+<circle cx="348.15" cy="465.56" r="3" fill="#2a78d6" opacity="0.6"><title>秋田県：実測 86.380 / 予測 86.966 / 残差 -0.586</title></circle>
+<circle cx="349.03" cy="563.66" r="3" fill="#2a78d6" opacity="0.6"><title>青森県：実測 85.930 / 予測 86.970 / 残差 -1.040</title></circle>
+<text x="312.0" y="642" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#0b0b0b">予測値</text>
+<text x="712" y="128" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">残差＝実測値−予測値（破線は0）</text>
+<path d="M712.00,154v440" stroke="#d5d4cf"/>
+<text x="712.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">86.93</text>
+<path d="M822.00,154v440" stroke="#d5d4cf"/>
+<text x="821.9999999999953" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.01</text>
+<path d="M932.00,154v440" stroke="#d5d4cf"/>
+<text x="931.9999999999908" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.09</text>
+<path d="M1042.00,154v440" stroke="#d5d4cf"/>
+<text x="1042.0000000000045" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.18</text>
+<path d="M1152.00,154v440" stroke="#d5d4cf"/>
+<text x="1152.0" y="618" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">87.26</text>
+<path d="M712,594.00h440" stroke="#d5d4cf"/>
+<text x="702" y="598.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-1.12</text>
+<path d="M712,484.00h440" stroke="#d5d4cf"/>
+<text x="702" y="488.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">-0.56</text>
+<path d="M712,374.00h440" stroke="#d5d4cf"/>
+<text x="702" y="378.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">0.00</text>
+<path d="M712,264.00h440" stroke="#d5d4cf"/>
+<text x="702" y="268.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">0.56</text>
+<path d="M712,154.00h440" stroke="#d5d4cf"/>
+<text x="702" y="158.0" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">1.12</text>
+<path d="M712,154v440h440" fill="none" stroke="#77766f"/>
+<path d="M712,374.0h440" stroke="#77766f" stroke-dasharray="5 4" fill="none"/>
+<circle cx="820.66" cy="244.52" r="3" fill="#2a78d6" opacity="0.6"><title>長野県：実測 87.670 / 予測 87.009 / 残差 +0.661</title></circle>
+<circle cx="874.91" cy="272.29" r="3" fill="#2a78d6" opacity="0.6"><title>滋賀県：実測 87.570 / 予測 87.051 / 残差 +0.519</title></circle>
+<circle cx="781.02" cy="273.80" r="3" fill="#2a78d6" opacity="0.6"><title>熊本県：実測 87.490 / 予測 86.978 / 残差 +0.512</title></circle>
+<circle cx="790.59" cy="310.50" r="3" fill="#2a78d6" opacity="0.6"><title>大分県：実測 87.310 / 予測 86.986 / 残差 +0.324</title></circle>
+<circle cx="853.74" cy="274.97" r="3" fill="#2a78d6" opacity="0.6"><title>福井県：実測 87.540 / 予測 87.034 / 残差 +0.506</title></circle>
+<circle cx="881.71" cy="336.00" r="3" fill="#2a78d6" opacity="0.6"><title>奈良県：実測 87.250 / 予測 87.056 / 残差 +0.194</title></circle>
+<circle cx="914.65" cy="321.38" r="3" fill="#2a78d6" opacity="0.6"><title>京都府：実測 87.350 / 予測 87.081 / 残差 +0.269</title></circle>
+<circle cx="830.05" cy="245.93" r="3" fill="#2a78d6" opacity="0.6"><title>岡山県：実測 87.670 / 予測 87.016 / 残差 +0.654</title></circle>
+<circle cx="850.20" cy="325.37" r="3" fill="#2a78d6" opacity="0.6"><title>石川県：実測 87.280 / 予測 87.032 / 残差 +0.248</title></circle>
+<circle cx="841.50" cy="347.57" r="3" fill="#2a78d6" opacity="0.6"><title>宮城県：実測 87.160 / 予測 87.025 / 残差 +0.135</title></circle>
+<circle cx="796.89" cy="246.81" r="3" fill="#2a78d6" opacity="0.6"><title>島根県：実測 87.640 / 予測 86.991 / 残差 +0.649</title></circle>
+<circle cx="851.20" cy="415.63" r="3" fill="#2a78d6" opacity="0.6"><title>岐阜県：実測 86.820 / 予測 87.033 / 残差 -0.213</title></circle>
+<circle cx="774.03" cy="345.22" r="3" fill="#2a78d6" opacity="0.6"><title>佐賀県：実測 87.120 / 予測 86.973 / 残差 +0.147</title></circle>
+<circle cx="939.92" cy="346.74" r="3" fill="#2a78d6" opacity="0.6"><title>神奈川県：実測 87.240 / 予測 87.101 / 残差 +0.139</title></circle>
+<circle cx="830.68" cy="336.14" r="3" fill="#2a78d6" opacity="0.6"><title>香川県：実測 87.210 / 予測 87.017 / 残差 +0.193</title></circle>
+<circle cx="797.34" cy="309.56" r="3" fill="#2a78d6" opacity="0.6"><title>新潟県：実測 87.320 / 予測 86.991 / 残差 +0.329</title></circle>
+<circle cx="891.96" cy="321.88" r="3" fill="#2a78d6" opacity="0.6"><title>広島県：実測 87.330 / 予測 87.064 / 残差 +0.266</title></circle>
+<circle cx="849.44" cy="382.07" r="3" fill="#2a78d6" opacity="0.6"><title>三重県：実測 86.990 / 予測 87.031 / 残差 -0.041</title></circle>
+<circle cx="873.38" cy="364.13" r="3" fill="#2a78d6" opacity="0.6"><title>静岡県：実測 87.100 / 予測 87.050 / 残差 +0.050</title></circle>
+<circle cx="852.30" cy="337.44" r="3" fill="#2a78d6" opacity="0.6"><title>山梨県：実測 87.220 / 予測 87.033 / 残差 +0.187</title></circle>
+<circle cx="777.07" cy="377.03" r="3" fill="#2a78d6" opacity="0.6"><title>山形県：実測 86.960 / 予測 86.975 / 残差 -0.015</title></circle>
+<circle cx="893.36" cy="404.36" r="3" fill="#2a78d6" opacity="0.6"><title>千葉県：実測 86.910 / 予測 87.065 / 残差 -0.155</title></circle>
+<circle cx="742.34" cy="277.76" r="3" fill="#2a78d6" opacity="0.6"><title>沖縄県：実測 87.440 / 予測 86.949 / 残差 +0.491</title></circle>
+<circle cx="802.10" cy="396.47" r="3" fill="#2a78d6" opacity="0.6"><title>山口県：実測 86.880 / 予測 86.995 / 残差 -0.115</title></circle>
+<circle cx="764.02" cy="343.71" r="3" fill="#2a78d6" opacity="0.6"><title>宮崎県：実測 87.120 / 予測 86.965 / 残差 +0.155</title></circle>
+<circle cx="776.44" cy="374.97" r="3" fill="#2a78d6" opacity="0.6"><title>長崎県：実測 86.970 / 予測 86.975 / 残差 -0.005</title></circle>
+<circle cx="903.78" cy="374.59" r="3" fill="#2a78d6" opacity="0.6"><title>兵庫県：実測 87.070 / 予測 87.073 / 残差 -0.003</title></circle>
+<circle cx="947.94" cy="422.40" r="3" fill="#2a78d6" opacity="0.6"><title>愛知県：実測 86.860 / 予測 87.107 / 残差 -0.247</title></circle>
+<circle cx="848.42" cy="352.53" r="3" fill="#2a78d6" opacity="0.6"><title>福岡県：実測 87.140 / 予測 87.030 / 残差 +0.110</title></circle>
+<circle cx="886.42" cy="452.29" r="3" fill="#2a78d6" opacity="0.6"><title>埼玉県：実測 86.660 / 予測 87.060 / 残差 -0.400</title></circle>
+<circle cx="846.99" cy="297.46" r="3" fill="#2a78d6" opacity="0.6"><title>富山県：実測 87.420 / 予測 87.029 / 残差 +0.391</title></circle>
+<circle cx="858.74" cy="412.86" r="3" fill="#2a78d6" opacity="0.6"><title>群馬県：実測 86.840 / 予測 87.038 / 残差 -0.198</title></circle>
+<circle cx="758.09" cy="313.43" r="3" fill="#2a78d6" opacity="0.6"><title>鳥取県：実測 87.270 / 予測 86.961 / 残差 +0.309</title></circle>
+<circle cx="789.70" cy="416.15" r="3" fill="#2a78d6" opacity="0.6"><title>北海道：実測 86.770 / 予測 86.985 / 残差 -0.215</title></circle>
+<circle cx="785.69" cy="368.53" r="3" fill="#2a78d6" opacity="0.6"><title>高知県：実測 87.010 / 予測 86.982 / 残差 +0.028</title></circle>
+<circle cx="763.74" cy="410.28" r="3" fill="#2a78d6" opacity="0.6"><title>鹿児島県：実測 86.780 / 予測 86.965 / 残差 -0.185</title></circle>
+<circle cx="842.31" cy="445.64" r="3" fill="#2a78d6" opacity="0.6"><title>徳島県：実測 86.660 / 予測 87.026 / 残差 -0.366</title></circle>
+<circle cx="813.83" cy="410.00" r="3" fill="#2a78d6" opacity="0.6"><title>愛媛県：実測 86.820 / 予測 87.004 / 残差 -0.184</title></circle>
+<circle cx="805.77" cy="491.06" r="3" fill="#2a78d6" opacity="0.6"><title>福島県：実測 86.400 / 予測 86.998 / 残差 -0.598</title></circle>
+<circle cx="852.08" cy="511.76" r="3" fill="#2a78d6" opacity="0.6"><title>茨城県：実測 86.330 / 予測 87.033 / 残差 -0.703</title></circle>
+<circle cx="775.31" cy="478.63" r="3" fill="#2a78d6" opacity="0.6"><title>岩手県：実測 86.440 / 予測 86.974 / 残差 -0.534</title></circle>
+<circle cx="823.65" cy="480.04" r="3" fill="#2a78d6" opacity="0.6"><title>和歌山県：実測 86.470 / 予測 87.011 / 残差 -0.541</title></circle>
+<circle cx="862.87" cy="531.02" r="3" fill="#2a78d6" opacity="0.6"><title>栃木県：実測 86.240 / 予測 87.042 / 残差 -0.802</title></circle>
+<circle cx="898.20" cy="440.36" r="3" fill="#2a78d6" opacity="0.6"><title>大阪府：実測 86.730 / 予測 87.069 / 残差 -0.339</title></circle>
+<circle cx="1121.66" cy="370.25" r="3" fill="#2a78d6" opacity="0.6"><title>東京都：実測 87.260 / 予測 87.241 / 残差 +0.019</title></circle>
+<circle cx="764.58" cy="488.76" r="3" fill="#2a78d6" opacity="0.6"><title>秋田県：実測 86.380 / 予測 86.966 / 残差 -0.586</title></circle>
+<circle cx="769.82" cy="577.70" r="3" fill="#2a78d6" opacity="0.6"><title>青森県：実測 85.930 / 予測 86.970 / 残差 -1.040</title></circle>
+<text x="932.0" y="642" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#0b0b0b">予測値</text>
+<text x="40" y="658" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">同じデータで推定した標本内の当てはめ。未知の地域・将来に対する予測精度ではない。</text>
+<text x="40" y="679" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">補助回帰の平均予測の95%区間はCSVに収録（600回・指標固定）。個々の実測値の予測区間ではない。</text>
+</svg>

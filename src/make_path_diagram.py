@@ -20,7 +20,7 @@ SURFACE, BOX_BG, BOX_LINE = "#fcfcfb", "#ffffff", "#d5d4cf"
 LAT_BG, LAT_LINE = "#eef4fd", "#2a78d6"
 FONT = "'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif"
 
-W, H = 1280, 1100
+W, H = 1280, 1140
 
 
 # ---------------------------------------------------------------- 推定
@@ -43,6 +43,11 @@ def stars(p):
     if p is None:
         return ""          # 尺度固定のため検定しない
     return "***" if p < .001 else "**" if p < .01 else "*" if p < .05 else " n.s."
+
+
+def loading_label(v, p):
+    """標準化負荷量に、自由係数の有意性または尺度固定の印を付ける。"""
+    return f"{v:.2f}" + ("†" if p is None else stars(p))
 
 
 def fmt(v, p):
@@ -141,7 +146,7 @@ def build():
                    f'<path d="M0,1 L9,5 L0,9 z" fill="{c}"/></marker>')
     out.append("</defs>")
 
-    out.append(text(48, 52, "制度の質は経済成長を生むか — World Bank 公開データによる構造方程式モデリング",
+    out.append(text(48, 52, "制度の質は経済成長を生むか — World Bank 公開データによる構造方程式モデリング（SEM）",
                     22, INK, "700"))
     out.append(text(48, 78, "Worldwide Governance Indicators (2012) ／ World Development Indicators "
                             "(2010-14, 2020-23)　semopy 2.3.11・最尤法・全変数を標準化", 13, INK3))
@@ -212,8 +217,8 @@ def build():
     for lat, boxes, keys, t in [(GOV, gb, gov_ind, .46), (HC, hb, hc_ind, .55),
                                 (GR, rb, gr_ind, .46)]:
         for n, (_, key) in zip(boxes, keys):
-            v, _p = B[(lat_name(lat), key)]
-            out.append(arrow(lat, n, f"{v:.2f}", INK3, 1.3, lab_t=t))
+            v, p = B[(lat_name(lat), key)]
+            out.append(arrow(lat, n, loading_label(v, p), INK3, 1.3, lab_t=t))
 
     # 構造パス
     for src, dst, key, bow, t in [(GOV, HC, ("GOV", "HC"), 0, .34),
@@ -253,7 +258,7 @@ def build():
         out.append(text(676, ny + 16 + i * 17, line, 11.5, INK2))
 
     # ===== 凡例 =====
-    lg = H - 52
+    lg = H - 92
     out.append(text(48, lg, "凡例", 12, INK, "700"))
     out.append(f'<ellipse cx="110" cy="{lg-5}" rx="21" ry="11" fill="{LAT_BG}" '
                f'stroke="{LAT_LINE}" stroke-width="2"/>')
@@ -275,6 +280,10 @@ def build():
     out.append(f'<text x="{W-48}" y="{lg+22}" text-anchor="end" font-family="{FONT}" '
                f'font-size="11" fill="{INK3}">出典: World Bank Open Data (WGI / WDI)</text>')
 
+    out.append(text(48, H - 25,
+                    "因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。", 11, INK3))
+    out.append(text(48, H - 9,
+                    "星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。", 11, INK3))
     out.append("</svg>")
     return "\n".join(out)
 

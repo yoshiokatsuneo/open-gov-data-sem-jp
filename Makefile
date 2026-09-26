@@ -52,6 +52,7 @@ figures:
 	$(PY) $(SRC)/make_country2_diagram.py
 	$(PY) $(SRC)/make_muni_chart.py
 	$(PY) $(SRC)/make_muni_path_diagram.py
+	$(PY) $(SRC)/prediction_diagnostics.py
 	$(PY) $(SRC)/make_index.py
 	$(PY) $(SRC)/make_manifest.py
 
