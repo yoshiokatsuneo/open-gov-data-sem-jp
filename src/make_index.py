@@ -334,11 +334,12 @@ def case_examples(section_id):
         "pref-job": [("job", "転職率（％・差はポイント）", ["東京都", "大阪府", "沖縄県"])],
         "muni": [("muni", "総移動率（％・差はポイント）", ["新宿区 [13104]"])],
     }[section_id]
-    out = ["<h3>具体例で見る：どこまで説明できているか</h3>",
+    out = ["<h3>具体例：予測とのずれ</h3>",
            "<p>主要国・身近な地域をあらかじめ指定し、それに加えて各指標で残差の絶対値が最小の地域、"
            "正の残差が最大の地域、負の残差が最小の地域を機械的に選びました。同じ地域は1行にまとめています。"
            "残差の大小は記述的な比較であり、統計的な異常の判定ではありません。</p>"]
     translations = {"United States": "アメリカ", "Japan": "日本", "China": "中国"}
+    chart_groups = []
     for key, title, named in groups:
         data = pd.read_csv(paths.result(f"{key}_prediction_diagnostics.csv")).set_index("region")
         selected = {}
@@ -348,6 +349,7 @@ def case_examples(section_id):
                              (data.residual.idxmax(), "予測を最も上回る"),
                              (data.residual.idxmin(), "予測を最も下回る")]:
             selected.setdefault(name, []).append(reason)
+        chart_groups.append((key, data, selected))
         interval = "mean_ci_low" in data
         rows = []
         for name, reasons in selected.items():
@@ -365,6 +367,10 @@ def case_examples(section_id):
                    "<table><thead><tr><th>国・地域</th><th>選定理由</th><th>実測</th><th>予測</th><th>実測−予測</th>"
                    + ("<th>平均予測の95％区間</th>" if interval else "")
                    + "<th>読み取り</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>")
+    from make_case_diagram import build as case_diagram
+    chart = case_diagram(section_id, chart_groups)
+    out.insert(2, f"<figure><a href='figures/{chart}'><img src='figures/{chart}' alt='選定した国・地域の予測との差。0を中心に左右で比較。健康は男女を併記。' loading='lazy'></a>"
+               "<figcaption>地域名と予測との差を表示。クリックで原寸。正確な数値と選定理由は下表で確認できます。</figcaption></figure>")
     explanations = {
         "country": "これは制度・所得調整後の人的資本・初期所得を使った補助回帰による比較です。日本とアメリカのずれも、これらの条件だけでは成長を説明し切れないことを示します。人口構成・産業構造・期間中の出来事などは説明候補ですが、この分析では個別の原因として検証していません。中国は対象外であり、説明できた／できなかったという評価自体をしていません。",
         "pref-health": "この予測は豊かさのみを使う補助回帰です。予測に近くても健康の原因が説明されたわけではありません。東京は豊かさスコアが他県から離れており、回帰の傾きや予測がその位置に影響されます。生活習慣や医療へのアクセスなどは追加検証の候補ですが、個別の残差から原因を特定することはできません。",

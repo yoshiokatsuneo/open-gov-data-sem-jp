@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="398" viewBox="0 0 1280 398" role="img">
+<title>具体例：予測とのずれ</title>
+<rect width="1280" height="398" fill="#fcfcfb"/>
+<text x="40" y="38" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="23" font-weight="700" fill="#0b0b0b">具体例：予測とのずれ</text>
+<text x="40" y="65" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#77766f">残差＝実測値−予測値。標本内の当てはめであり、因果・異常の判定ではありません。</text>
+<text x="40" y="89" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="400" fill="#77766f">単位：パーセントポイント ｜ パスモデルの式による当てはめ</text>
+<text x="490" y="112" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">← 予測より低い</text>
+<text x="830" y="112" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">予測より高い →</text>
+<path d="M410.00,124V337" stroke="#d5d4cf" stroke-width="1"/>
+<text x="410.0" y="359" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">-20.04</text>
+<path d="M565.00,124V337" stroke="#d5d4cf" stroke-width="1"/>
+<text x="565.0" y="359" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">-10.02</text>
+<path d="M720.00,124V337" stroke="#77766f" stroke-width="1.5"/>
+<text x="720.0" y="359" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">0</text>
+<path d="M875.00,124V337" stroke="#d5d4cf" stroke-width="1"/>
+<text x="875.0" y="359" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">+10.02</text>
+<path d="M1030.00,124V337" stroke="#d5d4cf" stroke-width="1"/>
+<text x="1030.0" y="359" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">+20.04</text>
+<text x="40" y="152" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="400" fill="#0b0b0b">与那国町 [47382]</text>
+<path d="M720.00,147H982.71" stroke="#2a78d6" stroke-width="3"/>
+<circle cx="982.71" cy="147" r="5" fill="#2a78d6"/>
+<text x="1235" y="152" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14" font-weight="600" fill="#0b0b0b">+16.98</text>
+<text x="40" y="204" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="400" fill="#0b0b0b">新宿区 [13104]</text>
+<path d="M720.00,199H758.23" stroke="#2a78d6" stroke-width="3"/>
+<circle cx="758.23" cy="199" r="5" fill="#2a78d6"/>
+<text x="1235" y="204" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14" font-weight="600" fill="#0b0b0b">+2.47</text>
+<text x="40" y="256" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="400" fill="#0b0b0b">庄内町 [6428]</text>
+<path d="M720.00,251H720.08" stroke="#2a78d6" stroke-width="3"/>
+<circle cx="720.08" cy="251" r="5" fill="#2a78d6"/>
+<text x="1235" y="256" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14" font-weight="600" fill="#0b0b0b">+0.01</text>
+<text x="40" y="308" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="15" font-weight="400" fill="#0b0b0b">浪江町 [7547]</text>
+<path d="M720.00,303H473.45" stroke="#2a78d6" stroke-width="3"/>
+<circle cx="473.45" cy="303" r="5" fill="#2a78d6"/>
+<text x="1235" y="308" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="14" font-weight="600" fill="#0b0b0b">-15.94</text>
+<text x="40" y="386" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">指定例と残差の極値・最小絶対値の例。残差が大きい順。</text>
+</svg>
