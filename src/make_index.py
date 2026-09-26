@@ -10,6 +10,10 @@ import pandas as pd
 
 import paths
 
+# GitHub Pages は .md を整形表示しないので、ドキュメントへのリンクだけ
+# Markdown がレンダリングされる GitHub 側に向ける。図とCSVとコードは相対のままでよい。
+REPO = "https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main"
+
 SECTIONS = [
     dict(id="country", no="01", title="国レベル — 所得の割に人的資本が厚い国は、その後10年よく伸びる",
          lead="World Bank の WGI / WDI で、制度の質・人的資本・その後10年の成長の関係を推定した。"
@@ -129,7 +133,7 @@ def build():
                          f"<figcaption>{esc(cap)} — figures/{f}</figcaption></figure>")
         parts += ["<h3>結果データ</h3>", files_ul(s["files"], "results"),
                   "<h3>コード</h3>", files_ul(s["src"], "src"),
-                  f"<p><a href='{s['doc']}'>詳細ドキュメント →</a></p></section>"]
+                  f"<p><a href='{REPO}/{s['doc']}'>詳細ドキュメント →</a></p></section>"]
         body.append("".join(parts))
 
     return f"""<!doctype html>
@@ -141,11 +145,11 @@ def build():
 <h1>公的データによる構造方程式モデリング</h1>
 <p>World Bank と e-Stat の公開データだけを使い、4つの分析単位でSEMを行った記録。
 図をクリックすると原寸で開く。各結果に対応するCSVとPythonコードも辿れる。</p>
-<nav aria-label="目次">{nav}<a href="docs/04-methodology.md">方法論の教訓</a>
-<a href="README.md">README</a></nav>
+<nav aria-label="目次">{nav}<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>
+<a href="{REPO}/README.md">README</a></nav>
 <div class="note"><strong>読む前に。</strong>すべて観測データであり、矢印の向きはモデルの仮定にすぎない。
 同じ共分散行列を再現する等価モデルは無数にあり、向きを逆にしても適合度は変わらない
-（<a href="docs/04-methodology.md">方法論 §5</a>に検算あり）。
+（<a href="{REPO}/docs/04-methodology.md">方法論 §5</a>に検算あり）。
 区間が0をまたぐパスは「効果を示せなかった」ものとして扱うこと。</div></header>
 {''.join(body)}
 <section id="repro"><h2>再現と、詳細ドキュメント</h2>
@@ -153,14 +157,14 @@ def build():
 <code>make setup &amp;&amp; make all</code> で全分析と全図が約50秒で再生成される。
 <code>data/raw/</code> に生データをコミットしてあるためネットワークは不要。</p>
 <ul class="files">
-<li><a href="README.md">README</a><span>結果の要約・方法論の教訓・リポジトリ構成</span></li>
-<li><a href="AGENTS.md">AGENTS.md</a><span>後続の分析者（人・AI）向けの作法と落とし穴</span></li>
-<li><a href="docs/01-countries.md">01 国レベル</a><span>docs/01-countries.md</span></li>
-<li><a href="docs/02-prefectures.md">02 都道府県</a><span>docs/02-prefectures.md</span></li>
-<li><a href="docs/03-municipalities.md">03 市区町村</a><span>docs/03-municipalities.md</span></li>
-<li><a href="docs/04-methodology.md">04 方法論の教訓</a><span>docs/04-methodology.md</span></li>
-<li><a href="docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
-<li><a href="Makefile">Makefile</a><span>再現用エントリポイント</span></li>
+<li><a href="{REPO}/README.md">README</a><span>結果の要約・方法論の教訓・リポジトリ構成</span></li>
+<li><a href="{REPO}/AGENTS.md">AGENTS.md</a><span>後続の分析者（人・AI）向けの作法と落とし穴</span></li>
+<li><a href="{REPO}/docs/01-countries.md">01 国レベル</a><span>docs/01-countries.md</span></li>
+<li><a href="{REPO}/docs/02-prefectures.md">02 都道府県</a><span>docs/02-prefectures.md</span></li>
+<li><a href="{REPO}/docs/03-municipalities.md">03 市区町村</a><span>docs/03-municipalities.md</span></li>
+<li><a href="{REPO}/docs/04-methodology.md">04 方法論の教訓</a><span>docs/04-methodology.md</span></li>
+<li><a href="{REPO}/docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
+<li><a href="{REPO}/Makefile">Makefile</a><span>再現用エントリポイント</span></li>
 </ul></section>
 <footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
 この目次は <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
