@@ -7,9 +7,9 @@ import semopy
 
 from job_sem import LABELS, MODEL, USED, wide
 from make_path_diagram import (BOX_LINE, C_NS, C_POS, FONT, INK, INK2, INK3,
-                               SURFACE, Node, arrow, path_style, stars, text)
+                               SURFACE, Node, arrow, path_style, stars, loading_label, text)
 
-W, H = 1280, 822
+W, H = 1280, 862
 P, PH = 118, 572
 
 
@@ -46,7 +46,7 @@ def build():
                    f'<path d="M0,1 L9,5 L0,9 z" fill="{c}"/></marker>')
     out.append("</defs>")
 
-    out.append(text(48, 52, "転職が多い県は、労働市場が厚いのか、雇用が不安定なのか — 47都道府県の構造方程式モデリング",
+    out.append(text(48, 52, "転職が多い県は、労働市場が厚いのか、雇用が不安定なのか — 47都道府県の構造方程式モデリング（SEM）",
                     21, INK, "700"))
     out.append(text(48, 78, "e-Stat 社会・人口統計体系「社会生活統計指標－都道府県の指標－2024」"
                             "（転職率・離職率は2017年、他は2015〜2021年）　semopy 2.3.11・最尤法・全変数を標準化",
@@ -75,7 +75,7 @@ def build():
                              (PRECAR, pb, ["sep", "unemp"])]:
         name = "URBAN" if lat is URBAN else "PRECAR"
         for n, k in zip(boxes, keys):
-            out.append(arrow(lat, n, f"{est[(k, name, '~')][0]:.2f}", INK3, 1.3, lab_t=.46))
+            out.append(arrow(lat, n, loading_label(*est[(k, name, '~')]), INK3, 1.3, lab_t=.46))
 
     for src, key in ((URBAN, "URBAN"), (PRECAR, "PRECAR")):
         v, p = est[("jobchg", key, "~")]
@@ -116,7 +116,7 @@ def build():
         out.append(text(1024, y, "0をまたぐ（未確立）" if zero else "0を含まない", 11.5, col))
 
     # ---- 凡例 ----
-    lg = H - 62
+    lg = H - 102
     out.append(text(48, lg, "凡例", 12, INK, "700"))
     out.append(f'<ellipse cx="110" cy="{lg-5}" rx="21" ry="11" fill="#eef4fd" '
                f'stroke="{C_POS}" stroke-width="2"/>')
@@ -149,6 +149,10 @@ def build():
     out.append(f'<text x="{W-48}" y="{lg+38}" text-anchor="end" font-family="{FONT}" '
                f'font-size="11" fill="{INK3}">出典: 総務省統計局 e-Stat 社会・人口統計体系</text>')
 
+    out.append(text(48, H - 25,
+                    "因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。", 11, INK3))
+    out.append(text(48, H - 9,
+                    "星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。", 11, INK3))
     out.append("</svg>")
     return "\n".join(out)
 

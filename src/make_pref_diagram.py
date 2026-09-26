@@ -10,9 +10,9 @@ import semopy
 
 from estat_sem import LABELS, MODEL, USED, wide
 from make_path_diagram import (BOX_LINE, C_NEG, C_NS, C_POS, FONT, INK, INK2, INK3,
-                               SURFACE, Node, arrow, esc, path_style, stars, text)
+                               SURFACE, Node, arrow, esc, path_style, stars, loading_label, text)
 
-W, H = 1280, 892
+W, H = 1280, 932
 P = 104                      # パネル上端
 PH = 654                     # パネル高さ
 
@@ -52,7 +52,7 @@ def build():
                    f'<path d="M0,1 L9,5 L0,9 z" fill="{c}"/></marker>')
     out.append("</defs>")
 
-    out.append(text(48, 52, "都道府県の健康格差は、豊かさか、医療の量か — 47都道府県の構造方程式モデリング",
+    out.append(text(48, 52, "都道府県の健康格差は、豊かさか、医療の量か — 47都道府県の構造方程式モデリング（SEM）",
                     22, INK, "700"))
     out.append(text(48, 78, "e-Stat 社会・人口統計体系「社会生活統計指標－都道府県の指標－2024」"
                             "（2015年前後の値）　semopy 2.3.11・最尤法・全変数を標準化", 13, INK3))
@@ -78,7 +78,7 @@ def build():
     for lat, boxes, keys in [(WEALTH, wb, ["income", "tax_income", "univ_rate"]),
                              (MED, mb, ["nurses", "beds", "hosp"])]:
         for n, k in zip(boxes, keys):
-            out.append(arrow(lat, n, f"{est[(k, lat_key(lat), '~')][0]:.2f}", INK3, 1.3, lab_t=.46))
+            out.append(arrow(lat, n, loading_label(*est[(k, lat_key(lat), '~')]), INK3, 1.3, lab_t=.46))
 
     for src, dst, key, t in [(WEALTH, MED, ("MED", "WEALTH"), .5),
                              (WEALTH, LE_M, ("le_m", "WEALTH"), .5),
@@ -126,7 +126,7 @@ def build():
         out.append(text(980, y, "0をまたぐ（効果を示せない）" if zero else "0を含まない", 11, col))
 
     # ---- 凡例 ----
-    lg = H - 68
+    lg = H - 108
     out.append(text(48, lg, "凡例", 12, INK, "700"))
     out.append(f'<ellipse cx="110" cy="{lg-5}" rx="21" ry="11" fill="#eef4fd" '
                f'stroke="{C_POS}" stroke-width="2"/>')
@@ -158,6 +158,10 @@ def build():
     out.append(f'<text x="{W-48}" y="{lg+22}" text-anchor="end" font-family="{FONT}" '
                f'font-size="11" fill="{INK3}">出典: 総務省統計局 e-Stat 社会・人口統計体系</text>')
 
+    out.append(text(48, H - 25,
+                    "因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。", 11, INK3))
+    out.append(text(48, H - 9,
+                    "星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。", 11, INK3))
     out.append("</svg>")
     return "\n".join(out)
 
