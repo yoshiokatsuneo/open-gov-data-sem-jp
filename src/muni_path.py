@@ -77,7 +77,12 @@ def bootstrap(z, n=400, seed=0):
     for _ in range(n):
         s = z.iloc[rng.integers(0, len(z), len(z))]
         try:
-            c = coefs(fit(s))
+            from sem_audit import diagnose
+            m = fit(s)
+            _, checks = diagnose(m)
+            if not checks["usable"]:
+                continue
+            c = coefs(m)
         except Exception:
             continue
         if all(k in c for k in keys):

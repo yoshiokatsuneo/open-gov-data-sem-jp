@@ -18,6 +18,22 @@ import paths
 # Markdown がレンダリングされる GitHub 側に向ける。CSVとコードはページ内に埋め込む。
 REPO_URL = "https://github.com/yoshiokatsuneo/open-gov-data-sem-jp"
 REPO = f"{REPO_URL}/blob/main"
+SITE_URL = "https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/"
+
+
+def social_meta(page, title, description):
+    card = 'pref-health' if page == 'pref-health' else 'site'
+    url = SITE_URL + ('' if page == 'index' else page + '.html')
+    image = SITE_URL + 'figures/' + card + '_social.png'
+    values = {'og:type': 'website', 'og:locale': 'ja_JP', 'og:title': title,
+              'og:description': description, 'og:url': url, 'og:image': image,
+              'og:image:width': '1600', 'og:image:height': '1200',
+              'og:image:alt': title + '。観測データによる探索的分析。因果関係を示すものではありません。'}
+    tags = [f'<meta property="{key}" content="{esc(value)}">' for key, value in values.items()]
+    tags += [f'<meta name="{key}" content="{esc(value)}">' for key, value in
+             {'description': description, 'twitter:card': 'summary_large_image',
+              'twitter:title': title, 'twitter:description': description, 'twitter:image': image}.items()]
+    return '\n'.join(tags) + f'\n<link rel="canonical" href="{url}">'
 
 SECTIONS = [
     dict(id="country", no="01", title="国レベル — 所得の割に人的資本が厚い国は、その後10年よく伸びる",
@@ -31,9 +47,9 @@ SECTIONS = [
          src=[("sem_country_v2.py", "採用モデル"), ("sem_analysis.py", "初版 Model A/B"),
               ("robustness.py", "頑健性チェック"), ("fetch_data.py", "データ取得"),
               ("make_country2_diagram.py", "図の生成")]),
-    dict(id="pref-health", no="02", title="都道府県の健康 — 経済の勾配は男性にだけ出る",
+    dict(id="pref-health", no="02", title="都道府県の健康 — 豊かさと寿命の関連を男女別に比較",
          lead="経済的豊かさ・入院医療キャパシティ・男女別の平均寿命。"
-              "豊かな県ほど人口当たりの病床が少なく、経済の勾配は男性にだけ検出される。",
+              "豊かな県ほど人口当たりの病床が少なく、男性では豊かさとの関連が検出される。",
          fig="pref_path_diagram.svg", fit="pref_fit.csv", n=47,
          boot="pref_bootstrap.csv", doc="docs/02-prefectures.md",
          files=[("pref_estimates.csv", "推定係数"), ("pref_influence.csv", "1県抜き診断"),
@@ -41,9 +57,9 @@ SECTIONS = [
          src=[("estat_sem.py", "SEM"), ("pref_influence.py", "LOO診断"),
               ("pref_residuals.py", "残差と図"), ("make_pref_diagram.py", "図の生成")],
          extra=[("pref_residual_chart.svg", "豊かさから予測される寿命とのずれ（47都道府県）")]),
-    dict(id="pref-job", no="03", title="都道府県の転職 — 独立した2つの経路",
+    dict(id="pref-job", no="03", title="都道府県の転職 — 都市度と雇用の不安定さという2つの側面",
          lead="「都市労働市場の厚み」と「雇用の不安定さ」の相関は −0.07。"
-              "まったく別の次元が、それぞれ転職率を押し上げる。",
+              "都市度と不安定さを分けて転職率との関連を検討する。",
          fig="job_path_diagram.svg", fit="job_fit.csv", n=47,
          boot="job_bootstrap.csv", doc="docs/02-prefectures.md",
          files=[("job_estimates.csv", "推定係数"), ("job_residuals.csv", "県別の転職率残差"),
@@ -74,7 +90,7 @@ SUMMARIES = {
 
 RESULT_OVERVIEWS = {
     "country": "所得水準から期待される以上に人的資本が充実した国ほど、その後の成長率が高いという関連が見られました。制度の質は、この人的資本の充実とも正の関連があります。制度と成長の直接の関係については、今回の分析では明確に示せませんでした。",
-    "pref-health": "経済的に豊かな県ほど、男性の平均寿命が長く、人口当たりの病床・看護師・病院が少ないという関連が見られました。女性の平均寿命との関連と、医療供給量から寿命への効果は明確に示せませんでした。男女の効果に差があるかは、別途検証が必要です。",
+    "pref-health": "経済的に豊かな県ほど、男性の平均寿命が長く、人口当たりの病床・看護師・病院が少ないという関連が見られました。女性の平均寿命との関連と、医療供給量から寿命への効果は明確に示せませんでした。男女の係数差は、下記の追加検証で直接比較しています。",
     "pref-job": "都市労働市場が厚い県ほど、転職率が高いという関連が見られました。都市度と雇用の不安定さは、ほぼ相関しない別の側面として捉えられます。雇用の不安定さと転職率との関係には不確実性が残ります。",
     "muni": "人口が密集した地域ほど、居住移動が活発になる経路と、抑えられる経路の両方が見られました。単身世帯の多さは移動の多さと関連し、通勤流出を経由する経路は逆向きに働きます。人口密度と移動の関係は、これらを合わせて読む必要があります。",
 }
@@ -87,7 +103,7 @@ DISCUSSIONS = {
     ],
     "pref-health": [
         "豊かな県ほど男性の平均寿命が長い一方、人口当たりの病床・看護師・病院は少ないという関係が見られました。この2つの関係は、県を1つずつ除いても符号が変わりませんでした。豊かさと医療供給量が同じ方向に並ばないことから、地域の健康を考える際には、経済条件と医療の量を分けて捉える必要があります。医療供給量から寿命への効果は示せませんでしたが、供給量だけでは医療の質や必要性を表し切れないため、医療が役立たないという意味ではありません。",
-        "豊かさだけを使った補助回帰では、予測からのずれが男女で似ていました。これは、その回帰では捉えていない共通の地域要因を考える手掛かりですが、原因を特定した結果ではありません。また、女性で豊かさとの関連を検出できなかったことも、女性への効果がないことや、男女の効果が異なることの証明にはなりません。男女差を論じるには、係数の差そのものを検証する必要があります。",
+        "豊かさだけを使った補助回帰では、予測からのずれが男女で似ていました。これは、その回帰では捉えていない共通の地域要因を考える手掛かりですが、原因を特定した結果ではありません。また、女性で豊かさとの関連を検出できなかったことも、女性への効果がないことや、男女の効果が異なることの証明にはなりません。そこで、下記の追加検証では同じ標本内の係数差を直接比較しました。",
         "分析の過程では、国と都道府県で相関が違う理由を集計単位の違いと解釈しかけました。しかし、所得の範囲をそろえると国でも相関が弱まり、その説明は撤回しました。比較する地域のばらつきが結論を左右するという教訓です。今後は過去の地域条件と後年の寿命を組み合わせ、生活習慣や医療へのアクセスなども事前に定義して検証することで、今回残った問いを絞り込めます。",
     ],
     "pref-job": [
@@ -101,6 +117,35 @@ DISCUSSIONS = {
         "採用モデルの当てはまりは良好ですが、残差を見ながら経路を選んだ探索的なモデルであり、因果関係や別データでの再現性は確認できていません。指標の年次も混在し、居住移動の結果を転職の説明へ置き換えることはできません。次は別年次で同じ経路が再現するかを確かめ、都市圏・地方圏や人口規模別、年齢別の転入・転出に分けて比較することで、どの地域や層に当てはまる説明なのかを明らかにしていく必要があります。",
     ],
 }
+
+DISCUSSION_HIGHLIGHTS = {
+    "country": [
+        "今回の結果で中心となったのは、所得水準から期待される以上に人的資本が充実した国ほど、その後の成長率が高いという関係です。",
+        "出発点は制度の質と成長の関係でしたが、制度から成長への直接の経路は明確にならず、制度と人的資本、人的資本と成長というつながりが見えてきました。",
+    ],
+    "pref-health": [
+        "豊かな県ほど男性の平均寿命が長い一方、人口当たりの病床・看護師・病院は少ないという関係が見られました。",
+        "医療供給量から寿命への効果は示せませんでしたが、供給量だけでは医療の質や必要性を表し切れないため、医療が役立たないという意味ではありません。",
+    ],
+    "pref-job": [
+        "転職率の高さを説明する候補として、都市の労働市場の厚みと雇用の不安定さを検討したところ、より明確な根拠が得られたのは都市側の関係でした。",
+        "ただし、不安定さから転職率への経路は推定区間が0をまたぎ、不安定さだけで沖縄を説明できるわけでもありません。",
+    ],
+    "muni": [
+        "市区町村の分析では、単独世帯割合が高い地域ほど総移動率が高く、高齢化率が高い地域ほど低いという関連が見られました。",
+        "人口密度には逆向きの経路が併存し、モデル上の総効果は正でした。",
+    ],
+}
+
+
+def discussion_html(section_id):
+    paragraphs = [esc(p) for p in DISCUSSIONS[section_id]]
+    for sentence in DISCUSSION_HIGHLIGHTS[section_id]:
+        target = esc(sentence)
+        assert sum(p.count(target) for p in paragraphs) == 1, sentence
+        paragraphs = [p.replace(target, f"<strong>{target}</strong>") for p in paragraphs]
+    return ''.join(f"<p>{p}</p>" for p in paragraphs)
+
 
 ARROW_NOTES = {
     "country": [
@@ -153,7 +198,7 @@ RELATED = {
         ],
         common="地域の経済・社会条件と健康の関係を、地域単位のデータから調べる点が共通する。",
         difference="先行研究は市区町村の地域剥奪指標を用いる。今回は都道府県の豊かさと医療供給量を潜在変数として扱い、平均寿命を説明する。集計単位と指標が違うため係数は直接比較できない。",
-        unknown="男性で関連を検出し女性で検出できなかったことだけでは、男女の効果が異なるとは言えない。係数差の検定が必要である。また、医療供給量の効果を示せなかったことは、医療が無効であることを意味しない。"),
+        unknown="男性で関連を検出し女性で検出できなかったことだけでは、男女の効果が異なるとは言えない。本ページの追加検証で係数差を直接比較しているが、モデル上の条件付きの比較である。また、医療供給量の効果を示せなかったことは、医療が無効であることを意味しない。"),
     "pref-job": dict(
         papers=[
             ("森川正之（2011）都市密度・人的資本と生産性―賃金データによる分析―",
@@ -179,7 +224,9 @@ CSS = """
 @media(prefers-color-scheme:dark){:root{--ink:#e8eef0;--muted:#a3b2b8;--line:#2c3a40;--accent:#5fd0c6;--bg:#12191c;--card:#182125;--warn:#e3c07a;--warnbg:#241f14;--warnline:#4a3f25}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif}
 main{max-width:1140px;margin:auto;padding:56px 24px}
-.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:700}
+.eyebrow{display:block;font-size:16px;letter-spacing:.02em;color:var(--accent);font-weight:700;text-decoration:none}
+.eyebrow:hover{text-decoration:underline}.site-subtitle{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+.home-header{padding:24px 0 36px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(32px,5.5vw,62px);max-width:900px;line-height:1.35;margin:24px 0 16px}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-top .eyebrow{min-width:0}
 .github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
@@ -349,6 +396,48 @@ def related_research(section_id):
             f"<ul>{papers}</ul><dl>{comparison}</dl></aside>")
 
 
+def audit_section(section_id):
+    a = pd.read_csv(paths.result('sem_audit_summary.csv')).set_index('model').loc[section_id]
+    out = ["<h3>追加検証：推定の健全性</h3>",
+           f"<p>復元抽出{int(a.attempts):,}回のうち、最適化の成功・係数と目的関数の有限性・負の分散なし・"
+           f"モデル共分散の正定値性という基本条件を満たしたのは{int(a.usable):,}回、除外は{int(a.failed):,}回でした。"
+           f"基本条件を満たしたうち、分散がほぼゼロの境界解は{int(a.usable_boundary):,}回です。</p>",
+           "<p>境界の基準は分散の絶対値が10⁻⁸以下。境界解は収束失敗とは区別して記録し、一律には除外していません。"
+           "これは局所最適性・情報行列・全てのモデル仮定を保証する検査ではありません。"
+           "再抽出は既存と同じ前処理済みデータから行い、前処理やモデル選択の不確実性は含めていません。</p>"]
+    if section_id == 'pref-health':
+        d = pd.read_csv(paths.result('pref_gender_contrasts.csv'))
+        loo = pd.read_csv(paths.result('pref_gender_contrast_loo.csv'))
+        rows=[]
+        sensitivity=[]
+        for key,label in [('WEALTH_years','豊かさ'),('MED_years','医療供給量')]:
+            r=d[(d.parameter==key)&(d.scope=='usable_including_boundary')].iloc[0]
+            interior=d[(d.parameter==key)&(d.scope=='interior_only')].iloc[0]
+            decision='0を含むため、差を示せない' if r.family_low<=0<=r.family_high else '0を含まず、男性側が大きい' if r.family_low>0 else '0を含まず、女性側が大きい'
+            v=loo.loc[loo.usable,key]
+            rows.append(f"<tr><th>{label}</th><td>{r.estimate:+.3f}</td><td>[{r.low:+.3f}, {r.high:+.3f}]</td>"
+                        f"<td>[{r.family_low:+.3f}, {r.family_high:+.3f}]</td><td>{decision}</td></tr>")
+            sensitivity.append(f"<p>{label}の男女差：1県抜きの差の範囲は{v.min():+.3f}〜{v.max():+.3f}年"
+                       f"（基本条件を満たす{len(v)}県分）。境界解を除いた参考区間は"
+                       f"[{interior.low:+.3f}, {interior.high:+.3f}]（{int(interior.valid)}反復）です。"
+                       "境界解の除外自体が標本を選別するため、主結果の代わりにはしません。</p>")
+        out.append("<h3>男女差を直接比較する</h3><p>同じ再抽出標本の中で、男性と女性の回帰係数の差を計算しました。"
+                   "主比較は寿命をどちらも年に戻した係数の「男−女」です。豊かさは県民所得の、医療供給量は看護師数の"
+                   "元標本の1標準偏差に尺度を合わせた潜在変数1単位当たりの差で、異なる因子間の比較には使いません。"
+                   "結果を見た後の追加検証であり、事前登録された検証ではありません。</p>")
+        out.append("<div style='overflow-x:auto'><table><thead><tr><th>説明側</th><th>男−女（年）</th>"
+                   "<th>95％区間</th><th>2比較を考慮した各97.5％区間</th><th>読み取り</th></tr></thead><tbody>"
+                   + ''.join(rows) + "</tbody></table></div><p>2本の年単位の比較にBonferroni対応の区間を併記しています。"
+                   "標準化係数の差は参考値としてCSVに収録。区間はブートストラップ近似で、境界解の多さやモデル選択の影響は残ります。"
+                   "女性側の効果がゼロという結論や、男女の因果効果の差を証明するものではありません。</p>")
+        out.extend(sensitivity)
+        out.append(files_ul([('pref_gender_contrasts.csv','男女の係数差と区間'),('pref_gender_contrast_loo.csv','男女差の1県抜き診断')],'results'))
+    out.append(files_ul([('sem_audit_summary.csv','全モデルの推定監査集計')],'results'))
+    out.append("<p><a href='results/sem_audit_trials.csv' download>全反復の監査記録をダウンロード</a></p>")
+    out.append(files_ul([('sem_audit.py','推定監査と男女差の検証コード')],'src'))
+    return ''.join(out)
+
+
 def case_examples(section_id):
     groups = {
         "country": [("country", "一人当たりGDP成長（対数差×100・年率ではない）", ["United States", "Japan", "China"])],
@@ -357,7 +446,7 @@ def case_examples(section_id):
         "pref-job": [("job", "転職率（％・差はポイント）", ["東京都", "大阪府", "沖縄県"])],
         "muni": [("muni", "総移動率（％・差はポイント）", ["新宿区 [13104]"])],
     }[section_id]
-    out = ["<h3>具体例：予測とのずれ</h3>",
+    out = ["<h2>予測とのずれ</h2><h3>主要な国・地域の具体例</h3>",
            "<p>主要国・身近な地域をあらかじめ指定し、それに加えて各指標で残差の絶対値が最小の地域、"
            "正の残差が最大の地域、負の残差が最小の地域を機械的に選びました。同じ地域は1行にまとめています。"
            "残差の大小は記述的な比較であり、統計的な異常の判定ではありません。</p>"]
@@ -409,17 +498,14 @@ def prediction_section(section_id):
     keys = {"country": [("country", "一人当たりGDP成長")],
             "pref-health": [("health_m", "平均寿命（男）"), ("health_f", "平均寿命（女）")],
             "pref-job": [("job", "転職率")], "muni": [("muni", "総移動率")]}[section_id]
-    parts = ["<h3>予測とのずれ</h3>",
+    parts = ["<details><summary>全地域の当てはまり・診断図とデータを見る</summary>",
              "<p>左は実測値と予測値（破線上で一致）、右は予測値と残差です。残差が正なら予測より高く、負なら低い値です。"
              "同じ標本に当てはめた結果であり、未知の地域や将来への予測精度ではありません。</p>"]
     if section_id == "muni":
         parts.append("<p>総移動率のパス方程式に、説明変数の実測値を入れて計算しています。人口密度だけから全経路をたどった予測とは異なります。単位は％、残差はパーセントポイントです。</p>")
     else:
-        parts.append("<p>こちらはSEMそのものの予測ではなく、指標の標準化平均を使った補助回帰です。"
-                     "健康は豊かさのみ、転職は都市度と雇用の不安定さ、国は制度・所得調整後の人的資本・初期所得を使います。"
-                     "国の結果変数は一人当たりGDPの対数差×100で、SEMの潜在成長因子や年率ではありません。</p>"
-                     "<p>CSVのmean_ci_low／mean_ci_highは、合成指標を固定した600回の復元抽出による平均予測の95％区間です。"
-                     "前処理の不確実性は含まず、個々の実測値が入る予測区間でもありません。</p>")
+        parts.append("<p>上の具体例と同じ補助回帰の結果を、全地域について表示しています。"
+                     "CSVのmean_ci_low／mean_ci_highは上で説明した平均予測の95％区間で、前処理の不確実性は含みません。</p>")
     for key,label in keys:
         f = f"{key}_prediction_diagnostics.svg"
         parts.append(f"<figure><a href='figures/{f}'><img src='figures/{f}' alt='{esc(label)}の実測値・予測値と残差' loading='lazy'></a>"
@@ -427,6 +513,7 @@ def prediction_section(section_id):
     parts.append("<p>表のregionは国・地域名、observedは実測値、predictedは予測値、residualは実測値−予測値です。地域名で検索できます。</p>")
     parts.append(files_ul([(f"{key}_prediction_diagnostics.csv", label + "：実測・予測・残差") for key,label in keys], "results"))
     parts.append(files_ul([("prediction_diagnostics.py", "予測と残差の計算・図の生成")], "src"))
+    parts.append("</details>")
     return "".join(parts)
 
 
@@ -441,7 +528,7 @@ def build(selected=None):
     if selected:
         nav = "<a href='index.html'>← 分析の一覧に戻る</a>" + nav
     nav += "<a href='guide.html'>図の読み方</a>"
-    heading = sections[0]["title"] if selected else "公的データによる構造方程式モデリング"
+    heading = sections[0]["title"] if selected else "豊かさ・健康・人の移動は、どう関係する？"
     intro = (RESULT_OVERVIEWS[selected]
              if selected else "World Bank と e-Stat の公開データを用いた、国・都道府県・市区町村の4つの分析。気になる図から詳細に進めます。")
     note = (f"すべて観測データであり、矢印の向きはモデルの仮定にすぎない。"
@@ -475,18 +562,20 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
                  f"alt='{esc(s['title'])}' loading='lazy'></a>"
                  f"<figcaption>figures/{s['fig']} — クリックで原寸</figcaption></figure>",
                  "<h2>考察</h2>",
-                 "".join(f"<p>{esc(paragraph)}</p>" for paragraph in DISCUSSIONS[s['id']]),
+                 discussion_html(s['id']),
                  f"<p><a href='{REPO}/{s['doc']}'>分析と試行の記録を読む →</a></p>",
                  case_examples(s["id"]),
+                 prediction_section(s["id"]),
                  "<h3>ブートストラップによる判定</h3>", boot_table(s["boot"])]
-        parts.append(prediction_section(s["id"]))
+        parts.append(audit_section(s["id"]))
         for f, cap in s.get("extra", []):
             parts.append(f"<figure><a href='figures/{f}'><img src='figures/{f}' "
                          f"alt='{esc(cap)}' loading='lazy'></a>"
                          f"<figcaption>{esc(cap)} — figures/{f}</figcaption></figure>")
         parts += ["<h3>データと分析方法</h3>", f"<p>{esc(METHODS[s['id']])}</p>",
                   f"<div class='fit'>{fit_line(s['fit'], s['n'])}</div>",
-                  "<h3 id='arrow-direction'>矢印の向きと解釈</h3>",
+                  "<h3 id='arrow-direction'>仮定した関係と根拠：関連と因果の違い</h3>",
+                  "<p>図の矢印は、モデルで仮定した関係の方向を示します。相関や関連があることと、一方を変えることで他方が変わる因果関係があることは別です。モデルがよく当てはまっても、因果関係が証明されたわけではありません。回帰パス係数は偏相関係数とは異なり、ここでは主に「関連」と表現しています。<a href='guide.html#association'>関連・相関・因果と係数の違い →</a></p>",
                   "".join(f"<p>{esc(paragraph)}</p>" for paragraph in ARROW_NOTES[s['id']]),
                   f"<p><a href='{REPO}/docs/04-methodology.md'>矢印の向きと等価モデルの検算記録</a></p>",
                   f"<h3>解釈上の注意</h3><div class='note'>{note}</div>",
@@ -496,23 +585,24 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
                   f"<p><a href='{REPO}/{s['doc']}'>詳細ドキュメント →</a></p></section>"]
         body.append("".join(parts))
 
+    detail_nav = f'<nav aria-label="目次">{nav}<a href="{REPO}/docs/06-model-selection.md">モデル選択の台帳</a>\n<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>\n<a href="{REPO}/README.md">README</a></nav>'
+    brand = '<div><a class="eyebrow" href="index.html" aria-label="国と地域の「なぜ？」を公的データで探る — トップページへ">国と地域の「なぜ？」を公的データで探る</a><span class="site-subtitle">構造方程式モデリング（SEM）による探索的分析</span></div>'
     return f"""<!doctype html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(heading)}｜公的データによるSEM</title>
 <style>{CSS}</style></head><body><main>
-<header><div class="header-top">
-<div class="eyebrow">PUBLIC DATA / STRUCTURAL EQUATION MODELING</div>
+<header class="{'home-header' if selected is None else 'page-header'}"><div class="header-top">
+{brand if selected else ''}
 <a class="github-link" href="{REPO_URL}" aria-label="GitHubでコード・変更履歴を見る">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
 <span>GitHub</span></a></div>
-<h1>{esc(heading)}</h1>
+<h1>{esc(heading) if selected else '国と地域の「なぜ？」を公的データで探る'}</h1>
+{'<p class="home-subtitle">構造方程式モデリング（SEM）による探索的分析</p><p class="home-question">豊かさ・健康・人の移動は、どう関係する？</p>' if selected is None else ''}
 <p>{esc(intro)}</p>
 {('<p class="fit">分析手法：' + ('パス解析（SEMの一種・観測変数のみ）' if selected == 'muni' else '構造方程式モデリング（SEM）') + '</p>') if selected else ''}
 {'<p>複数の関係を同時に推定し、直接の関係と他の変数を経由する間接の関係を分けて調べます。</p>' if selected == 'muni' else ''}
-<nav aria-label="目次">{nav}<a href="{REPO}/docs/06-model-selection.md">モデル選択の台帳</a>
-<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>
-<a href="{REPO}/README.md">README</a></nav>
+{detail_nav if selected else '<nav class="home-actions" aria-label="サイトの入口"><a class="primary" href="#country">4つの分析を見る →</a><a href="guide.html">図の読み方を知る →</a></nav>'}
 {f'<div class="note">{note}</div>' if selected is None else ''}</header>
 {about}
 {''.join(body)}
@@ -544,14 +634,20 @@ if __name__ == "__main__":
         filename = f"{selected}.html" if selected else "index.html"
         out = paths.ROOT / filename
         page = build(selected)
+        title = ('豊かな県ほど長寿？ 男女を分けて調べてみた' if selected == 'pref-health'
+                 else next(s["title"] for s in SECTIONS if s["id"] == selected) if selected
+                 else '国と地域の「なぜ？」を公的データで探る')
+        description = RESULT_OVERVIEWS[selected] if selected else '豊かさ・健康・人の移動は、どう関係する？ 公的データを使った4つの探索的分析を図で紹介します。'
+        page = page.replace('</head>', social_meta(selected or 'index', title, description) + '\n</head>')
         out.write_text(page, encoding="utf-8")
         print(f"-> {filename} ({len(page.encode('utf-8'))/1024:.1f} KB)")
     from reading_guide import content
     # 共通の書式・GitHubリンク・フッターを保ち、解説本文を差し込む。
-    top = build()
+    top = build("country")
     head = top.split('<h1>', 1)[0].replace(
-        '<title>公的データによる構造方程式モデリング｜公的データによるSEM</title>',
+        f'<title>{esc(SECTIONS[0]["title"])}｜公的データによるSEM</title>',
         '<title>図の読み方と分析手法｜公的データによるSEM</title>')
     guide = head + '</header>' + content() + '<footer>' + top.split('<footer>', 1)[1]
+    guide = guide.replace('</head>', social_meta('guide', '図の読み方と分析手法', 'SEM・パス図・係数・不確実性の読み方を解説します。') + '\n</head>')
     (paths.ROOT / 'guide.html').write_text(guide, encoding='utf-8')
     print('-> guide.html')

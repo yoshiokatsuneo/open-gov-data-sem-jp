@@ -59,7 +59,7 @@ def build():
 
     out.append(f'<rect x="40" y="{P}" width="{W-80}" height="{PH}" rx="10" fill="#ffffff" '
                f'stroke="{BOX_LINE}"/>')
-    out.append(text(64, P + 32, "制度 → 人的資本 → 成長。ただし制度から成長への直行便は確立しない",
+    out.append(text(64, P + 32, "制度 → 人的資本 → 成長。ただし制度と成長の直接の関連は示せない",
                     15.5, INK, "700"))
     out.append(text(64, P + 56,
                     f"N = 128 か国　χ²/df = {s['chi2']/s['DoF']:.2f}　CFI = {s['CFI']:.3f}　"

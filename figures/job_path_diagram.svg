@@ -8,7 +8,7 @@
 <text x="48" y="52" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="21" font-weight="700" fill="#0b0b0b">転職が多い県は、労働市場が厚いのか、雇用が不安定なのか — 47都道府県の構造方程式モデリング（SEM）</text>
 <text x="48" y="78" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="400" fill="#77766f">e-Stat 社会・人口統計体系「社会生活統計指標－都道府県の指標－2024」（転職率・離職率は2017年、他は2015〜2021年）　semopy 2.3.11・最尤法・全変数を標準化</text>
 <rect x="40" y="118" width="1200" height="572" rx="10" fill="#ffffff" stroke="#d5d4cf"/>
-<text x="64" y="150" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="16" font-weight="700" fill="#0b0b0b">ふたつの独立した経路が、それぞれ転職率を押し上げる</text>
+<text x="64" y="150" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="16" font-weight="700" fill="#0b0b0b">都市度と雇用の不安定さを分けて、転職率との関連を調べる</text>
 <text x="64" y="174" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="400" fill="#77766f">N = 47 都道府県　χ²/df = 2.14　CFI = 0.951　TLI = 0.895　RMSEA = 0.157　残差相関の最大 |r| = 0.145</text>
 <path d="M394.3,266.7 L270.6,236.0" fill="none" stroke="#77766f" stroke-width="1.3" marker-end="url(#ah-77766f)"/><rect x="312.4" y="241.6" width="50.0" height="21" rx="4" fill="#fcfcfb" opacity="0.94"/><text x="337.35995532364524" y="256.58591994242227" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="600" fill="#77766f">0.91†</text>
 <path d="M373.5,282.1 L308.0,278.5" fill="none" stroke="#77766f" stroke-width="1.3" marker-end="url(#ah-77766f)"/><rect x="310.8" y="269.5" width="65.2" height="21" rx="4" fill="#fcfcfb" opacity="0.94"/><text x="343.38722838453236" y="284.4627436350087" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13" font-weight="600" fill="#77766f">0.78***</text>
@@ -28,7 +28,7 @@
 <rect x="72.0" y="524.0" width="236" height="40" rx="5" fill="#ffffff" stroke="#d5d4cf" stroke-width="1.5"/><text x="190" y="549" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="400" fill="#52514e">完全失業率</text>
 <rect x="64" y="588" width="560" height="86" rx="8" fill="#f2f7fd" stroke="#cfe0f5"/>
 <text x="82" y="612" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12.5" font-weight="700" fill="#1c5cab">読みどころ</text>
-<text x="82" y="634" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・2つの説明側の相関は −0.07（n.s.）。まったく別の次元として分離する。</text>
+<text x="82" y="634" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・説明側の相関の点推定は小さい。独立性を示したわけではない。</text>
 <text x="82" y="651" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・離職率は「雇用の不安定さ」の指標であって、転職率とは r = 0.29 しかない。</text>
 <text x="82" y="668" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#52514e">・有効求人倍率は転職率と −0.36。逼迫と労働移動は別物（モデル外）。</text>
 <rect x="648" y="588" width="568" height="86" rx="8" fill="#fdf8ef" stroke="#e8d9b8"/>
@@ -40,7 +40,7 @@
 <text x="666" y="653" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#77766f">雇用の不安定さ → 転職率</text>
 <text x="900" y="653" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="600" fill="#77766f">+0.40</text>
 <text x="1010" y="653" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#77766f">[-0.01, +0.70]</text>
-<text x="1024" y="653" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#77766f">0をまたぐ（未確立）</text>
+<text x="1024" y="653" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11.5" font-weight="400" fill="#77766f">0をまたぐ</text>
 <text x="48" y="760" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="700" fill="#0b0b0b">凡例</text>
 <ellipse cx="110" cy="755" rx="21" ry="11" fill="#eef4fd" stroke="#2a78d6" stroke-width="2"/>
 <text x="140" y="760" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#52514e">潜在変数</text>
