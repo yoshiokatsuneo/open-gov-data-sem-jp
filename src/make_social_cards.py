@@ -118,5 +118,45 @@ def main():
     label(60,721,'初期所得・測定モデル等を省略した図。出典：World Bank。因果関係は示しません。',25)
     im.save(paths.figure('country_card_v2.png'))
 
+
+    for name,prefix,title,sub,target,outcome,rows,foot in [
+        ('pref-job','job','都市部ほど転職が多い？','47都道府県のSEM ｜ 転職率への2経路を抜粋','jobchg','転職率',
+         [('URBAN','都市労働市場の厚み'),('PRECAR','雇用の不安定さ')],
+         '測定モデル・因子間相関は省略。600回のブートストラップ。'),
+        ('muni','muni_path','人の移動は、どんな地域で多い？','1,859市区町村のパス解析 ｜ 総移動率への直接の4経路','move_rate','総移動率',
+         [('solo','単独世帯割合'),('old','高齢化率'),('commute_out','通勤流出率'),('ldens','人口密度（対数）')],
+         '説明変数間の経路は省略。直接係数であり総効果とは異なる。400回の再抽出。'),
+    ]:
+        with paths.result(prefix+'_estimates.csv').open() as f:
+            vals={r['lval']+'~'+r['rval']:float(r['std']) for r in csv.DictReader(f) if r['op']=='~'}
+        with paths.result(prefix+'_bootstrap.csv').open() as f:
+            intervals={r['key']:(float(r['2.5%']),float(r['97.5%'])) for r in csv.DictReader(f)}
+        im=Image.new('RGB',(1600,800),'#fcfcfb');d=ImageDraw.Draw(im)
+        label(60,30,title,53,'#0b6b68');label(60,108,sub,29)
+        for i,(key,caption) in enumerate(rows):
+            y=(270+i*210) if len(rows)==2 else (215+i*104)
+            coef=vals[target+'~'+key];low,high=intervals[target+'~'+key]
+            uncertain=low<=0<=high
+            color='#737c80' if uncertain else '#2378cd' if coef>0 else '#d64545'
+            box=(65,y,460,y+78)
+            if name=='pref-job':d.ellipse(box,fill='#e0efeb',outline=color,width=3)
+            else:d.rounded_rectangle(box,radius=10,fill='#f0f3f4',outline=color,width=3)
+            label(92,y+21,caption,30)
+            a=(475,y+40);b=(1110,y+40)
+            if uncertain:
+                for x in range(475,1095,28):d.line([(x,y+40),(x+14,y+40)],fill=color,width=4)
+            else:d.line([a,b],fill=color,width=5)
+            d.polygon([b,(1088,y+29),(1088,y+51)],fill=color)
+            d.rectangle((525,y-3,1050,y+31),fill='#fcfcfb')
+            label(535,y-5,f'{coef:+.2f}   95％区間 [{low:+.2f}, {high:+.2f}]',29,color)
+        y0=270 if len(rows)==2 else 215
+        y1=(480 if len(rows)==2 else 527)+78
+        d.rounded_rectangle((1130,y0,1530,y1),radius=16,fill='#e0efeb',outline='#0b6b68',width=3)
+        label(1230,(y0+y1)//2-20,outcome,40)
+        label(60,653,'標準化係数と95％区間。破線は区間が0を含み、関連を明確に示せない経路。',26)
+        label(60,697,foot,25)
+        label(60,739,'出典：e-Stat ｜ 観測データによる探索的分析。因果関係を示すものではありません。',25)
+        im.save(paths.figure(name+'_card_v2.png'))
+
 if __name__=='__main__':
     main()
