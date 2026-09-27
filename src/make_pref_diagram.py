@@ -154,7 +154,7 @@ def build():
     out.append(text(48, lg + 58,
                     f"※ 1県抜き（47通り）での振れ: 豊かさ→平均寿命(男) {a['LOO最小']:+.2f}〜{a['LOO最大']:+.2f}、"
                     f"豊かさ→医療キャパ {b['LOO最小']:+.2f}〜{b['LOO最大']:+.2f}。"
-                    "確立した2本はどちらも符号が反転しない。", 11, INK3))
+                    "区間が0を含まない2本はどちらも符号が反転しない。", 11, INK3))
     out.append(f'<text x="{W-48}" y="{lg+22}" text-anchor="end" font-family="{FONT}" '
                f'font-size="11" fill="{INK3}">出典: 総務省統計局 e-Stat 社会・人口統計体系</text>')
 

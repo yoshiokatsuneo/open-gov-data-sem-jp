@@ -75,7 +75,7 @@
 <text x="790" y="824" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="12" font-weight="400" fill="#77766f">数値は標準化係数　*** p&lt;.001　** p&lt;.01　* p&lt;.05</text>
 <text x="48" y="846" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ N = 47 に対して推定パラメータが多く、RMSEA は小標本で過大に出る。有意性の判断はブートストラップ区間を優先すること。</text>
 <text x="48" y="864" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ 医師数は他指標との残差相関が大きい（医学部の所在に規定される）ため、入院医療キャパシティの指標から除外した。</text>
-<text x="48" y="882" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ 1県抜き（47通り）での振れ: 豊かさ→平均寿命(男) +0.42〜+0.67、豊かさ→医療キャパ -0.64〜-0.56。確立した2本はどちらも符号が反転しない。</text>
+<text x="48" y="882" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">※ 1県抜き（47通り）での振れ: 豊かさ→平均寿命(男) +0.42〜+0.67、豊かさ→医療キャパ -0.64〜-0.56。区間が0を含まない2本はどちらも符号が反転しない。</text>
 <text x="1232" y="846" text-anchor="end" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" fill="#77766f">出典: 総務省統計局 e-Stat 社会・人口統計体系</text>
 <text x="48" y="907" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">因子負荷量：細い灰色の矢印。† 非標準化係数を1に固定（検定対象外）。n.s. は p≥.05。</text>
 <text x="48" y="923" text-anchor="start" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="11" font-weight="400" fill="#77766f">星印は非標準化係数の漸近的な検定結果。表示する数値は標準化係数。</text>

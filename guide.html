@@ -7,7 +7,9 @@
 @media(prefers-color-scheme:dark){:root{--ink:#e8eef0;--muted:#a3b2b8;--line:#2c3a40;--accent:#5fd0c6;--bg:#12191c;--card:#182125;--warn:#e3c07a;--warnbg:#241f14;--warnline:#4a3f25}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif}
 main{max-width:1140px;margin:auto;padding:56px 24px}
-.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:700}
+.eyebrow{display:block;font-size:16px;letter-spacing:.02em;color:var(--accent);font-weight:700;text-decoration:none}
+.eyebrow:hover{text-decoration:underline}.site-subtitle{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+.home-header{padding:24px 0 36px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(32px,5.5vw,62px);max-width:900px;line-height:1.35;margin:24px 0 16px}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-top .eyebrow{min-width:0}
 .github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
@@ -49,9 +51,24 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 .related dt{font-weight:700;margin-top:12px}.related dd{margin:4px 0;color:var(--muted)}
 @media(max-width:640px){main{padding:28px 16px}section{padding:20px}}
 @media print{body{background:#fff}nav{display:none}section{break-inside:avoid}}
-</style></head><body><main>
-<header><div class="header-top">
-<div class="eyebrow">PUBLIC DATA / STRUCTURAL EQUATION MODELING</div>
+</style><meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="図の読み方と分析手法">
+<meta property="og:description" content="SEM・パス図・係数・不確実性の読み方を解説します。">
+<meta property="og:url" content="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/guide.html">
+<meta property="og:image" content="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/figures/site_social.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="図の読み方と分析手法。観測データによる探索的分析。因果関係を示すものではありません。">
+<meta name="description" content="SEM・パス図・係数・不確実性の読み方を解説します。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="図の読み方と分析手法">
+<meta name="twitter:description" content="SEM・パス図・係数・不確実性の読み方を解説します。">
+<meta name="twitter:image" content="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/figures/site_social.png">
+<link rel="canonical" href="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/guide.html">
+</head><body><main>
+<header class="page-header"><div class="header-top">
+<div><a class="eyebrow" href="index.html" aria-label="国と地域の「なぜ？」を公的データで探る — トップページへ">国と地域の「なぜ？」を公的データで探る</a><span class="site-subtitle">構造方程式モデリング（SEM）による探索的分析</span></div>
 <a class="github-link" href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp" aria-label="GitHubでコード・変更履歴を見る">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
 <span>GitHub</span></a></div>
@@ -62,6 +79,12 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <p><strong>構造方程式モデリング（Structural Equation Modeling／SEM）</strong>は、変数どうしの関係を複数の式で表し、データにどの程度合うかを調べる方法です。「豊かさと医療供給量が関係し、その両方が寿命と関係する」といった構造をまとめて扱えます。</p>
 <p>所得や寿命のように測れる値が<strong>観測変数</strong>です。「経済的豊かさ」のように直接は測れず、複数の指標で表す概念が<strong>潜在変数</strong>です。潜在変数と指標の関係が「測定モデル」、説明したい変数間の関係が「構造モデル」です。</p>
 <p><strong>パス解析</strong>は、観測変数だけで関係を表すSEMの一種です。本サイトの市区町村分析はこちらです。矢印は仮定した関係を表し、図を推定できたことだけで因果関係が証明されるわけではありません。</p></section>
+<section id="association"><h2>関連・相関・因果の違い</h2>
+<p><strong>関連</strong>は、ある変数の値によって別の変数の値や分布が異なる関係を広く指します。<strong>相関</strong>は数値変数どうしの関係を捉えるもので、よく使うピアソンの相関係数は直線的な関係の向きと強さを−1〜＋1で表します。例えば、気温が低い日にも高い日にも電力使用量が増えるU字形の関連は、直線的な相関では捉えきれません。</p>
+<p><strong>因果関係</strong>は、一方を変えることで他方が変わる関係です。相関も関連も、それだけで因果関係を意味しません。今回のモデルには因果関係についての仮説を反映していますが、データとの当てはまりだけで、その仮説や関係の方向を確定することはできません。</p>
+<h3>SEMのパス係数は偏相関係数ではない</h3>
+<p><strong>偏相関係数</strong>は、他の変数への線形回帰で両方の変数から説明される部分を取り除き、残差どうしの相関を求めたものです。一方、今回の線形SEMの<strong>回帰パス係数</strong>は、その式の他の説明変数を一定としたとき、説明側が1単位高いと結果側が何単位高いかを表します。</p>
+<p>標準化しても両者は一般に一致しません。偏相関係数は−1〜＋1の範囲ですが、標準化回帰パス係数はその範囲を超える場合があります。本サイトで「関連」と呼ぶのは、パス係数が相関係数そのものではなく、因果効果とも断定できないためです。SEMには因子負荷量や共分散なども含まれるので、すべての係数を同じ意味で読むことはできません。</p></section>
 <section id="legend"><h2>パス図の凡例</h2>
 <table><thead><tr><th>図の要素</th><th>このサイトでの意味</th></tr></thead><tbody>
 <tr><td>楕円</td><td>潜在変数。複数の指標から表す概念。</td></tr>
@@ -108,7 +131,7 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <h3>ブートストラップ：地域を引き直して推定する</h3>
 <p>例えば47都道府県の分析なら、元の47県から<strong>重複を許して47県分を抽出</strong>し、モデルをもう一度推定します。ある県が複数回選ばれ、別の県は選ばれない標本になります。これを何百回も繰り返し、係数がどれくらい変わるかを見ます。新しい実測データを集める方法ではありません。</p>
 <p>本サイトの係数の区間は、得られた推定値の下側2.5％点から上側97.5％点までを示すパーセンタイル区間です。区間が狭ければ推定の揺れは小さく、広ければ大きいと読みます。0をまたぐ場合は、正か負かを明確に示せません。通常の95％信頼区間は、同じ手順を繰り返したときの区間の被覆を意図するもので、今回の区間に真の値が95％の確率で入るという意味ではありません。</p>
-<p>現在の実装では、国・都道府県の主要パスは600回、市区町村の主要パスは400回の復元抽出を試みています。図・表の中央値と、元データを一度推定した係数は異なる場合があります。計算に失敗した反復を除く処理もあるため、反復回数だけでなく有効な推定数や収束状況にも注意が必要です。</p>
+<p>現在の実装では、国・都道府県の主要パスは600回、市区町村の主要パスは400回の復元抽出を試みています。図・表の中央値と、元データを一度推定した係数は異なる場合があります。主要パスの反復では収束フラグ、係数などの有限性、負の分散、モデル共分散の正定値性も確認します。分散がほぼゼロになる境界解は収束失敗とは区別し、各分析ページに件数を示しています。境界解を含む区間の解釈には注意が必要です。<a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/06-estimation-audit.md">追加検証の方法と結果ファイル</a></p>
 <p><strong>この実装の区間が含む範囲にも限界があります。</strong>SEMの再推定では、元データで作った標準化値や、国の所得調整後の指標を使って行を再抽出しています。前処理やモデル選択の全過程を毎回やり直す区間ではありません。補助回帰の平均予測の区間も合成指標を固定しています。これらは、別のモデルを選ぶ不確実性、欠測や測定の偏り、未測定の交絡まで表すものではありません。</p>
 <h3>1県抜き：特定の地域に依存していないか</h3>
 <p>県を1つだけ除いて再推定し、それを全県について繰り返します。係数の符号や大きさが大きく変わるなら、その県の影響が強いと分かります。ブートストラップが標本を引き直したときの揺れを見るのに対し、1県抜きは影響の強い県を特定する診断です。影響が強い県を、都合が悪いという理由で除外するための手順ではありません。</p>
@@ -151,4 +174,21 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <p>ライブラリが自動で分析を正しくしてくれるわけではありません。実際、指標の残差分散がゼロになる境界解で因子得点が計算できず、残差診断では標準化平均を用いました。ブートストラップや1県抜き、探索の補正はプロジェクト側のコードで実装し、図もsemopyの自動描画ではなく独自のSVG生成で作っています。</p>
 <p><a href="https://semopy.com/">semopy公式サイト</a> · <a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/requirements.txt">依存ライブラリ</a> · <a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/04-methodology.md">この分析での方法論の教訓</a></p></section><footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
 このページは <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
-</main></body></html>
+</main><script>
+document.querySelectorAll('.file-search').forEach(label => {
+  label.hidden = false;
+  const details = label.closest('details');
+  const rows = Array.from(details.querySelectorAll('tbody tr'));
+  const searchable = rows.map(row => row.textContent.toLocaleLowerCase());
+  const output = details.querySelector('output');
+  label.querySelector('input').addEventListener('input', event => {
+    const query = event.target.value.trim().toLocaleLowerCase();
+    let count = 0;
+    rows.forEach((row, index) => {
+      row.hidden = !searchable[index].includes(query);
+      if (!row.hidden) count++;
+    });
+    output.textContent = `${count.toLocaleString()} / ${rows.length.toLocaleString()} 行`;
+  });
+});
+</script></body></html>

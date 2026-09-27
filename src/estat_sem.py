@@ -92,7 +92,10 @@ def bootstrap(z, n=600, seed=0):
     for _ in range(n):
         s = z.iloc[rng.integers(0, len(z), len(z))]
         try:
-            e = fit(s).inspect(std_est=True)
+            from sem_audit import diagnose
+            e, checks = diagnose(fit(s))
+            if not checks["usable"]:
+                continue
         except Exception:
             continue
         e = e[e.op == "~"]

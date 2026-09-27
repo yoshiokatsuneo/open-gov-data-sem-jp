@@ -1,0 +1,5 @@
+model,n,attempts,usable,failed,nonconverged,boundary,usable_boundary,original_usable,original_boundary
+country,128,600,600,0,0,528,528,True,gov_effect
+pref-health,47,600,600,0,0,361,361,True,tax_income
+pref-job,47,600,600,0,0,378,378,True,
+muni,1859,400,400,0,0,0,0,True,

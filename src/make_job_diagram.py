@@ -54,7 +54,7 @@ def build():
 
     out.append(f'<rect x="40" y="{P}" width="{W-80}" height="{PH}" rx="10" fill="#ffffff" '
                f'stroke="{BOX_LINE}"/>')
-    out.append(text(64, P + 32, "ふたつの独立した経路が、それぞれ転職率を押し上げる", 16, INK, "700"))
+    out.append(text(64, P + 32, "都市度と雇用の不安定さを分けて、転職率との関連を調べる", 16, INK, "700"))
     out.append(text(64, P + 56,
                     f"N = 47 都道府県　χ²/df = {s['chi2']/s['DoF']:.2f}　CFI = {s['CFI']:.3f}　"
                     f"TLI = {s['TLI']:.3f}　RMSEA = {s['RMSEA']:.3f}　残差相関の最大 |r| = 0.145",
@@ -94,7 +94,7 @@ def build():
                f'stroke="#cfe0f5"/>')
     out.append(text(82, by + 24, "読みどころ", 12.5, "#1c5cab", "700"))
     for i, line in enumerate([
-            "・2つの説明側の相関は −0.07（n.s.）。まったく別の次元として分離する。",
+            "・説明側の相関の点推定は小さい。独立性を示したわけではない。",
             "・離職率は「雇用の不安定さ」の指標であって、転職率とは r = 0.29 しかない。",
             "・有効求人倍率は転職率と −0.36。逼迫と労働移動は別物（モデル外）。"]):
         out.append(text(82, by + 46 + i * 17, line, 11.5, INK2))
@@ -113,7 +113,7 @@ def build():
         out.append(text(666, y, lab, 11.5, col))
         out.append(text(900, y, f"{r['中央値']:+.2f}", 11.5, col, "600", "end"))
         out.append(text(1010, y, f"[{r['2.5%']:+.2f}, {r['97.5%']:+.2f}]", 11.5, col, "400", "end"))
-        out.append(text(1024, y, "0をまたぐ（未確立）" if zero else "0を含まない", 11.5, col))
+        out.append(text(1024, y, "0をまたぐ" if zero else "0を含まない", 11.5, col))
 
     # ---- 凡例 ----
     lg = H - 102

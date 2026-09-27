@@ -83,7 +83,12 @@ def bootstrap(z, n=600, seed=0):
     for _ in range(n):
         s = z.iloc[rng.integers(0, len(z), len(z))]
         try:
-            p = path_coefs(fit(s))
+            from sem_audit import diagnose
+            m = fit(s)
+            _, checks = diagnose(m)
+            if not checks["usable"]:
+                continue
+            p = path_coefs(m)
         except Exception:
             continue
         if all(k in p for k in KEYS):
