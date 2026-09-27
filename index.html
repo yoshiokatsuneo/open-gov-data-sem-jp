@@ -9,7 +9,8 @@
 main{max-width:1140px;margin:auto;padding:56px 24px}
 .eyebrow{display:block;font-size:16px;letter-spacing:.02em;color:var(--accent);font-weight:700;text-decoration:none}
 .eyebrow:hover{text-decoration:underline}.site-subtitle{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
-.home-header{padding:24px 0 36px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(32px,5.5vw,62px);max-width:900px;line-height:1.35;margin:24px 0 16px}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
+.share-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 24px;font-size:14px;color:var(--muted)}.share-tools a,.share-tools button{font:inherit;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:8px 12px;text-decoration:none;cursor:pointer}.share-tools button:focus-visible{outline:3px solid #dc9523;outline-offset:3px}.share-status input{width:min(100%,540px);font:inherit}.share-status:empty{display:none}
+.home-main{padding-top:20px}.home-header{padding:0 0 28px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(24px,4.6vw,52px);line-height:1.4;margin:8px 0 16px}.home-title-line{display:block;white-space:nowrap}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-top .eyebrow{min-width:0}
 .github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
@@ -18,6 +19,7 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.35;margin:12px 0 8px}h2{font-siz
 p{color:var(--muted);margin:.6em 0}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid #dc9523;outline-offset:3px}
 nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}nav a,.open{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:9px 15px;background:var(--card);text-decoration:none;font-size:14px}
 section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;margin:24px 0;scroll-margin-top:20px}
+.analysis-content>p,.analysis-content>details>p,.page-header>p{max-width:48em}.analysis-content>h2:not(:first-of-type){margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}.analysis-content>p{line-height:1.95}.analysis-content strong{color:var(--ink)}.technical-details{margin:18px 0;padding:16px 20px;border:1px solid var(--line);border-radius:10px}.technical-details>summary{font-weight:600;color:var(--accent);cursor:pointer}.technical-details[open]>summary{margin-bottom:18px}@media(max-width:600px){.analysis-content{padding:18px 12px}.technical-details{padding:12px}.analysis-content figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:12px}}
 .number{color:var(--accent);font-weight:700;font-size:13px}
 .fit{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;border-left:3px solid var(--accent);padding-left:12px;margin:14px 0}
 figure{margin:22px 0}img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px;background:#fff}
@@ -66,18 +68,19 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <meta name="twitter:description" content="豊かさ・健康・人の移動は、どう関係する？ 公的データを使った4つの探索的分析を図で紹介します。">
 <meta name="twitter:image" content="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/figures/site_social.png">
 <link rel="canonical" href="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/">
-</head><body><main>
+</head><body><main class="home-main">
 <header class="home-header"><div class="header-top">
 
 <a class="github-link" href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp" aria-label="GitHubでコード・変更履歴を見る">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
 <span>GitHub</span></a></div>
-<h1>国と地域の「なぜ？」を公的データで探る</h1>
+<h1><span class="home-title-line">国と地域の「なぜ？」を</span><span class="home-title-line">公的データで探る</span></h1>
 <p class="home-subtitle">構造方程式モデリング（SEM）による探索的分析</p><p class="home-question">豊かさ・健康・人の移動は、どう関係する？</p>
 <p>World Bank と e-Stat の公開データを用いた、国・都道府県・市区町村の4つの分析。気になる図から詳細に進めます。</p>
 
 
 <nav class="home-actions" aria-label="サイトの入口"><a class="primary" href="#country">4つの分析を見る →</a><a href="guide.html">図の読み方を知る →</a></nav>
+<div class='share-tools' aria-label='共有'><span>このサイトを共有</span><a href='https://twitter.com/intent/tweet?text=%E5%9B%BD%E3%81%A8%E5%9C%B0%E5%9F%9F%E3%81%AE%E3%80%8C%E3%81%AA%E3%81%9C%EF%BC%9F%E3%80%8D%E3%82%92%E5%85%AC%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A7%E6%8E%A2%E3%82%8B&amp;url=https%3A%2F%2Fyoshiokatsuneo.github.io%2Fopen-gov-data-sem-jp%2F' target='_blank' rel='noopener noreferrer'><svg width='16' height='16' viewBox='0 0 24 24' aria-hidden='true' focusable='false' style='vertical-align:-2px;margin-right:6px;fill:currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933ZM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644Z'/></svg>Xで共有</a><button type='button' data-share-url='https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/'>リンクをコピー</button><span class='share-status' role='status' aria-live='polite'></span></div>
 <div class="note">観測データから関係を調べたもので、因果関係を証明する分析ではありません。</div></header>
 <section id="about"><h2>このプロジェクトについて</h2>
 <p>公開データを使い、経済・健康・労働・人口移動の関係を、国・都道府県・市区町村の単位で調べるプロジェクトです。
@@ -88,8 +91,9 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 AIが生成した説明をそのまま結論とせず、データや検証結果に照らして見直す方針です。</p></section>
 <section id='country'><div class='number'>01 · N = 128</div><h2><a href='country.html'>国レベル — 所得の割に人的資本が厚い国は、その後10年よく伸びる</a></h2><figure><a href='country.html'><img src='figures/country2_path_diagram.svg' alt='国レベル — 所得の割に人的資本が厚い国は、その後10年よく伸びるのパス図。クリックで分析の詳細へ' loading='lazy'></a></figure><p>所得水準から期待される以上に人的資本が充実した国ほど、その後の成長率が高いという関連が見られました。</p><a class='open' href='country.html'>詳しく見る →</a></section><section id='pref-health'><div class='number'>02 · N = 47</div><h2><a href='pref-health.html'>都道府県の健康 — 豊かさと寿命の関連を男女別に比較</a></h2><figure><a href='pref-health.html'><img src='figures/pref_path_diagram.svg' alt='都道府県の健康 — 豊かさと寿命の関連を男女別に比較のパス図。クリックで分析の詳細へ' loading='lazy'></a></figure><p>地域の豊かさ・医療供給量・平均寿命の関係を、男女別に分析しました。</p><a class='open' href='pref-health.html'>詳しく見る →</a></section><section id='pref-job'><div class='number'>03 · N = 47</div><h2><a href='pref-job.html'>都道府県の転職 — 都市度と雇用の不安定さという2つの側面</a></h2><figure><a href='pref-job.html'><img src='figures/job_path_diagram.svg' alt='都道府県の転職 — 都市度と雇用の不安定さという2つの側面のパス図。クリックで分析の詳細へ' loading='lazy'></a></figure><p>都市労働市場の厚みと雇用の不安定さという、2つの側面から転職率を分析しました。</p><a class='open' href='pref-job.html'>詳しく見る →</a></section><section id='muni'><div class='number'>04 · N = 1,859</div><h2><a href='muni.html'>市区町村 — 密度は正反対の経路を同時に走らせる</a></h2><figure><a href='muni.html'><img src='figures/muni_path_diagram.svg' alt='市区町村 — 密度は正反対の経路を同時に走らせるのパス図。クリックで分析の詳細へ' loading='lazy'></a></figure><p>人口密度と居住移動の関係を、単身世帯・高齢化・通勤を通じた経路に分解しました。</p><a class='open' href='muni.html'>詳しく見る →</a></section>
 <nav aria-label="分析ページ"><a href='country.html'>01 国レベル</a><a href='pref-health.html'>02 都道府県の健康</a><a href='pref-job.html'>03 都道府県の転職</a><a href='muni.html'>04 市区町村</a><a href='guide.html'>図の読み方</a></nav>
-<details><summary>再現方法とドキュメント</summary>
-<section id="repro"><h2>再現と、詳細ドキュメント</h2>
+<details id="repro" class="technical-details"><summary>データ・コード・再現方法</summary>
+
+<h3>分析を再現する</h3>
 <p>Python 3.13 が必要（3.14 には semopy の wheel が無い）。
 <code>make setup &amp;&amp; make all</code> で全分析と全図が約50秒で再生成される。
 <code>data/raw/</code> に生データをコミットしてあるためネットワークは不要。</p>
@@ -103,8 +107,26 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
 <li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
 <li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/06-model-selection.md">06 モデル選択の台帳</a><span>docs/06-model-selection.md</span></li>
 <li><a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/Makefile">Makefile</a><span>再現用エントリポイント</span></li>
-</ul></section>
-</details>
+</ul></details>
 <footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
 このページは <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
-</main></body></html>
+</main><script>
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('button[data-share-url]');
+  if (!button) return;
+  const status = button.parentElement.querySelector('.share-status');
+  try {
+    await navigator.clipboard.writeText(button.dataset.shareUrl);
+    status.textContent = 'リンクをコピーしました';
+  } catch (_) {
+    status.textContent = 'このリンクを選択してコピーしてください：';
+    const input = document.createElement('input');
+    input.value = button.dataset.shareUrl;
+    input.readOnly = true;
+    input.setAttribute('aria-label', '共有するページのURL');
+    status.appendChild(input);
+    input.focus();
+    input.select();
+  }
+});
+</script></body></html>
