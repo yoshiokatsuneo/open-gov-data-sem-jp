@@ -66,7 +66,7 @@ document.addEventListener('click', async (event) => {
 
 
 def social_meta(page, title, description):
-    card = 'pref-health' if page == 'pref-health' else 'site'
+    card = page if page in {'country', 'pref-health', 'pref-job', 'muni'} else 'site'
     url = SITE_URL + ('' if page == 'index' else page + '.html')
     image = SITE_URL + 'figures/' + card + '_social.png'
     values = {'og:type': 'website', 'og:locale': 'ja_JP', 'og:title': title,
@@ -76,7 +76,8 @@ def social_meta(page, title, description):
     tags = [f'<meta property="{key}" content="{esc(value)}">' for key, value in values.items()]
     tags += [f'<meta name="{key}" content="{esc(value)}">' for key, value in
              {'description': description, 'twitter:card': 'summary_large_image',
-              'twitter:title': title, 'twitter:description': description, 'twitter:image': image}.items()]
+              'twitter:title': title, 'twitter:description': description, 'twitter:image': image,
+              'twitter:image:alt': values['og:image:alt']}.items()]
     return '\n'.join(tags) + f'\n<link rel="canonical" href="{url}">'
 
 SECTIONS = [

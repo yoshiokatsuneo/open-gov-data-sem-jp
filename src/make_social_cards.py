@@ -1,4 +1,4 @@
-"""既存の健康SEMパス図を主役にしたSNS画像。
+"""各分析の既存パス図を主役にしたSNS画像。
 Pillow、Node.jsのsharp、日本語フォントが必要。
 python src/make_social_cards.py --font FONT --node NODE --sharp SHARP_MODULE
 """
@@ -19,13 +19,16 @@ def main():
     args = p.parse_args()
     # 既存SVGをそのまま描画するので、モデルの係数・区間・凡例が追随する。
     js = "const sharp=require(process.argv[1]);sharp(process.argv[2],{density:144}).resize({width:1400}).png().toBuffer().then(b=>process.stdout.write(b));"
-    png = subprocess.check_output([args.node, '-e', js, args.sharp,
-                                   str(paths.figure('pref_path_diagram.svg'))])
-    graph = Image.open(io.BytesIO(png)).convert('RGB')
-    for name,title,footer in [
-        ('pref-health','豊かな県ほど長寿？ 男女を分けて調べてみた','豊かさと寿命の関連は、今回のモデルでは男性側が大きい。'),
-        ('site','国と地域の「なぜ？」を公的データで探る','4つの分析を公開中 ｜ 図は47都道府県の健康分析'),
+    for name,source,title,footer in [
+        ('pref-health','pref_path_diagram.svg','豊かな県ほど長寿？ 男女を分けて調べてみた','豊かさと寿命の関連は、今回のモデルでは男性側が大きい。'),
+        ('site','pref_path_diagram.svg','国と地域の「なぜ？」を公的データで探る','4つの分析を公開中 ｜ 図は47都道府県の健康分析'),
+        ('pref-job','job_path_diagram.svg','都市部ほど転職が多い？','都市の労働市場の厚みと転職率に正の関連。'),
+        ('muni','muni_path_diagram.svg','人口密度と人の移動は、どう関係する？','モデル上では、正と負の経路が併存。'),
+        ('country','country2_path_diagram.svg','どんな国ほど、その後の経済成長が高い？','所得を調整した人的資本と、その後の成長に正の関連。'),
     ]:
+        png = subprocess.check_output([args.node, '-e', js, args.sharp, str(paths.figure(source))])
+        graph = Image.open(io.BytesIO(png)).convert('RGB')
+        graph.thumbnail((1400,1008), Image.Resampling.LANCZOS)
         im=Image.new('RGB',(1600,1200),'#fcfcfb')
         im.paste(graph,((1600-graph.width)//2,85))
         d=ImageDraw.Draw(im)
