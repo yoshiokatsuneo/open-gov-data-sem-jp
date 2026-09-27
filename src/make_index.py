@@ -69,11 +69,11 @@ def social_meta(page, title, description):
     card = page if page in {'country', 'pref-health', 'pref-job', 'muni'} else 'site'
     url = SITE_URL + ('' if page == 'index' else page + '.html')
     image = SITE_URL + 'figures/' + card + '_social.png'
-    if page in {'pref-health', 'country'}:
+    if page in {'pref-health', 'country', 'pref-job', 'muni'}:
         image = SITE_URL + 'figures/' + page + '_card_v2.png'
     values = {'og:type': 'website', 'og:locale': 'ja_JP', 'og:title': title,
               'og:description': description, 'og:url': url, 'og:image': image,
-              'og:image:width': '1600', 'og:image:height': '800' if page in {'pref-health', 'country'} else '1200',
+              'og:image:width': '1600', 'og:image:height': '800' if page in {'pref-health', 'country', 'pref-job', 'muni'} else '1200',
               'og:image:alt': title + '。観測データによる探索的分析。因果関係を示すものではありません。'}
     tags = [f'<meta property="{key}" content="{esc(value)}">' for key, value in values.items()]
     tags += [f'<meta name="{key}" content="{esc(value)}">' for key, value in
