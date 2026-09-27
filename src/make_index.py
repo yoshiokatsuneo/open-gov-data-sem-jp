@@ -9,6 +9,7 @@ import html
 import io
 import keyword
 import tokenize
+from urllib.parse import urlencode
 
 import pandas as pd
 
@@ -19,6 +20,49 @@ import paths
 REPO_URL = "https://github.com/yoshiokatsuneo/open-gov-data-sem-jp"
 REPO = f"{REPO_URL}/blob/main"
 SITE_URL = "https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/"
+
+
+def share_buttons(selected=None):
+    titles = {
+        None: '国と地域の「なぜ？」を公的データで探る',
+        'country': '所得が同程度でも、人的資本が充実した国ほど成長する？',
+        'pref-health': '豊かな県ほど長寿？ 男女を分けて調べてみました。',
+        'pref-job': '都市部ほど転職が多い？ 公的データで調べてみました。',
+        'muni': '人口密度と人の移動は、どう関係する？',
+    }
+    url = SITE_URL + (selected + '.html' if selected else '')
+    intent = 'https://twitter.com/intent/tweet?' + urlencode({'text': titles[selected], 'url': url})
+    image = ("<a href='figures/pref-health_post.png' download>投稿用の画像を保存</a>"
+             if selected == 'pref-health' else '')
+    return (f"<div class='share-tools' aria-label='共有'><span>{'この分析' if selected else 'このサイト'}を共有</span>"
+            f"<a href='{esc(intent)}' target='_blank' rel='noopener noreferrer'>"
+            "<svg width='16' height='16' viewBox='0 0 24 24' aria-hidden='true' focusable='false' style='vertical-align:-2px;margin-right:6px;fill:currentColor'>"
+            "<path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933ZM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644Z'/></svg>"
+            "Xで共有</a>"
+            f"<button type='button' data-share-url='{esc(url)}'>リンクをコピー</button>{image}"
+            "<span class='share-status' role='status' aria-live='polite'></span></div>")
+
+
+SHARE_JS = """
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('button[data-share-url]');
+  if (!button) return;
+  const status = button.parentElement.querySelector('.share-status');
+  try {
+    await navigator.clipboard.writeText(button.dataset.shareUrl);
+    status.textContent = 'リンクをコピーしました';
+  } catch (_) {
+    status.textContent = 'このリンクを選択してコピーしてください：';
+    const input = document.createElement('input');
+    input.value = button.dataset.shareUrl;
+    input.readOnly = true;
+    input.setAttribute('aria-label', '共有するページのURL');
+    status.appendChild(input);
+    input.focus();
+    input.select();
+  }
+});
+"""
 
 
 def social_meta(page, title, description):
@@ -226,7 +270,8 @@ CSS = """
 main{max-width:1140px;margin:auto;padding:56px 24px}
 .eyebrow{display:block;font-size:16px;letter-spacing:.02em;color:var(--accent);font-weight:700;text-decoration:none}
 .eyebrow:hover{text-decoration:underline}.site-subtitle{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
-.home-header{padding:24px 0 36px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(32px,5.5vw,62px);max-width:900px;line-height:1.35;margin:24px 0 16px}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
+.share-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 24px;font-size:14px;color:var(--muted)}.share-tools a,.share-tools button{font:inherit;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:8px 12px;text-decoration:none;cursor:pointer}.share-tools button:focus-visible{outline:3px solid #dc9523;outline-offset:3px}.share-status input{width:min(100%,540px);font:inherit}.share-status:empty{display:none}
+.home-main{padding-top:20px}.home-header{padding:0 0 28px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(24px,4.6vw,52px);line-height:1.4;margin:8px 0 16px}.home-title-line{display:block;white-space:nowrap}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-top .eyebrow{min-width:0}
 .github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
@@ -235,6 +280,7 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.35;margin:12px 0 8px}h2{font-siz
 p{color:var(--muted);margin:.6em 0}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid #dc9523;outline-offset:3px}
 nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}nav a,.open{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:9px 15px;background:var(--card);text-decoration:none;font-size:14px}
 section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;margin:24px 0;scroll-margin-top:20px}
+.analysis-content>p,.analysis-content>details>p,.page-header>p{max-width:48em}.analysis-content>h2:not(:first-of-type){margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}.analysis-content>p{line-height:1.95}.analysis-content strong{color:var(--ink)}.technical-details{margin:18px 0;padding:16px 20px;border:1px solid var(--line);border-radius:10px}.technical-details>summary{font-weight:600;color:var(--accent);cursor:pointer}.technical-details[open]>summary{margin-bottom:18px}@media(max-width:600px){.analysis-content{padding:18px 12px}.technical-details{padding:12px}.analysis-content figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:12px}}
 .number{color:var(--accent);font-weight:700;font-size:13px}
 .fit{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;border-left:3px solid var(--accent);padding-left:12px;margin:14px 0}
 figure{margin:22px 0}img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px;background:#fff}
@@ -556,18 +602,26 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
                 f"<p>{esc(SUMMARIES[s['id']])}</p>"
                 f"<a class='open' href='{s['id']}.html'>詳しく見る →</a></section>")
             continue
-        parts = [f"<section id='{s['id']}'><div class='number'>{s['no']}</div>",
+        parts = [f"<section class='analysis-content' id='{s['id']}'><div class='number'>{s['no']}</div>",
                  "<h2>結果を図で見る</h2>",
                  f"<figure><a href='figures/{s['fig']}'><img src='figures/{s['fig']}' "
                  f"alt='{esc(s['title'])}' loading='lazy'></a>"
-                 f"<figcaption>figures/{s['fig']} — クリックで原寸</figcaption></figure>",
+                 f"<figcaption><a class='open' href='figures/{s['fig']}'>図を拡大して読む ↗</a> <a href='guide.html#legend'>凡例・数字の読み方</a></figcaption></figure>",
+                 share_buttons(s["id"]),
                  "<h2>考察</h2>",
                  discussion_html(s['id']),
                  f"<p><a href='{REPO}/{s['doc']}'>分析と試行の記録を読む →</a></p>",
                  case_examples(s["id"]),
                  prediction_section(s["id"]),
-                 "<h3>ブートストラップによる判定</h3>", boot_table(s["boot"])]
-        parts.append(audit_section(s["id"]))
+                 "<h2>結果の確かさを確認する</h2>",
+                 "<p>区間が0を含む経路は、関連を明確に示せていません。以下の検証は、採用したモデルと前処理に条件づけられたものです。</p>",
+                 "<details class='technical-details'><summary>ブートストラップによる各経路の判定</summary>", boot_table(s["boot"]), "</details>"]
+        audit = pd.read_csv(paths.result('sem_audit_summary.csv')).set_index('model').loc[s['id']]
+        parts.append(f"<p>再抽出{int(audit.attempts)}回中、分散がほぼゼロの境界解は{int(audit.usable_boundary)}回でした。境界解も含めた区間であり、モデルの安定性に注意が必要です。</p>" if audit.usable_boundary else
+                     "<p>今回の再抽出では、基本的な推定条件を満たさない結果や分散がほぼゼロの境界解はありませんでした。因果関係や別データでの再現性を保証するものではありません。</p>")
+        if s['id'] == 'pref-health':
+            parts.append("<p><strong>追加検証では、豊かさの係数は男性側が大きく、医療供給量の係数の男女差は示せませんでした。</strong>比較の区間と1県抜きの検証は下に掲載しています。</p>")
+        parts.append("<details class='technical-details'><summary>推定の診断と追加検証を詳しく見る</summary>" + audit_section(s["id"]) + "</details>")
         for f, cap in s.get("extra", []):
             parts.append(f"<figure><a href='figures/{f}'><img src='figures/{f}' "
                          f"alt='{esc(cap)}' loading='lazy'></a>"
@@ -580,35 +634,18 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
                   f"<p><a href='{REPO}/docs/04-methodology.md'>矢印の向きと等価モデルの検算記録</a></p>",
                   f"<h3>解釈上の注意</h3><div class='note'>{note}</div>",
                   related_research(s["id"]),
-                  "<h3>結果データ</h3>", files_ul(s["files"], "results"),
-                  "<h3>コード</h3>", files_ul(s["src"], "src"),
-                  f"<p><a href='{REPO}/{s['doc']}'>詳細ドキュメント →</a></p></section>"]
+                  "</section>"]
         body.append("".join(parts))
 
-    detail_nav = f'<nav aria-label="目次">{nav}<a href="{REPO}/docs/06-model-selection.md">モデル選択の台帳</a>\n<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>\n<a href="{REPO}/README.md">README</a></nav>'
-    brand = '<div><a class="eyebrow" href="index.html" aria-label="国と地域の「なぜ？」を公的データで探る — トップページへ">国と地域の「なぜ？」を公的データで探る</a><span class="site-subtitle">構造方程式モデリング（SEM）による探索的分析</span></div>'
-    return f"""<!doctype html>
-<html lang="ja"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(heading)}｜公的データによるSEM</title>
-<style>{CSS}</style></head><body><main>
-<header class="{'home-header' if selected is None else 'page-header'}"><div class="header-top">
-{brand if selected else ''}
-<a class="github-link" href="{REPO_URL}" aria-label="GitHubでコード・変更履歴を見る">
-<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-<span>GitHub</span></a></div>
-<h1>{esc(heading) if selected else '国と地域の「なぜ？」を公的データで探る'}</h1>
-{'<p class="home-subtitle">構造方程式モデリング（SEM）による探索的分析</p><p class="home-question">豊かさ・健康・人の移動は、どう関係する？</p>' if selected is None else ''}
-<p>{esc(intro)}</p>
-{('<p class="fit">分析手法：' + ('パス解析（SEMの一種・観測変数のみ）' if selected == 'muni' else '構造方程式モデリング（SEM）') + '</p>') if selected else ''}
-{'<p>複数の関係を同時に推定し、直接の関係と他の変数を経由する間接の関係を分けて調べます。</p>' if selected == 'muni' else ''}
-{detail_nav if selected else '<nav class="home-actions" aria-label="サイトの入口"><a class="primary" href="#country">4つの分析を見る →</a><a href="guide.html">図の読み方を知る →</a></nav>'}
-{f'<div class="note">{note}</div>' if selected is None else ''}</header>
-{about}
-{''.join(body)}
-<nav aria-label="分析ページ">{nav}</nav>
-{"<details><summary>再現方法とドキュメント</summary>" if selected is None else ""}
-<section id="repro"><h2>再現と、詳細ドキュメント</h2>
+    resources = ''
+    if selected:
+        current = sections[0]
+        resources = ("<h3>結果データ</h3>" + files_ul(current['files'], 'results')
+                     + "<h3>分析コード</h3>" + files_ul(current['src'], 'src')
+                     + f"<p><a href='{REPO}/{current['doc']}'>この分析の詳細ドキュメント →</a></p>")
+    repro = f"""<details id="repro" class="technical-details"><summary>データ・コード・再現方法</summary>
+{resources}
+<h3>分析を再現する</h3>
 <p>Python 3.13 が必要（3.14 には semopy の wheel が無い）。
 <code>make setup &amp;&amp; make all</code> で全分析と全図が約50秒で再生成される。
 <code>data/raw/</code> に生データをコミットしてあるためネットワークは不要。</p>
@@ -622,11 +659,36 @@ AIが生成した説明をそのまま結論とせず、データや検証結果
 <li><a href="{REPO}/docs/05-data-sources.md">05 データ出典</a><span>docs/05-data-sources.md</span></li>
 <li><a href="{REPO}/docs/06-model-selection.md">06 モデル選択の台帳</a><span>docs/06-model-selection.md</span></li>
 <li><a href="{REPO}/Makefile">Makefile</a><span>再現用エントリポイント</span></li>
-</ul></section>
-{"</details>" if selected is None else ""}
+</ul></details>"""
+    if selected:
+        body[-1] = body[-1].removesuffix("</section>") + repro + "</section>"
+    detail_nav = f'<nav aria-label="目次">{nav}<a href="{REPO}/docs/06-model-selection.md">モデル選択の台帳</a>\n<a href="{REPO}/docs/04-methodology.md">方法論の教訓</a>\n<a href="{REPO}/README.md">README</a></nav>'
+    brand = '<div><a class="eyebrow" href="index.html" aria-label="国と地域の「なぜ？」を公的データで探る — トップページへ">国と地域の「なぜ？」を公的データで探る</a><span class="site-subtitle">構造方程式モデリング（SEM）による探索的分析</span></div>'
+    return f"""<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(heading)}｜公的データによるSEM</title>
+<style>{CSS}</style></head><body><main class="{'home-main' if selected is None else 'page-main'}">
+<header class="{'home-header' if selected is None else 'page-header'}"><div class="header-top">
+{brand if selected else ''}
+<a class="github-link" href="{REPO_URL}" aria-label="GitHubでコード・変更履歴を見る">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+<span>GitHub</span></a></div>
+<h1>{esc(heading) if selected else '<span class="home-title-line">国と地域の「なぜ？」を</span><span class="home-title-line">公的データで探る</span>'}</h1>
+{'<p class="home-subtitle">構造方程式モデリング（SEM）による探索的分析</p><p class="home-question">豊かさ・健康・人の移動は、どう関係する？</p>' if selected is None else ''}
+<p>{esc(intro)}</p>
+{('<p class="fit">分析手法：' + ('パス解析（SEMの一種・観測変数のみ）' if selected == 'muni' else '構造方程式モデリング（SEM）') + '</p>') if selected else ''}
+{'<p>複数の関係を同時に推定し、直接の関係と他の変数を経由する間接の関係を分けて調べます。</p>' if selected == 'muni' else ''}
+{detail_nav if selected else '<nav class="home-actions" aria-label="サイトの入口"><a class="primary" href="#country">4つの分析を見る →</a><a href="guide.html">図の読み方を知る →</a></nav>'}
+{share_buttons() if selected is None else ''}
+{f'<div class="note">{note}</div>' if selected is None else ''}</header>
+{about}
+{''.join(body)}
+<nav aria-label="分析ページ">{nav}</nav>
+{repro if selected is None else ''}
 <footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
 このページは <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
-</main>{f'<script>{PREVIEW_JS}</script>' if selected else ''}</body></html>"""
+</main><script>{SHARE_JS}</script>{f'<script>{PREVIEW_JS}</script>' if selected else ''}</body></html>"""
 
 
 if __name__ == "__main__":

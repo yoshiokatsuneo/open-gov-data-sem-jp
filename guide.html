@@ -9,7 +9,8 @@
 main{max-width:1140px;margin:auto;padding:56px 24px}
 .eyebrow{display:block;font-size:16px;letter-spacing:.02em;color:var(--accent);font-weight:700;text-decoration:none}
 .eyebrow:hover{text-decoration:underline}.site-subtitle{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
-.home-header{padding:24px 0 36px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(32px,5.5vw,62px);max-width:900px;line-height:1.35;margin:24px 0 16px}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
+.share-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 24px;font-size:14px;color:var(--muted)}.share-tools a,.share-tools button{font:inherit;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:8px 12px;text-decoration:none;cursor:pointer}.share-tools button:focus-visible{outline:3px solid #dc9523;outline-offset:3px}.share-status input{width:min(100%,540px);font:inherit}.share-status:empty{display:none}
+.home-main{padding-top:20px}.home-header{padding:0 0 28px}.home-header .header-top{justify-content:flex-end}.home-header h1{font-size:clamp(24px,4.6vw,52px);line-height:1.4;margin:8px 0 16px}.home-title-line{display:block;white-space:nowrap}.home-subtitle{font-size:clamp(16px,2vw,21px);color:var(--accent)}.home-question{font-size:22px;color:var(--ink);margin-top:28px}.home-actions{margin:28px 0}.home-actions .primary{background:var(--accent);color:var(--card);border-color:var(--accent)}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-top .eyebrow{min-width:0}
 .github-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px;padding:6px 10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;border-radius:8px}
@@ -18,6 +19,7 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.35;margin:12px 0 8px}h2{font-siz
 p{color:var(--muted);margin:.6em 0}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid #dc9523;outline-offset:3px}
 nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}nav a,.open{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:9px 15px;background:var(--card);text-decoration:none;font-size:14px}
 section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;margin:24px 0;scroll-margin-top:20px}
+.analysis-content>p,.analysis-content>details>p,.page-header>p{max-width:48em}.analysis-content>h2:not(:first-of-type){margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}.analysis-content>p{line-height:1.95}.analysis-content strong{color:var(--ink)}.technical-details{margin:18px 0;padding:16px 20px;border:1px solid var(--line);border-radius:10px}.technical-details>summary{font-weight:600;color:var(--accent);cursor:pointer}.technical-details[open]>summary{margin-bottom:18px}@media(max-width:600px){.analysis-content{padding:18px 12px}.technical-details{padding:12px}.analysis-content figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:12px}}
 .number{color:var(--accent);font-weight:700;font-size:13px}
 .fit{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;border-left:3px solid var(--accent);padding-left:12px;margin:14px 0}
 figure{margin:22px 0}img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px;background:#fff}
@@ -66,7 +68,7 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <meta name="twitter:description" content="SEM・パス図・係数・不確実性の読み方を解説します。">
 <meta name="twitter:image" content="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/figures/site_social.png">
 <link rel="canonical" href="https://yoshiokatsuneo.github.io/open-gov-data-sem-jp/guide.html">
-</head><body><main>
+</head><body><main class="page-main">
 <header class="page-header"><div class="header-top">
 <div><a class="eyebrow" href="index.html" aria-label="国と地域の「なぜ？」を公的データで探る — トップページへ">国と地域の「なぜ？」を公的データで探る</a><span class="site-subtitle">構造方程式モデリング（SEM）による探索的分析</span></div>
 <a class="github-link" href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp" aria-label="GitHubでコード・変更履歴を見る">
@@ -175,6 +177,25 @@ footer{font-size:13px;color:var(--muted);margin-top:40px}
 <p><a href="https://semopy.com/">semopy公式サイト</a> · <a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/requirements.txt">依存ライブラリ</a> · <a href="https://github.com/yoshiokatsuneo/open-gov-data-sem-jp/blob/main/docs/04-methodology.md">この分析での方法論の教訓</a></p></section><footer>出典: World Bank Open Data (CC BY 4.0) / 総務省統計局 e-Stat（政府標準利用規約）。
 このページは <code>src/make_index.py</code> が results/ の中身から生成している。</footer>
 </main><script>
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('button[data-share-url]');
+  if (!button) return;
+  const status = button.parentElement.querySelector('.share-status');
+  try {
+    await navigator.clipboard.writeText(button.dataset.shareUrl);
+    status.textContent = 'リンクをコピーしました';
+  } catch (_) {
+    status.textContent = 'このリンクを選択してコピーしてください：';
+    const input = document.createElement('input');
+    input.value = button.dataset.shareUrl;
+    input.readOnly = true;
+    input.setAttribute('aria-label', '共有するページのURL');
+    status.appendChild(input);
+    input.focus();
+    input.select();
+  }
+});
+</script><script>
 document.querySelectorAll('.file-search').forEach(label => {
   label.hidden = false;
   const details = label.closest('details');
